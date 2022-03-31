@@ -7,13 +7,15 @@ functions envup() {
 	cd $HOME/.env
 	{
 		git add .
-		git commit -m 'Regular update by envup at $(date +"%Y-%m-%d %H:%M:%S")'
+		local create_time=$(date +"%Y-%m-%d %H:%M:%S") 
+		local commit_str="Regular update by envup at ${create_time}"
+		git commit -m $commit_str
 		/usr/bin/wget -q --spider http://baidu.com
 		if [[ $? -eq 0 ]];
 		then
 			git push origin master
 		fi
-	}&> /dev/null
+	}
 
 	cd $current
 	return 0
