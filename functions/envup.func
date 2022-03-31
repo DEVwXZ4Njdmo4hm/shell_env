@@ -1,7 +1,7 @@
 #!/bin/sh
 # Created by zijian at 2022-03-31 14:17:45
 
-functions envup() {
+function envup() {
 	source $HOME/.shrc
 	local current=$(pwd)
 	cd $HOME/.env
