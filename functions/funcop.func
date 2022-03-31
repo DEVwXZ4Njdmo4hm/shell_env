@@ -78,7 +78,7 @@ function viewfunc() {
 
 	if [[ -f $nf ]];
 	then
-		/bin/bat --file-name=$1 $nf
+		/usr/bin/bat --file-name=$1 $nf
 		return $?
 	else
 		echo "$1 is not exist in functions directory."
