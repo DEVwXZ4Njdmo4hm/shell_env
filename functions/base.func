@@ -10,7 +10,7 @@ function addalias() {
 
 	/usr/bin/micro $HOME/.env/alias
 	envup
-	return 0
+	return $?
 }
 
 function addvar() {
@@ -22,7 +22,7 @@ function addvar() {
 
 	/usr/bin/micro $HOME/.env/vars
 	envup
-	return 0
+	return $?
 }
 
 function envset() {
@@ -34,6 +34,5 @@ function envset() {
 
 	/usr/bin/micro $HOME/.env/setting
 	envup
-	return 0
-
+	return $?
 }
