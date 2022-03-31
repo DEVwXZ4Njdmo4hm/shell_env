@@ -8,12 +8,10 @@ function addalias() {
 		return 1
 	fi
 
-
 	/usr/bin/micro $HOME/.env/alias
 	envup
 	return 0
 }
-
 
 function addvar() {
 	if [[ $UID -ne 1000 ]]
@@ -21,7 +19,6 @@ function addvar() {
 		echo "The user does not have permission to operate."
 		return 1
 	fi
-
 
 	/usr/bin/micro $HOME/.env/vars
 	envup
@@ -34,7 +31,6 @@ function envset() {
 		echo "The user does not have permission to operate."
 		return 1
 	fi
-
 
 	/usr/bin/micro $HOME/.env/setting
 	envup
