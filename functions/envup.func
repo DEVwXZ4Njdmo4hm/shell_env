@@ -15,7 +15,7 @@ functions envup() {
 		then
 			git push origin master
 		fi
-	}
+	}&>/dev/null
 
 	cd $current
 	return 0
