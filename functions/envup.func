@@ -7,11 +7,10 @@ functions envup() {
 	cd $HOME/.env
 	{
 		git add .
-		
+		git commit -m 'Regular update by envup at $(date +"%Y-%m-%d %H:%M:%S")'
 		/usr/bin/wget -q --spider http://baidu.com
 		if [[ $? -eq 0 ]];
 		then
-			git commit -m 'Regular update by envup'
 			git push origin master
 		fi
 	}&> /dev/null
