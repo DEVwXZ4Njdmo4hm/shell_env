@@ -1,0 +1,112 @@
+#!/bin/sh
+
+#but do not excute it.
+
+source ${HOME}/.env/setting
+source ${HOME}/.env/functions/pathremove.func
+
+export MATLAB_HOME="${HOME}/.local/share/MATLAB"
+export MATLAB_SOFTWARE_VERSION="R2021b"
+#export PATH="${MATLAB_HOME}/${MATLAB_SOFTWARE_VERSION}/bin:$PATH"
+export OPENCV_LOG_LEVEL=ERROR
+export JDK_MAJOR_VERSION="17"
+export EDITOR="/usr/bin/micro"
+export USER_COMMIT="Capricornus"
+export PORTAGE="/etc/portage"
+export PUSES="$PORTAGE/package.use"
+export PENV="$PORTAGE/env"
+export PMASK="$PORTAGE/package.mask"
+#export PLASMA_USE_QT_SCALING=1
+#export GDK_SCALE=2
+#export GDK_DPI_SCALE=0.5
+#export PATH="/usr/lib/ccache/bin${PATH:+:}$PATH"
+#export CCACHE_DIR="/var/cache/ccache"
+export PATH="${HOME}/.local/bin:$PATH"
+#export PATH="$PATH:/usr/bin:/usr/lib/llvm/10/bin:/opt/cuda/bin"
+export JAVA_HOME="/usr/lib/jvm/openjdk-bin-${JDK_MAJOR_VERSION}/"
+export PATH="$JAVA_HOME/bin:$PATH"
+#export GAME_LIBRARY_PATH="${HOME}/.local/share/Steam"
+#export PGHOME=/usr/lib64/pgsql
+#export PGUSER=postgres
+#export PGPORT=3000
+#export PGDATA=$PGHOME/data
+#export PATH=$PGHOME/bin:$PATH:$HOME/bin
+export LLVM_TOOLCHAIN_VER=13
+export LLVM_HOME=/usr/lib/llvm/$LLVM_TOOLCHAIN_VER/bin
+export PATH=$LLVM_HOME:$PATH
+export BCC_HOME=/usr/share/bcc
+export BCC_TOOLS=$BCC_HOME/tools
+export PATH=$BCC_TOOLS:$PATH
+export RUBY_VERSION=3.0.0
+export RB_PATH=${HOME}/.local/share/gem/ruby/${RUBY_VERSION}/bin
+export GEM_HOME=${HOME}/.local/share/gem/ruby/${RUBY_VERSION}
+export JFX_PATH=${HOME}/.local/lib/javafx-sdk-11.0.2/lib
+export PATH=$JFX_PATH:$RB_PATH:$PATH
+export GPG_TTY=$(tty)
+export USERIPSLOG=$HOME/.ipslog
+export vmlinuz="/usr/src/linux/arch/$(uname -m)/boot/bzImage"
+
+# Add risc-v 64 toolchain
+export RISCV_TOOLCHAIN_HOME=/opt/riscv
+export PATH=$PATH:$RISCV_TOOLCHAIN_HOME/bin
+
+# anaconda3
+ANACONDA_HOME=$HOME/anaconda3
+
+if [[ ${USE_ANACONDA} -eq 1 ]]
+then
+	#export CONDAENV=py39
+	#export PATH=${ANACONDA_HOME}/envs/${CONDAENV}/bin:${ANACONDA_HOME}/bin:$PATH
+	export PATH=${ANACONDA_HOME}/bin:$PATH
+elif [[ ${USE_ANACONDA} -eq 0 ]]
+then
+	pathremove ${ANACONDA_HOME}/bin
+fi
+
+# conda
+if [[ ${USE_CONDA} -eq 1 ]]
+then
+	export PATH=${ANACONDA_HOME}/condabin:$PATH
+elif [[ ${USE_CONDA} -eq 0 ]]
+then
+	pathremove ${ANACONDA_HOME}/condabin
+fi
+
+#add local rust library support
+export PATH=${HOME}/.cargo/bin:$PATH
+
+#add local qtlib
+#export QT_HOME=${HOME}/.local/lib/Qt-6.2
+#export PATH=$QT_HOME/bin:$PATH
+#export LD_LIBRARY_PATH=$QT_HOME/lib:/lib64:/usr/lib64
+
+#add musl lib
+export MUSL_HOME=${HOME}/.local/lib/musl
+export PATH=$MUSL_HOME/bin:$PATH
+#export LD_LIBRARY_PATH=$MUSL_HOME/lib:$LD_LIBRARY_PATH
+
+# add android_cli_tools
+export SDK_ROOT=${HOME}/.local/lib/android/sdk_root
+export REPO_OS_OVERRIDE=linux
+export ANDROID_CLI_TOOLS_HOME=$SDK_ROOT/cmdline-tools/latest
+export AVD_HOME=${HOME}/.local/lib/android/avd_home
+#export PATH=$ANDROID_CLI_TOOLS_HOME/bin:$PATH
+
+# set screen resolve here.
+export SCREEN_RESOLVE=1920x1080
+#export http_proxy=127.0.0.1:8889
+#export https_proxy=$http_proxy
+
+# add flutter support
+export FLUTTER_HOME=${HOME}/.local/lib/flutter
+export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
+export PATH=$PATH:$FLUTTER_HOME/bin
+
+# dotnet
+export DOTNET_VER=6.0
+export DOTNET_ROOT="/opt/dotnet-sdk-bin-${DOTNET_VER}"
+
+
+# openssl3
+export OPENSSL3_HOME=$HOME/.local/lib/openssl3
+export LD_LIBRARY_PATH=/lib:/lib64:/usr/lib:/usr/lib64:${OPENSSL3_HOME}/lib64

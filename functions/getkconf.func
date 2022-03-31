@@ -1,0 +1,23 @@
+#!/bin/sh
+# but do not make it executable.
+
+function getkconf() {
+	if [[ "$#" -ne 1 ]]
+	then
+		echo "Invalid parameter numbers: $#"
+		return 1
+	fi
+
+	#RED='\033[1;31m'
+	#CYAN='\033[0;36m'
+	#BOLD=$(tput bold)
+	#NoColor='\033[0m'
+	#NORM=$(tput sgr0)
+	source "${HOME}/.env/functions/macro/colors"
+	
+	echo -e "Specified config ${RED}${BOLD}'$1'${NoColor}${NORM} from ${CYAN}${BOLD}config-$(uname -r)${NoColor}${NORM}:"
+	echo
+	cat /usr/src/linux/.config | grep -i $1
+
+	return 0;
+}

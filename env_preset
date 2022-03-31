@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# but do not excute it.
+
+chmod 600 $HOME/.shrc
+chmod 700 $HOME/.env
+chmod 600 $HOME/.env/env_preset
+chmod 600 $HOME/.env/vars
+chmod 600 $HOME/.env/alias
+source $HOME/.env/functions/.func_dir_init
+source $HOME/.env/setting
+
+if [[ $(/usr/bin/tty) =~ "pts" ]]
+then
+	export BAT_THEME="Coldark-Cold"
+	alias menuconfig="sudo /usr/bin/make MENUCONFIG_COLOR=mono menuconfig"
+elif [[ $(/usr/bin/tty) =~ "tty" ]]
+then
+	export BAT_THEME="gruvbox-white"
+	alias menuconfig="sudo /usr/bin/make MENUCONFIG_COLOR=blackbg menuconfig"
+else
+	echo "I do not know what device are you using, bat_theme set to \"gruvbox\""
+	echo "Set MENUCONFIG_COLOR to default."
+	export BAT_THEME="gruvbox"
+	alias menuconfig="sudo /usr/bin/make menuconfig"
+fi
+
+if [[ $0 == "bash" ]]
+then
+	alias py=python
+fi

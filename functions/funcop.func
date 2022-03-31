@@ -1,0 +1,67 @@
+#!/bin/sh
+
+function newfunc() {
+	if [[ $# -eq 0 ]];
+	then
+		echo "You must specific a name."
+		return 1
+	fi
+	
+	local nf="$HOME/.env/functions/$1.func"
+
+	if [[ -f $nf ]];
+	then
+		echo "function $1 is exist in functions directory."
+		sleep 0.2
+		echo "call editfunc"
+		sleep 0.5
+		editfunc $1
+		return $?
+	fi
+
+	local create_date=$(date +"%Y-%m-%d %H:%M:%S")
+	touch $nf
+	echo "#!/bin/sh" >> $nf
+	echo "# Created by $USER at ${create_date}">> $nf
+	echo >> $nf
+	echo "functions $1() {" >> $nf
+	echo >> $nf
+	echo "}" >> $nf
+	/usr/bin/micro $nf
+
+	source $HOME/.shrc
+	return 0
+}
+
+function editfunc() {
+	if [[ $# -eq 0 ]];
+	then
+		echo "You must specific a name"
+		return 1
+	fi
+
+	local nf="$HOME/.env/functions/$1.func"
+
+	if [[ -f $nf ]];
+	then
+		/usr/bin/micro $nf
+		source $HOME/.shrc
+		return 0
+	else
+		echo "$1 is not exist in functions directory."
+		return 2
+	fi
+}
+
+function rmfunc() {
+	if [[ $# -eq 0 ]];
+	then
+		echo "You must specific a name."
+		return 1
+	fi
+
+	local nf="$HOME/.env/functions/$1.func"
+	rm -vf $nf
+
+	return $?
+}

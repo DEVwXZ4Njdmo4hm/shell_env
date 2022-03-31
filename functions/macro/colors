@@ -1,0 +1,5 @@
+RED='\033[1;31m'
+CYAN='\033[0;36m'
+BOLD=$(tput bold)
+NoColor='\033[0m'
+NORM=$(tput sgr0)

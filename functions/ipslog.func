@@ -1,0 +1,54 @@
+#!/bin/sh
+# but do not excute it.
+
+
+function ipslog() {
+	chmod 700 $USERIPSLOG
+	date=$(date +\%Y\%m\%d)
+	cd $USERIPSLOG
+	if [[ "$#" -ne 1 ]]
+	then
+		echo "Invalid parameter numbers: $#."
+		return 1
+	fi
+
+	if [[ $1 == "stats" ]]
+	then
+		echo "Getting stats.log"
+	elif [[ $1 == "suricata" ]]
+	then
+		echo "Getting suricata.log"
+	elif [[ $1 == "fast" ]]
+	then
+		echo "Getting fast.log"
+	elif [[ $1 == "http" ]]
+	then
+		echo "Getting http.log"
+	elif [[ $1 == "tls" ]]
+	then
+		echo "Getting tls.log"
+	elif [[ $1 == "eve" ]]
+	then
+		filetype="json-"
+		echo "Getting eve.json"
+	elif [[ $1 == "log.pcap" ]]
+	then
+		echo "Getting log.pcap.lz4"
+		cp -v -f /var/log/suricata/$1.lz4 ./
+		/usr/bin/lz4 -d --rm ./$1.lz4
+		rm -v -f ./log.pcap.lz4
+		chmod 600 $USERIPSLOG/*
+		return 0
+	else
+		echo "Unknown log type $1."
+		return 2
+	fi
+
+	cp -v -f /var/log/suricata/$1.log-${date}.zst ./
+	/usr/bin/zstd -d --rm ./$1.log-${date}.zst
+	chmod 600 $USERIPSLOG/*
+	return 0
+}
+
+
+

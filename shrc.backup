@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# but do not excute it!
+
+if [[ ${UID} -ne 1000 ]]
+then
+	echo "Incorret UID ${UID}!!!"
+	echo "Attempting env source!"
+	return 133
+fi
+
+source $HOME/.env/env_preset
+source $HOME/.env/vars
+source $HOME/.env/alias
+
+for i in $(dir $HOME/.env/functions/*.func);
+do
+	source ${i}
+done

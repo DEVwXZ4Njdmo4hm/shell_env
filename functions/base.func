@@ -1,0 +1,46 @@
+#!/bin/sh
+# but do not make it executable.
+
+function addalias() {
+	if [[ $UID -ne 1000 ]]
+	then
+		echo "The user does not have permission to operate."
+		return 1
+	fi
+
+
+	/usr/bin/micro $HOME/.env/alias
+	source ~/.shrc
+
+	return 0
+}
+
+
+function addvar() {
+	if [[ $UID -ne 1000 ]]
+	then
+		echo "The user does not have permission to operate."
+		return 1
+	fi
+
+
+	/usr/bin/micro $HOME/.env/vars
+	source ~/.shrc
+
+	return 0
+}
+
+function envset() {
+	if [[ $UID -ne 1000 ]]
+	then
+		echo "The user does not have permission to operate."
+		return 1
+	fi
+
+
+	/usr/bin/micro $HOME/.env/setting
+	source ~/.shrc
+
+	return 0
+
+}
