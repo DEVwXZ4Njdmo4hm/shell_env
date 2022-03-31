@@ -10,8 +10,8 @@ function addalias() {
 
 
 	/usr/bin/micro $HOME/.env/alias
-	source ~/.shrc
-
+	#source ~/.shrc
+	envup
 	return 0
 }
 
@@ -25,8 +25,8 @@ function addvar() {
 
 
 	/usr/bin/micro $HOME/.env/vars
-	source ~/.shrc
-
+	#source ~/.shrc
+	envup
 	return 0
 }
 
@@ -39,8 +39,8 @@ function envset() {
 
 
 	/usr/bin/micro $HOME/.env/setting
-	source ~/.shrc
-
+	#source ~/.shrc
+	envup
 	return 0
 
 }

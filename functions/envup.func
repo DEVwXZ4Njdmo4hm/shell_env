@@ -1,0 +1,21 @@
+#!/bin/sh
+# Created by zijian at 2022-03-31 14:17:45
+
+functions envup() {
+	source $HOME/.shrc
+	local current=$(pwd)
+	cd $HOME/.env
+	{
+		git add .
+		
+		/usr/bin/wget -q --spider http://baidu.com
+		if [[ $? -eq 0 ]];
+		then
+			git commit -m 'Regular update by envup'
+			git push origin master
+		fi
+	}&> /dev/null
+
+	cd $current
+	return 0
+}

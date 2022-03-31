@@ -29,7 +29,7 @@ function newfunc() {
 	echo "}" >> $nf
 	/usr/bin/micro $nf
 
-	source $HOME/.shrc
+	envup
 	return 0
 }
 
@@ -46,6 +46,7 @@ function editfunc() {
 	then
 		/usr/bin/micro $nf
 		source $HOME/.shrc
+		envup
 		return 0
 	else
 		echo "$1 is not exist in functions directory."
@@ -62,6 +63,6 @@ function rmfunc() {
 
 	local nf="$HOME/.env/functions/$1.func"
 	rm -vf $nf
-
+	envup
 	return $?
 }
