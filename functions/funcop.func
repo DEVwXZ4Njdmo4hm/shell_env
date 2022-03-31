@@ -66,3 +66,23 @@ function rmfunc() {
 	envup
 	return $?
 }
+
+function viewfunc() {
+	if [[ $# -eq 0 ]];
+	then
+		echo "You must specific a name"
+		return 1
+	fi
+
+	local nf="$HOME/.env/functions/$1.func"
+
+	if [[ -f $nf ]];
+	then
+		/bin/bat --file-name=$1 $nf
+		return $?
+	else
+		echo "$1 is not exist in functions directory."
+		return 2
+	fi
+
+}
