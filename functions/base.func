@@ -8,7 +8,7 @@ function addalias() {
 		return 1
 	fi
 
-	/usr/bin/micro $HOME/.env/alias
+	${EDITOR} $HOME/.env/alias
 	envup "alias"
 	return $?
 }
@@ -21,7 +21,7 @@ function addalias() {
 #		return 1
 #	fi
 #
-#	/usr/bin/micro $HOME/.env/vars
+#	${EDITOR} $HOME/.env/vars
 #	envup "vars"
 #	return $?
 #}
@@ -53,7 +53,7 @@ function addevar() {
 		echo >> $nv
 	fi
 
-	/usr/bin/micro $nv
+	${EDITOR} $nv
 	envup "$1.evar"
 	return $?
 }
@@ -65,7 +65,7 @@ function envset() {
 		return 1
 	fi
 
-	/usr/bin/micro $HOME/.env/setting
+	${EDITOR} $HOME/.env/setting
 	envup "setting"
 	return $?
 }
@@ -77,7 +77,7 @@ function preset() {
 		return 1
 	fi
 
-	/usr/bin/micro $HOME/.env/env_preset
+	${EDITOR} $HOME/.env/env_preset
 	envup "env_preset"
 	return $?
 }
@@ -89,7 +89,7 @@ function editshrc() {
 		return 1
 	fi
 
-	/usr/bin/micro $HOME/.env/shrc
+	${EDITOR} $HOME/.env/shrc
 	envup "shrc"
 	return $?
 }
