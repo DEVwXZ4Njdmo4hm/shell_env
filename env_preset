@@ -29,3 +29,5 @@ if [[ $0 == "bash" ]]
 then
 	alias py=python
 fi
+
+export LD_LIBRARY_PATH=/lib:/lib64:/usr/lib:/usr/lib64:/usr/local/lib:/usr/local/lib64
