@@ -3,6 +3,7 @@
 
 source $HOME/.env/setting
 source $HOME/.env/functions/pathremove.func
+source $HOME/.env/functions/ev_op.func
 
 MUSL_HOME=$HOME/.local/lib/musl
 
