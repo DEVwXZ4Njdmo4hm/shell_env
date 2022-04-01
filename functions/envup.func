@@ -9,7 +9,6 @@ function envup() {
 	fi
 
 	source $HOME/.shrc
-	local current=$(pwd)
 	{
 		if [[ $1 =~ .*"*.func".* ]];
 		then
@@ -34,6 +33,5 @@ function envup() {
 		popd
 	}&>/dev/null
 
-	#cd $current
 	return $retval
 }
