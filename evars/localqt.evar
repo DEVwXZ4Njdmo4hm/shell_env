@@ -10,12 +10,16 @@ LOCAL_QT_HOME=${HOME}/.local/lib/Qt-${LOCAL_QT_VER}
 
 if [[ ${USE_LOCALQT} -eq 1 ]];
 then
-	if [[ $(is_in ${LOCAL_QT_HOME}/bin PATH) -eq false ]];
+	is_in ${LOCAL_QT_HOME}/bin PATH
+
+	if [[ $? -eq 1 ]];
 	then
 		export PATH=${LOCAL_QT_HOME}/bin:$PATH
 	fi
 
-	if [[ $(is_in ${LOCAL_QT_HOME}/lib LD_LIBRARY_PATH) -eq false ]];
+	is_in ${LOCAL_QT_HOME}/lib LD_LIBRARY_PATH
+
+	if [[ $? -eq 1 ]];
 	then
 		export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${LOCAL_QT_HOME}/lib
 	fi
