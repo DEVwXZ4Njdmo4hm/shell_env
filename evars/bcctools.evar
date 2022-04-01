@@ -7,6 +7,7 @@ source $HOME/.env/functions/pathremove.func
 BCC_HOME=/usr/share/bcc
 
 if [[ ${USE_BCCTOOL} -eq 1 ]];
+then
 	export PATH=${BCC_HOME}/tools:$PATH
 else
 	pathremove ${BCC_HOME} PATH
