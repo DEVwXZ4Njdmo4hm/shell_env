@@ -5,7 +5,7 @@ source $HOME/.env/setting
 source $HOME/.env/functions/pathremove.func
 RUBY_VERSION=3.0.0
 
-if [[ ${USE_USERGEMHOME -eq 1 }]];
+if [[ ${USE_USERGEMHOME} -eq 1 ]];
 then
 	export GEM_HOME=$HOME/.local/share/gem/ruby/${RUBY_VERSION}
 	export PATH=${GEM_HOME}/bin:$PATH
