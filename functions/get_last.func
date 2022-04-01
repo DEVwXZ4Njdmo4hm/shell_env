@@ -1,0 +1,15 @@
+#!/bin/sh
+# Created by zijian at 2022-04-02 01:44:23
+
+function get_last() {
+	if [[ $# -ne 1 ]]
+	then
+		echo "Usage: get_last [ev]"
+		return 1
+	fi
+	if [[ -f $! ]]
+	then
+		echo $(sed 's/:/\n/g' <<< $(/usr/bin/printenv PATH) | tail -n 1)
+	fi
+
+}
