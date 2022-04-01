@@ -3,13 +3,17 @@
 
 source $HOME/.env/setting
 source $HOME/.env/functions/pathremove.func
+source $HOME/.env/functions/ev_op.func
 
 MATLAB_HOME=${HOME}/.local/share/MATLAB
 MATLAB_VERSION=R2021b
 
 if [[ ${USE_MATLAB} -eq 1 ]];
 then
-	export PATH=${MATLAB_HOME}/${MATLAB_VERSION}/bin:$PATH
+	if [[ $(is_in ${MATLAB_HOME}/${MATLAB_VERSION}/bin PATH) -eq 1 ]];
+	then
+		export PATH=${MATLAB_HOME}/${MATLAB_VERSION}/bin:$PATH
+	fi
 elif [[ ${USE_MATALB} -eq 0 ]];
 then
 	pathremove ${MATLAB_HOME}/${MATLAB_VERSION}/bin PATH
