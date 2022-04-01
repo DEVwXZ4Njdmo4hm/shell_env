@@ -7,10 +7,10 @@ source $HOME/.env/functions/pathremove.func
 MATLAB_HOME=${HOME}/.local/share/MATLAB
 MATLAB_VERSION=R2021b
 
-if [[ $USE_MATLAB -eq 1 ]];
+if [[ ${USE_MATLAB} -eq 1 ]];
 then
 	export PATH=${MATLAB_HOME}/${MATLAB_VERSION}/bin:%PATH
-elif [[ $USE_MATALB -eq 0 ]];
+elif [[ ${USE_MATALB} -eq 0 ]];
 then
 	pathremove ${MATLAB_HOME}/${MATLAB_VERSION}/bin PATH
 fi
