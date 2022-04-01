@@ -1,0 +1,14 @@
+#!/bin/sh
+# Created by zijian at 2022-04-01 13:33:25
+
+source $HOME/.env/setting
+source $HOME/.env/functions/pathremove.func
+
+RISCV_TOOLCHAIN_HOME=/opt/riscv
+
+if [[ ${USE_RV64TOOLCHAIN} -eq 1 ]];
+then
+	export PATH=$PATH:$RISCV_TOOLCHAIN_HOME/bin
+else
+	pathremove $RISCV_TOOLCHAIN_HOME/bin PATH
+fi
