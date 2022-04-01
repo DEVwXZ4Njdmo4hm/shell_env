@@ -16,7 +16,7 @@ CONDA_ENV=base
 USE_MATLAB=1
 
 # Enable JFX Library
-USE_JFX=0
+USE_JFX=1
 
 # Enable BCC toolset
 USE_BCCTOOL=1
@@ -34,13 +34,13 @@ USE_USERGEMHOME=1
 USE_RV64TOOLCHAIN=1
 
 # Enable local Qt lib
-USE_LOCALQT=0
+USE_LOCALQT=1
 
 # Enable local rust library
 USE_LOCALRUSTLIB=1
 
 # Enable local Musl C library
-USE_LOCALMUSL=0
+USE_LOCALMUSL=1
 
 # Enable Android CLI toolset
 USE_ANDROID_CLI_TOOLSET=1
@@ -52,4 +52,4 @@ USE_FLUTTER=1
 USE_DOTNET=1
 
 # Enable local openssl3 library
-USE_LOCAL_OPENSSL3=0
+USE_LOCAL_OPENSSL3=1
