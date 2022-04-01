@@ -30,9 +30,10 @@ function envup() {
 		then
 			git push origin master
 		fi
+		local retval=$?
+		popd
 	}&>/dev/null
 
 	#cd $current
-	popd
-	return 0
+	return $retval
 }
