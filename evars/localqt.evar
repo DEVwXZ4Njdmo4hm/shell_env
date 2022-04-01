@@ -10,7 +10,7 @@ LOCAL_QT_HOME=${HOME}/.local/lib/Qt-${LOCAL_QT_VER}
 if [[ ${USE_LOCALQT} -eq 1 ]];
 then
 	export PATH=${LOCAL_QT_HOME}/bin:$PATH
-	export LD_LIBRARY_PATH=${LOCAL_QT_HOME}/lib:$LD_LIBRARY_PATH
+	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${LOCAL_QT_HOME}/lib
 else
 	pathremove ${LOCAL_QT_HOME} PATH
 	pathremove ${LOCAL_QT_HOME}/lib LD_LIBRARY_PATH
