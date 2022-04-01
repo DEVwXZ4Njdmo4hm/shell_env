@@ -7,7 +7,6 @@ chmod 700 $HOME/.env
 chmod 600 $HOME/.env/env_preset
 chmod 600 $HOME/.env/vars
 chmod 600 $HOME/.env/alias
-source $HOME/.env/functions/.func_dir_init
 source $HOME/.env/setting
 
 if [[ $(/usr/bin/tty) =~ "pts" ]]
