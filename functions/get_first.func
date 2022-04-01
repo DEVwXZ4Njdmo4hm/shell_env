@@ -10,6 +10,6 @@ function get_first() {
 
 	if [[ -f $1 ]];
 	then
-		echo $(sed 's/:/\n/' <<< $(/usr/bin/printenv $1) | head -n 1)
+		echo $(sed 's/:/\n/g' <<< $(/usr/bin/printenv $1) | head -n 1)
 	fi
 }
