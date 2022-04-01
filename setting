@@ -26,3 +26,18 @@ USE_GENTOO=1
 
 # USE EDITOR
 USE_EDITOR=micro
+
+# Enable local gem library
+USE_USERGEMHOME=1
+
+# Enable risc-v 64 toolchain
+USE_RV64TOOLCHAIN=1
+
+# Enable local Qt lib
+USE_LOCALQT=1
+
+# Enable local rust library
+USE_LOCALRUSTLIB=1
+
+# Enable local Musl C library
+USE_LOCALMUSL=1
