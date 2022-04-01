@@ -3,12 +3,16 @@
 
 source $HOME/.env/setting
 source $HOME/.env/functions/pathremove.func
+source $HOME/.env/functions/ev_op.func
 
 OPENSSL3_HOME=$HOME/.local/lib/openssl3
 
 if [[ ${USE_LOCAL_OPENSSL3} -eq 1 ]];
 then
-	export LD_LIBRARY_PATH=${OPENSSL3_HOME}/lib64:$LD_LIBRARY_PATH
+	if [[ $(is_in ${OPENSSL3_HOME}/lib64 LD_LIBRARY_PATH) -eq 1 ]];
+	then
+		export LD_LIBRARY_PATH=${OPENSSL3_HOME}/lib64:$LD_LIBRARY_PATH
+	fi
 else
 	pathremove ${OPENSSL3_HOME}/lib64 LD_LIBRARY_PATH
 fi
