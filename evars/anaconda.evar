@@ -15,7 +15,8 @@ fi
 
 if [[ ${USE_ANACONDA} -eq 1 ]]
 then
-	if [[ $(is_in ${CONDA_PY_PATH} PATH) -eq false ]];
+	is_in ${CONDA_PY_PATH} PATH
+	if [[ $? -eq 1 ]];
 	then
 		export PATH=${CONDA_PY_PATH}:$PATH
 	fi
@@ -27,7 +28,8 @@ fi
 # conda
 if [[ ${USE_CONDA} -eq 1 ]]
 then
-	if [[ $(is_in ${ANACONDA_HOME}/condabin PATH) -eq false ]];
+	is_in ${ANACONDA_HOME}/condabin PATH
+	if [[ $? -eq 1 ]];
 	then
 		export PATH=${ANACONDA_HOME}/condabin:$PATH
 	fi
