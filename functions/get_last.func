@@ -7,9 +7,6 @@ function get_last() {
 		echo "Usage: get_last [ev]"
 		return 1
 	fi
-	if [[ -f $! ]]
-	then
-		echo $(sed 's/:/\n/g' <<< $(/usr/bin/printenv PATH) | tail -n 1)
-	fi
 
+	echo $(sed 's/:/\n/g' <<< $(/usr/bin/printenv PATH) | tail -n 1)
 }
