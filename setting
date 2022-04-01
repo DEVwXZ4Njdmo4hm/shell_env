@@ -9,7 +9,6 @@ USE_ANACONDA=0
 # enable conda package manager if it set to 1
 USE_CONDA=1
 
-
 # CONDA ENV
 CONDA_ENV=base
 
@@ -24,3 +23,6 @@ USE_BCCTOOL=1
 
 # Enable some helpful ev for gentoo
 USE_GENTOO=1
+
+# USE EDITOR
+USE_EDITOR=micro
