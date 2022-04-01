@@ -1,18 +1,18 @@
 #!/bin/sh
 # Created by zijian at 2022-04-02 00:56:19
 
-functions is_in() {
+function is_in() {
     if [[ $# -ne 2 ]];
     then
 		echo "Wrong arugument nums"
 		echo "Usage: is_in [dir] [ev]"
-		return 1
+		return 2
     fi
 
     if [[ $(/usr/bin/printenv $2) == *"$1"* ]];
     then
 		return 0
     else
-		return -1
+		return 1
 	fi
 }
