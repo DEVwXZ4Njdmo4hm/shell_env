@@ -18,3 +18,6 @@ USE_MATLAB=1
 
 # Enable JFX Library
 USE_JFX=1
+
+# Enable BCC toolset
+USE_BCCTOOL=1
