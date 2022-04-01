@@ -5,7 +5,7 @@ chmod 700 $HOME/.env/functions/macro
 chmod 600 $HOME/.env/functions/macro/*
 chmod 600 $HOME/.env/functions/*.func
 
-for func in $(dir $HOME/.env/functions )
+for func in $(dir $HOME/.env/functions/*.func )
 do
 	source ${func}
 done
