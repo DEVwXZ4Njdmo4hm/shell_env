@@ -12,6 +12,7 @@ if [[ ${USE_LOCALQT} -eq 1 ]];
 then
 	if [[ $(is_in ${LOCAL_QT_HOME}/bin PATH) -eq 1 ]];
 	then
+		echo "Adding QT_PATH to PATH..."
 		export PATH=${LOCAL_QT_HOME}/bin:$PATH
 	fi
 
