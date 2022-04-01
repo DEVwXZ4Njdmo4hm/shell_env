@@ -80,3 +80,15 @@ function preset() {
 	envup "env_preset"
 	return $?
 }
+
+function editshrc() {
+	if [[ $UID -ne 1000 ]]
+	then
+		echo "The user does not have permission to operate."
+		return 1
+	fi
+
+	/usr/bin/micro $HOME/.env/shrc
+	envup "shrc"
+	return $?
+}
