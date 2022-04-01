@@ -10,14 +10,15 @@ function envup() {
 
 	source $HOME/.shrc
 	local current=$(pwd)
-	cd $HOME/.env
 	{
 		if [[ $1 =~ .*"*.func".* ]];
 		then
-			cd ${PWD}/functions/
+			pushd $HOME/.env/functions/
 		elif [[ $1 =~ .*"*.evar".*  ]];
 		then
-			cd ${PWD}/evars
+			pushd $HOME/.env/evars
+		else
+			pushd $HOME/.env
 		fi
 	
 		git add $1
@@ -31,6 +32,7 @@ function envup() {
 		fi
 	}&>/dev/null
 
-	cd $current
+	#cd $current
+	popd
 	return 0
 }
