@@ -60,7 +60,7 @@ then
 	export PATH=${ANACONDA_HOME}/bin:$PATH
 elif [[ ${USE_ANACONDA} -eq 0 ]]
 then
-	pathremove ${ANACONDA_HOME}/bin
+	pathremove ${ANACONDA_HOME}/bin PATH
 fi
 
 # conda
@@ -69,7 +69,7 @@ then
 	export PATH=${ANACONDA_HOME}/condabin:$PATH
 elif [[ ${USE_CONDA} -eq 0 ]]
 then
-	pathremove ${ANACONDA_HOME}/condabin
+	pathremove ${ANACONDA_HOME}/condabin PATH
 fi
 
 #add local rust library support
