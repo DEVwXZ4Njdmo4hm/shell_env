@@ -3,14 +3,23 @@
 
 source $HOME/.env/setting
 source $HOME/.env/functions/pathremove.func
+source $HOME/.env/functions/ev_op.func
 
 LOCAL_QT_VER=6.2
 LOCAL_QT_HOME=${HOME}/.local/lib/Qt-${LOCAL_QT_VER}
 
 if [[ ${USE_LOCALQT} -eq 1 ]];
 then
-	export PATH=${LOCAL_QT_HOME}/bin:$PATH
-	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${LOCAL_QT_HOME}/lib
+	if [[ $(is_in ${LOCAL_QT_HOME}/bin PATH) -eq 1 ]];
+	then
+		export PATH=${LOCAL_QT_HOME}/bin:$PATH
+	fi
+
+	if [[ $(is_in ${LOCAL_QT_HOME}/lib LD_LIBRARY_PATH) -eq 1 ]];
+	then
+		export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${LOCAL_QT_HOME}/lib
+	fi
+	
 else
 	pathremove ${LOCAL_QT_HOME} PATH
 	pathremove ${LOCAL_QT_HOME}/lib LD_LIBRARY_PATH
