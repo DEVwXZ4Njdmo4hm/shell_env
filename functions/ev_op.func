@@ -1,0 +1,44 @@
+#!/bin/sh
+# Created by zijian at 2022-04-02 01:56:16
+
+function get_first() {
+	if [[ $# -ne 1 ]];
+	then
+		echo "Usage: get_first [ev]"
+		return 1
+	fi
+
+	echo $(sed 's/:/\n/g' <<< $(/usr/bin/printenv $1) | head -n 1)
+}
+
+function get_last() {
+	if [[ $# -ne 1 ]]
+	then
+		echo "Usage: get_last [ev]"
+		return 1
+	fi
+
+	echo $(sed 's/:/\n/g' <<< $(/usr/bin/printenv $1) | tail -n 1)
+}
+
+function is_in() {
+    if [[ $# -ne 2 ]];
+    then
+		echo "Wrong arugument nums"
+		echo "Usage: is_in [dir] [ev]"
+		return 2
+    fi
+
+    if [[ $(/usr/bin/printenv $2) == *":$1:"* ]];
+    then
+		return 0
+    elif [[ $(get_first $2) == $1 ]];
+    then
+    	return 0
+    elif [[ $(get_last $2) == $1 ]];
+    then
+    	return 0
+    else
+    	return 1
+	fi
+}
