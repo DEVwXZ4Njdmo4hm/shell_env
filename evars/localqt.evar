@@ -10,13 +10,13 @@ LOCAL_QT_HOME=${HOME}/.local/lib/Qt-${LOCAL_QT_VER}
 
 if [[ ${USE_LOCALQT} -eq 1 ]];
 then
-	if [[ $(is_in ${LOCAL_QT_HOME}/bin PATH) -eq 1 ]];
+	if [[ $(is_in ${LOCAL_QT_HOME}/bin PATH) -eq false ]];
 	then
 		echo "Adding QT_PATH to PATH..."
 		export PATH=${LOCAL_QT_HOME}/bin:$PATH
 	fi
 
-	if [[ $(is_in ${LOCAL_QT_HOME}/lib LD_LIBRARY_PATH) -eq 1 ]];
+	if [[ $(is_in ${LOCAL_QT_HOME}/lib LD_LIBRARY_PATH) -eq false ]];
 	then
 		export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${LOCAL_QT_HOME}/lib
 	fi
