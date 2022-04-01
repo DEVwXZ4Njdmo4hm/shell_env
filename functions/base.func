@@ -25,6 +25,37 @@ function addvar() {
 	return $?
 }
 
+function addevar() {
+	if [[ $UID -ne 1000 ]]
+	then
+		echo "The user does not have permission to operate."
+		return 1
+	fi
+
+	if [[ $# -eq 0 ]];
+	then
+		echo "You must specific a name."
+		return 1
+	fi
+
+
+	local nv=$HOME/.env/evars/$1.evar
+	if [[ ! -f $nv ]];
+	then
+		touch $nv
+	fi
+
+	create_time=$(date +"%Y-%m-%d %H:%M:%S")
+	echo "#!/bin/sh" > $nv
+	echo "# Created by $USER at ${create_date}">> $nv
+	echo >> $nv
+
+	/usr/bin/micro $nv
+	
+	envup "$1.evar"
+	return $?
+}
+
 function envset() {
 	if [[ $UID -ne 1000 ]]
 	then
