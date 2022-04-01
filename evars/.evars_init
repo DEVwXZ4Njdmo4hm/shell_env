@@ -1,6 +1,6 @@
 #!/bin/sh
 
-chmod 600 $HOME/.env/evars/*
+chmod 600 $HOME/.env/evars/*.evar
 
 for evar in $(dir $HOME/.env/evars/*.evar);
 do
