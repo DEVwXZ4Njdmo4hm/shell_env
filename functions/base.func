@@ -36,3 +36,15 @@ function envset() {
 	envup
 	return $?
 }
+
+function preset() {
+	if [[ $UID -ne 1000 ]]
+	then
+		echo "The user does not have permission to operate."
+		return 1
+	fi
+
+	/usr/bin/micro $HOME/.env/env_preset
+	envup
+	return $?
+}
