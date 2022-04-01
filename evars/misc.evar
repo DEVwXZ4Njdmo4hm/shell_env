@@ -9,4 +9,4 @@ export EDITOR="/usr/bin/${USE_EDITOR}"
 export OPENCV_LOG_LEVEL=ERROR
 export USERIPSLOG=$HOME/.ipslog
 export vmlinuz="/usr/src/linux/arch/$(uname -m)/boot/bzImage"
-export SCREEN_RESOLV=1920x1080
+export SCREEN_RESOLVE=1920x1080
