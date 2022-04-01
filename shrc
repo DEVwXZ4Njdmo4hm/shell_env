@@ -10,6 +10,7 @@ then
 fi
 
 source $HOME/.env/env_preset
+#source $HOME/.env/evars/.evars_init
 source $HOME/.env/vars
 source $HOME/.env/alias
 
