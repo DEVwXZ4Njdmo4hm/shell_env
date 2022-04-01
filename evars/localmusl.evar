@@ -8,9 +8,9 @@ MUSL_HOME=$HOME/.local/lib/musl
 
 if [[ ${USE_LOCALMUSL} -eq 1 ]];
 then
-	export PATH=$MUSL_HOME/bin:$PATH
-	export LD_LIBRARY_PATH=$MUSL_HOME/lib:$LD_LIBRARY_PATH
+	export PATH=${MUSL_HOME}/bin:$PATH
+	export LD_LIBRARY_PATH=${MUSL_HOME}/lib:$LD_LIBRARY_PATH
 else
-	pathremove $MUSL_HOME/bin PATH
-	pathremove $MUSL_HOME/lib LD_LIBRARY_PATH
+	pathremove ${MUSL_HOME}/bin PATH
+	pathremove ${MUSL_HOME}/lib LD_LIBRARY_PATH
 fi
