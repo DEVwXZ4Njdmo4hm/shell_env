@@ -13,7 +13,7 @@ then
 		export PATH=${MUSL_HOME}/bin:$PATH
 	fi
 
-	if [[ $(is_in ${MUSL_LIB}/lib LD_LIBRARY_PATH) -eq 1 ]];
+	if [[ $(is_in ${MUSL_HOME}/lib LD_LIBRARY_PATH) -eq 1 ]];
 	then
 		export LD_LIBRARY_PATH=${MUSL_HOME}/lib:$LD_LIBRARY_PATH
 	fi
