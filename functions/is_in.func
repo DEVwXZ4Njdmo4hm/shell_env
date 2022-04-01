@@ -9,7 +9,7 @@ function is_in() {
 		return 2
     fi
 
-    if [[ $(/usr/bin/printenv $2) == *"$1"* ]];
+    if [[ $(/usr/bin/printenv $2) == *":$1:"* ]];
     then
 		return 0
     else
