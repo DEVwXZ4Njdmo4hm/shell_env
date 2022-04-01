@@ -47,6 +47,9 @@ function addevar() {
 		echo "#!/bin/sh" > $nv
 		echo "# Created by $USER at ${create_date}">> $nv
 		echo >> $nv
+		echo "source \$HOME/.env/setting" >> $nv
+		echo "source \$HOME/.env/functions/pathremove.func" >> $nv
+		echo >> $nv
 	fi
 
 	/usr/bin/micro $nv
