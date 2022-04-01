@@ -25,7 +25,7 @@ USE_BCCTOOL=1
 USE_GENTOO=1
 
 # USE EDITOR
-USE_EDITOR=micro
+USE_EDITOR=emacs
 
 # Enable local gem library
 USE_USERGEMHOME=1
