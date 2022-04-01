@@ -9,7 +9,7 @@ BCC_HOME=/usr/share/bcc
 
 if [[ ${USE_BCCTOOL} -eq 1 ]];
 then
-	if [[ $(is_in ${BCC_HOME}/tools PATH) -eq 1 ]];
+	if [[ $(is_in ${BCC_HOME}/tools PATH) -eq false ]];
 	then
 		export PATH=${BCC_HOME}/tools:$PATH
 	fi
