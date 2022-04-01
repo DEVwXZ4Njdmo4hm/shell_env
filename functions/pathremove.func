@@ -16,16 +16,15 @@ function pathremove () {
 		return 1
 	fi
 
-	if [[ $0 == zsh ]];
+	if [[ $0 == bash ]];
 	then
+		no_path $* || eval ${2:-PATH}=`eval echo :'$'${2:-PATH}: | sed -e "s;:$1:;:;g" -e "s;^:;;" -e "s;:\$;;"`
+	else
 		FOLDERS_TO_REMOVE=`echo $@ | sed 's/ /|/g'` 
 		EV_NAME=$2 
 		EV_VAR=$( echo $(env | grep ${EV_NAME}) | tr -s ":" "\n" | grep -vwE "(${FOLDERS_TO_REMOVE})" | tr -s "\n" ":" | sed "s/:$//" )
 		export ${EV_NAME}=${EV_VAR}
-	else
-		echo "Current Shell is $0"
-		no_path $* || eval ${2:-PATH}=`eval echo :'$'${2:-PATH}: | \
-		  sed -e "s;:$1:;:;g" -e "s;^:;;" -e "s;:\$;;"`
+
 	fi
 	return $?
 }
