@@ -9,7 +9,9 @@ RISCV_TOOLCHAIN_HOME=/opt/riscv
 
 if [[ ${USE_RV64TOOLCHAIN} -eq 1 ]];
 then
-	if [[ $(is_in ${RISCV_TOOLCHAIN_HOME}/bin PATH) -eq false ]];
+	is_in ${RISCV_TOOLCHAIN_HOME}/bin PATH
+
+	if [[ $? -eq 1 ]];
 	then
 		export PATH=$PATH:${RISCV_TOOLCHAIN_HOME}/bin
 	fi
