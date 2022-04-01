@@ -12,8 +12,4 @@ fi
 source $HOME/.env/env_preset
 source $HOME/.env/evars/.evars_init
 source $HOME/.env/alias
-
-for i in $(dir $HOME/.env/functions/*.func);
-do
-	source ${i}
-done
+source $HOME/.env/functions/.func_dir_init
