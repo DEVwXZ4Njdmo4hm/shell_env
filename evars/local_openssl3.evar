@@ -9,7 +9,9 @@ OPENSSL3_HOME=$HOME/.local/lib/openssl3
 
 if [[ ${USE_LOCAL_OPENSSL3} -eq 1 ]];
 then
-	if [[ $(is_in ${OPENSSL3_HOME}/lib64 LD_LIBRARY_PATH) -eq false ]];
+	is_in ${OPENSSL3_HOME}/lib64 LD_LIBRARY_PATH
+
+	if [[ $? -eq 1 ]];
 	then
 		export LD_LIBRARY_PATH=${OPENSSL3_HOME}/lib64:$LD_LIBRARY_PATH
 	fi
