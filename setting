@@ -41,3 +41,15 @@ USE_LOCALRUSTLIB=1
 
 # Enable local Musl C library
 USE_LOCALMUSL=1
+
+# Enable Android CLI toolset
+USE_ANDROID_CLI_TOOLSET=1
+
+# Enable local flutter
+USE_FLUTTER=1
+
+# Enable dotnet
+USE_DOTNET=1
+
+# Enable local openssl3 library
+USE_LOCAL_OPENSSL3=1
