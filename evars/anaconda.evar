@@ -1,0 +1,28 @@
+#!/bin/sh
+# Created by zijian at 2022-04-01 12:48:15
+
+ANACONDA_HOME=$HOME/anaconda3
+CONDA_PY_PATH=${ANACONDA_HOME}/bin
+if [[ -f ${ANACONDA_HOME}/envs/${CONDA_ENV} ]];
+then
+	CONDA_PY_PATH=${ANACONDA_HOME}/envs/${CONDA_ENV}/bin
+
+if [[ ${USE_ANACONDA} -eq 1 ]]
+then
+	#export CONDAENV=py39
+	#export PATH=${ANACONDA_HOME}/envs/${CONDAENV}/bin:${ANACONDA_HOME}/bin:$PATH
+	#export PATH=${ANACONDA_HOME}/bin:$PATH
+	export PATH=${CONDA_PY_PATH}:$PATH
+elif [[ ${USE_ANACONDA} -eq 0 ]]
+then
+	pathremove ${CONDA_PY_PATH} PATH
+fi
+
+# conda
+if [[ ${USE_CONDA} -eq 1 ]]
+then
+	export PATH=${ANACONDA_HOME}/condabin:$PATH
+elif [[ ${USE_CONDA} -eq 0 ]]
+then
+	pathremove ${ANACONDA_HOME}/condabin PATH
+fi
