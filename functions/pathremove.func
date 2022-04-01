@@ -1,13 +1,15 @@
 #!/bin/sh
 
 function pathremove () {
-	if [ $# -lt 1 ]; then
-	    echo "You should give at least one argument"
-	    echo "For example"
-	    echo "$0 /usr/local/bin"
+	if [ $# -lt 2 ]
+	then
+		echo "You should give at least 2 argument"
+		echo "For example"
+		echo "pathremove [dir] [ev_name]"
 	else
-	    FOLDERS_TO_REMOVE=`echo $@ | sed 's/ /|/g'`
-	    PATH=$( echo ${PATH} | tr -s ":" "\n" | grep -vwE "(${FOLDERS_TO_REMOVE})" | tr -s "\n" ":" | sed "s/:$//" )
-	    export PATH=$PATH
+		FOLDERS_TO_REMOVE=`echo $@ | sed 's/ /|/g'` 
+		EV_NAME=$2 
+		EV_VAR=$( echo $(env | grep ${EV_NAME}) | tr -s ":" "\n" | grep -vwE "(${FOLDERS_TO_REMOVE})" | tr -s "\n" ":" | sed "s/:$//" )
+		export ${EV_NAME}=${EV_VAR}
 	fi
 }

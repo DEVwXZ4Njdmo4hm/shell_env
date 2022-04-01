@@ -1,0 +1,8 @@
+#!/bin/sh
+
+chmod 600 $HOME/.env/evars/*
+
+for evar in $(dir $HOME/.env/evars/*.evar);
+do
+	source ${evar}
+done
