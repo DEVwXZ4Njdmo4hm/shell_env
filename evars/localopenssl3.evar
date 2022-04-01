@@ -1,0 +1,6 @@
+#!/bin/sh
+# Created by zijian at 2022-04-02 02:28:08
+
+source $HOME/.env/setting
+source $HOME/.env/functions/pathremove.func
+
