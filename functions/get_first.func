@@ -1,0 +1,15 @@
+#!/bin/sh
+# Created by zijian at 2022-04-02 01:19:49
+
+function get_first() {
+	if [[ $# -ne 1 ]];
+	then
+		echo "Usage: get_first [ev]"
+		return 1
+	fi
+
+	if [[ -f $! ]];
+	then
+		echo $(sed 's/:/\n/' <<< $(/usr/bin/printenv PATH) | head -n 1)
+	fi
+}
