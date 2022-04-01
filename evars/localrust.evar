@@ -1,0 +1,12 @@
+#!/bin/sh
+# Created by zijian at 2022-04-01 13:51:42
+
+source $HOME/.env/setting
+source $HOME/.env/functions/pathremove.func
+
+if [[ ${USE_LOCALRUSTLIB} -eq 1 ]];
+then
+	export PATH=$HOME/.cargo/bin:$PATH
+else
+	pathremove $HOME/.cargo/bin PATH
+fi
