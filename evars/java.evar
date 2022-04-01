@@ -9,7 +9,7 @@ JAVA_HOME=/usr/bin/jvm/openjdk-bin-${JDK_MAJOR_VERSION}
 JFX_VERSION=17.0.1
 JFX_HOME=$HOME/.local/lib/javafx-sdk-${JFX_VERSION}
 
-if [[ $USE_JFX -eq 1 ]];
+if [[ ${USE_JFX} -eq 1 ]];
 then
 	export LD_LIBRARY_PATH=${JFX_HOME}/lib:$LD_LIBRARY_PATH
 else
