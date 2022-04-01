@@ -7,7 +7,7 @@ source $HOME/.env/functions/ev_op.func
 
 if [[ ${USE_LOCALRUSTLIB} -eq 1 ]];
 then
-	if [[ $(is_in ${HOME}/.cargo/bin PATH) -eq 1 ]];
+	if [[ $(is_in $HOME/.cargo/bin PATH) -eq 1 ]];
 	then
 		export PATH=$HOME/.cargo/bin:$PATH
 	fi
