@@ -1,0 +1,15 @@
+#!/bin/sh
+# Created by zijian at 2022-04-01 13:44:07
+
+source $HOME/.env/setting
+source $HOME/.env/functions/pathremove.func
+
+export FLUTTER_HOME=${HOME}/.local/lib/flutter
+export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
+
+if [[ ${USE_FLUTTER} -eq 1 ]];
+then
+	export PATH=$PATH:${FLUTTER_HOME}/bin
+else
+	pathremove ${FLUTTER_HOME} PATH
+fi
