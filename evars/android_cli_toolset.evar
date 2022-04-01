@@ -4,7 +4,7 @@
 source $HOME/.env/setting
 source $HOME/.env/functions/pathremove.func
 
-if [[ USE_ANDROID_CLI_TOOLSET -eq 1 ]];
+if [[ ${USE_ANDROID_CLI_TOOLSET} -eq 1 ]];
 then
 	export SDK_ROOT=${HOME}/.local/lib/android/sdk_root
 	export REPO_OS_OVERRIDE=linux
