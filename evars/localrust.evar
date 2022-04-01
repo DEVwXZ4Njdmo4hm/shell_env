@@ -3,7 +3,7 @@
 
 source $HOME/.env/setting
 source $HOME/.env/functions/pathremove.func
-source $HOME/.env/functions/is_in.func
+source $HOME/.env/functions/ev_op.func
 
 if [[ ${USE_LOCALRUSTLIB} -eq 1 ]];
 then
