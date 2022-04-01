@@ -36,5 +36,4 @@ unset MANPATH
 unset MOZ_GMP_PATH
 unset LD_LIBRARY_PATH
 export PATH=/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:/usr/lib/llvm/13/bin:/usr/lib64/subversion/bin
-export LD_LIBRARY_PATH=/lib:/lib64:/usr/lib:/usr/lib64:/usr/local/lib:/usr/local/lib64
-#export PATH=/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:/usr/lib/llvm/13/bin:/usr/lib64/subversion/bin
+#export LD_LIBRARY_PATH=/lib:/lib64:/usr/lib:/usr/lib64:/usr/local/lib:/usr/local/lib64
