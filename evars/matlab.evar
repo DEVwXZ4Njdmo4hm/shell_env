@@ -9,7 +9,7 @@ MATLAB_VERSION=R2021b
 
 if [[ ${USE_MATLAB} -eq 1 ]];
 then
-	export PATH=${MATLAB_HOME}/${MATLAB_VERSION}/bin:%PATH
+	export PATH=${MATLAB_HOME}/${MATLAB_VERSION}/bin:$PATH
 elif [[ ${USE_MATALB} -eq 0 ]];
 then
 	pathremove ${MATLAB_HOME}/${MATLAB_VERSION}/bin PATH
