@@ -3,6 +3,7 @@
 
 source $HOME/.env/setting
 source $HOME/.env/functions/pathremove.func
+source $HOME/.env/functions/ev_op.func
 
 JDK_MAJOR_VERSION=17
 JAVA_HOME=/usr/bin/jvm/openjdk-bin-${JDK_MAJOR_VERSION}
@@ -11,7 +12,10 @@ JFX_HOME=$HOME/.local/lib/javafx-sdk-${JFX_VERSION}
 
 if [[ ${USE_JFX} -eq 1 ]];
 then
-	export LD_LIBRARY_PATH=${JFX_HOME}/lib:$LD_LIBRARY_PATH
+	if [[ $(is_in ${JFX_HOME}/lib PATH) -eq 1 ]];
+	then
+		export LD_LIBRARY_PATH=${JFX_HOME}/lib:$LD_LIBRARY_PATH
+	fi
 else
 	pathremove ${JFX_HOME}/lib LD_LIBRARY_PATH
 fi
