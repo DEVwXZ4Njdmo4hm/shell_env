@@ -43,7 +43,7 @@ function addevar() {
 	if [[ ! -f $nv ]];
 	then
 		touch $nv
-		create_time=$(date +"%Y-%m-%d %H:%M:%S")
+		create_date=$(date +"%Y-%m-%d %H:%M:%S")
 		echo "#!/bin/sh" > $nv
 		echo "# Created by $USER at ${create_date}">> $nv
 		echo >> $nv
