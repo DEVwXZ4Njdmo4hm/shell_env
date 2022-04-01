@@ -1,0 +1,7 @@
+#!/bin/sh
+# Created by zijian at 2022-04-02 03:00:30
+
+source $HOME/.env/setting
+source $HOME/.env/functions/pathremove.func
+
+export LD_LIBRARY_PATH=/lib:/lib64:/usr/lib:/usr/lib64:/usr/local/lib:/usr/local/lib64:$LD_LIBRARY_PATH
