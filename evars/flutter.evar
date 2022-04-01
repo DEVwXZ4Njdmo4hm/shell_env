@@ -10,7 +10,7 @@ CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
 
 if [[ ${USE_FLUTTER} -eq 1 ]];
 then
-	if [[ $(is_in ${FLUTTER_HOME}/bin PATH) -eq 1 ]];
+	if [[ $(is_in ${FLUTTER_HOME}/bin PATH) -eq false ]];
 	then
 		export PATH=$PATH:${FLUTTER_HOME}/bin
 	fi
