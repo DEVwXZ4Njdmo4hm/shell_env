@@ -1,6 +1,5 @@
 #!/bin/sh
 # but do not make it executable.
-# haha
 
 function addalias() {
 	if [[ $UID -ne 1000 ]]
