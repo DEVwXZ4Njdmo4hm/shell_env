@@ -27,7 +27,7 @@ function newfunc() {
 	echo "functions $1() {" >> $nf
 	echo >> $nf
 	echo "}" >> $nf
-	/usr/bin/micro $nf
+	${EDITOR} $nf
 
 	envup "$1.func"
 	return $?
@@ -44,7 +44,7 @@ function editfunc() {
 
 	if [[ -f $nf ]];
 	then
-		/usr/bin/micro $nf
+		${EDITOR} $nf
 		source $HOME/.shrc
 		envup "$1.func"
 		return $?
