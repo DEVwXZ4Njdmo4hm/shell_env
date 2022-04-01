@@ -6,6 +6,7 @@ CONDA_PY_PATH=${ANACONDA_HOME}/bin
 if [[ -f ${ANACONDA_HOME}/envs/${CONDA_ENV} ]];
 then
 	CONDA_PY_PATH=${ANACONDA_HOME}/envs/${CONDA_ENV}/bin
+fi
 
 if [[ ${USE_ANACONDA} -eq 1 ]]
 then
