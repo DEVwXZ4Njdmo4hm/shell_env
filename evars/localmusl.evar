@@ -6,7 +6,7 @@ source $HOME/.env/functions/pathremove.func
 
 MUSL_HOME=$HOME/.local/lib/musl
 
-if [[ $USE_LOCALMUSL -eq 1 ]];
+if [[ ${USE_LOCALMUSL} -eq 1 ]];
 then
 	export PATH=$MUSL_HOME/bin:$PATH
 	export LD_LIBRARY_PATH=$MUSL_HOME/lib:$LD_LIBRARY_PATH
