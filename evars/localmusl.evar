@@ -9,12 +9,16 @@ MUSL_HOME=$HOME/.local/lib/musl
 
 if [[ ${USE_LOCALMUSL} -eq 1 ]];
 then
-	if [[ $(is_in ${MUSL_HOME}/bin PATH) -eq false ]];
+	is_in ${MUSL_HOME}/bin PATH
+
+	if [[ $? -eq 1 ]];
 	then
 		export PATH=${MUSL_HOME}/bin:$PATH
 	fi
 
-	if [[ $(is_in ${MUSL_HOME}/lib LD_LIBRARY_PATH) -eq false ]];
+	is_in ${MUSL_HOME}/lib LD_LIBRARY_PATH
+
+	if [[ $? -eq 1 ]];
 	then
 		export LD_LIBRARY_PATH=${MUSL_HOME}/lib:$LD_LIBRARY_PATH
 	fi
