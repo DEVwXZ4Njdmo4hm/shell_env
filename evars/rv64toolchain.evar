@@ -3,12 +3,16 @@
 
 source $HOME/.env/setting
 source $HOME/.env/functions/pathremove.func
+source $HOME/.env/functions/ev_op.func
 
 RISCV_TOOLCHAIN_HOME=/opt/riscv
 
 if [[ ${USE_RV64TOOLCHAIN} -eq 1 ]];
 then
-	export PATH=$PATH:$RISCV_TOOLCHAIN_HOME/bin
+	if [[ $(is_in ${RISCV_TOOLCHAIN_HOME}/bin PATH) -eq 1 ]];
+	then
+		export PATH=$PATH:${RISCV_TOOLCHAIN_HOME}/bin
+	fi
 else
 	pathremove $RISCV_TOOLCHAIN_HOME/bin PATH
 fi
