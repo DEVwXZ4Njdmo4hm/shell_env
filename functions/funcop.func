@@ -24,7 +24,7 @@ function newfunc() {
 	echo "#!/bin/sh" >> $nf
 	echo "# Created by $USER at ${create_date}">> $nf
 	echo >> $nf
-	echo "functions $1() {" >> $nf
+	echo "function $1() {" >> $nf
 	echo >> $nf
 	echo "}" >> $nf
 	${EDITOR} $nf
