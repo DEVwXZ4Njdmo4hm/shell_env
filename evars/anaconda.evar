@@ -3,9 +3,11 @@
 
 source $HOME/.env/setting
 source $HOME/.env/functions/pathremove.func
+source $HOME/.env/functions/ev_op.func
 
 ANACONDA_HOME=$HOME/anaconda3
 CONDA_PY_PATH=${ANACONDA_HOME}/bin
+
 if [[ -f ${ANACONDA_HOME}/envs/${CONDA_ENV} ]];
 then
 	CONDA_PY_PATH=${ANACONDA_HOME}/envs/${CONDA_ENV}/bin
@@ -13,10 +15,10 @@ fi
 
 if [[ ${USE_ANACONDA} -eq 1 ]]
 then
-	#export CONDAENV=py39
-	#export PATH=${ANACONDA_HOME}/envs/${CONDAENV}/bin:${ANACONDA_HOME}/bin:$PATH
-	#export PATH=${ANACONDA_HOME}/bin:$PATH
-	export PATH=${CONDA_PY_PATH}:$PATH
+	if [[ $(is_in ${CONDA_PY_PATH} PATH) -eq 1 ]];
+	then
+		export PATH=${CONDA_PY_PATH}:$PATH
+	fi
 elif [[ ${USE_ANACONDA} -eq 0 ]]
 then
 	pathremove ${CONDA_PY_PATH} PATH
@@ -25,7 +27,10 @@ fi
 # conda
 if [[ ${USE_CONDA} -eq 1 ]]
 then
-	export PATH=${ANACONDA_HOME}/condabin:$PATH
+	if [[ $(is_in ${ANACONDA_HOME}/condabin PATH) -eq 1 ]];
+	then
+		export PATH=${ANACONDA_HOME}/condabin:$PATH
+	fi
 elif [[ ${USE_CONDA} -eq 0 ]]
 then
 	pathremove ${ANACONDA_HOME}/condabin PATH
