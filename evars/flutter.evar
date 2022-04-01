@@ -3,13 +3,17 @@
 
 source $HOME/.env/setting
 source $HOME/.env/functions/pathremove.func
+source $HOME/.env/functions/ev_op.func
 
 FLUTTER_HOME=${HOME}/.local/lib/flutter
 CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
 
 if [[ ${USE_FLUTTER} -eq 1 ]];
 then
-	export PATH=$PATH:${FLUTTER_HOME}/bin
+	if [[ $(is_in ${FLUTTER_HOME}) -eq 1 ]];
+	then
+		export PATH=$PATH:${FLUTTER_HOME}/bin
+	fi
 else
 	pathremove ${FLUTTER_HOME} PATH
 fi
