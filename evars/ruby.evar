@@ -1,0 +1,14 @@
+#!/bin/sh
+# Created by zijian at 2022-04-01 13:20:48
+
+source $HOME/.env/setting
+source $HOME/.env/functions/pathremove.func
+
+RUBY_VERSION=3.1.0
+
+if [[ ${USE_USERGEMHOME -eq 1 }]];
+then
+	export GEM_HOME=$HOME/.local/share/gem/ruby/${RUBY_VERSION}
+else
+	export GEM_HOME=/usr/lib64/ruby/gems/${RUBY_VERSION}/gems
+fi
