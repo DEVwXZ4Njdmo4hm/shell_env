@@ -7,7 +7,10 @@ source $HOME/.env/functions/is_in.func
 
 if [[ ${USE_LOCALRUSTLIB} -eq 1 ]];
 then
-	export PATH=$HOME/.cargo/bin:$PATH
+	if [[ $(is_in ${HOME}/.cargo/bin PATH) -eq 1 ]];
+	then
+		export PATH=$HOME/.cargo/bin:$PATH
+	fi
 else
 	pathremove $HOME/.cargo/bin PATH
 fi
