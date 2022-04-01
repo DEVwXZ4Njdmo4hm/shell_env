@@ -3,7 +3,7 @@
 
 # USE ANACONDA
 # shell will use anaconda python interpreter instead of system python if it set to 1
-USE_ANACONDA=1
+USE_ANACONDA=0
 
 # USE CONDA
 # enable conda package manager if it set to 1
@@ -52,4 +52,4 @@ USE_FLUTTER=1
 USE_DOTNET=1
 
 # Enable local openssl3 library
-USE_LOCAL_OPENSSL3=1
+USE_LOCAL_OPENSSL3=0
