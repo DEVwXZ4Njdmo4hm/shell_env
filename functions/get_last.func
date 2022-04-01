@@ -8,5 +8,5 @@ function get_last() {
 		return 1
 	fi
 
-	echo $(sed 's/:/\n/g' <<< $(/usr/bin/printenv PATH) | tail -n 1)
+	echo $(sed 's/:/\n/g' <<< $(/usr/bin/printenv $1) | tail -n 1)
 }
