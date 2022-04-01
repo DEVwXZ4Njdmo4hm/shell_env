@@ -12,7 +12,9 @@ JFX_HOME=$HOME/.local/lib/javafx-sdk-${JFX_VERSION}
 
 if [[ ${USE_JFX} -eq 1 ]];
 then
-	if [[ $(is_in ${JFX_HOME}/lib LD_LIBRARY_PATH) -eq false ]];
+	is_in ${JFX_HOME}/lib LD_LIBRARY_PATH
+
+	if [[ $? -eq 1 ]];
 	then
 		export LD_LIBRARY_PATH=${JFX_HOME}/lib:$LD_LIBRARY_PATH
 	fi
