@@ -3,12 +3,16 @@
 
 source $HOME/.env/setting
 source $HOME/.env/functions/pathremove.func
+source $HOME/.env/functions/ev_op.func
 
 BCC_HOME=/usr/share/bcc
 
 if [[ ${USE_BCCTOOL} -eq 1 ]];
 then
-	export PATH=${BCC_HOME}/tools:$PATH
+	if [[ $(is_in ${BCC_HOME}/tools PATH) -eq 1 ]];
+	then
+		export PATH=${BCC_HOME}/tools:$PATH
+	fi
 else
 	pathremove ${BCC_HOME} PATH
 fi
