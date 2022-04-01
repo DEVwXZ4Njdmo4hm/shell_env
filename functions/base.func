@@ -13,17 +13,18 @@ function addalias() {
 	return $?
 }
 
-function addvar() {
-	if [[ $UID -ne 1000 ]]
-	then
-		echo "The user does not have permission to operate."
-		return 1
-	fi
-
-	/usr/bin/micro $HOME/.env/vars
-	envup "vars"
-	return $?
-}
+# Discard addvar() at 2022/04/01 14:11, and relace it with addevar()
+#function addvar() {
+#	if [[ $UID -ne 1000 ]]
+#	then
+#		echo "The user does not have permission to operate."
+#		return 1
+#	fi
+#
+#	/usr/bin/micro $HOME/.env/vars
+#	envup "vars"
+#	return $?
+#}
 
 function addevar() {
 	if [[ $UID -ne 1000 ]]
