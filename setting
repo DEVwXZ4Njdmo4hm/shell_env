@@ -19,7 +19,7 @@ USE_MATLAB=1
 USE_JFX=1
 
 # Enable BCC toolset
-USE_BCCTOOL=0
+USE_BCCTOOL=1
 
 # Enable some helpful ev for gentoo
 USE_GENTOO=1
