@@ -10,5 +10,5 @@ if [[ ${USE_LOCAL_OPENSSL3} -eq 1 ]];
 then
 	export LD_LIBRARY_PATH=${OPENSSL3_HOME}/lib64:$LD_LIBRARY_PATH
 else
-	pathremove ${OPENSSL3_HOME} LD_LIBRARY_PATH
+	pathremove ${OPENSSL3_HOME}/lib64 LD_LIBRARY_PATH
 fi
