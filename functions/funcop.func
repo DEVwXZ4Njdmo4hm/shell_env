@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 function newfunc() {
 	if [[ $# -eq 0 ]];
 	then
@@ -16,8 +15,7 @@ function newfunc() {
 		sleep 0.2
 		echo "call editfunc"
 		sleep 0.5
-		editfunc $1
-		return $?
+		return $(editfunc $1)
 	fi
 
 	local create_date=$(date +"%Y-%m-%d %H:%M:%S")
@@ -30,8 +28,7 @@ function newfunc() {
 	echo "}" >> $nf
 	${EDITOR} $nf
 
-	envup "$1.func"
-	return $?
+	return $(envup "$1.func")
 }
 
 function editfunc() {
@@ -47,7 +44,6 @@ function editfunc() {
 	then
 		${EDITOR} $nf
 		source $HOME/.shrc
-		#envup "$1.func"
 		return $(envup "$1.func")
 	else
 		echo "$1 is not exist in functions directory."
@@ -64,8 +60,7 @@ function rmfunc() {
 
 	local nf="$HOME/.env/functions/$1.func"
 	rm -vf $nf
-	envup "$1.func"
-	return $?
+	return $(envup "$1.func")
 }
 
 function viewfunc() {
