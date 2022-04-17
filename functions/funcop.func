@@ -70,7 +70,7 @@ function viewfunc() {
 		return 1
 	fi
 
-	if [[ $(type $1) =~ "function" ]];
+	if [[ $(type $1) =~ "function" || $(type $1) =~ "函数" ]];
 	then
 		/usr/bin/bat -l sh --file-name=$1 <<< $(declare -f $1)
 	else
