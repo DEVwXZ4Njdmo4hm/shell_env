@@ -46,8 +46,8 @@ function editfunc() {
 	then
 		${EDITOR} $nf
 		source $HOME/.shrc
-		envup "$1.func"
-		return $?
+		#envup "$1.func"
+		return $(envup "$1.func")
 	else
 		echo "$1 is not exist in functions directory."
 		return 2
