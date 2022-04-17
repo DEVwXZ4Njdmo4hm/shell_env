@@ -1,5 +1,6 @@
 #!/bin/sh
 
+
 function newfunc() {
 	if [[ $# -eq 0 ]];
 	then
