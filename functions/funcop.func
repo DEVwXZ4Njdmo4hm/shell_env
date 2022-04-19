@@ -70,7 +70,7 @@ function viewfunc() {
 		return 1
 	fi
 
-	if [[ declare -f $1 >/dev/null ]];
+	if declare -f $1 >/dev/null;
 	then
 		/usr/bin/bat -l sh --file-name=$1 <<< $(declare -f $1)
 	else
