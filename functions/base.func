@@ -52,9 +52,38 @@ function addevar() {
 		echo "source \$HOME/.env/functions/pathremove.func" >> $nv
 		echo "source \$HOME/.env/functions/ev_op.func" >> $nv
 		echo >> $nv
+	else
+		editevar $1
+		return $?
 	fi
 
 	${EDITOR} $nv
+	envup "$1.evar"
+	return $?
+}
+
+function editevar() {
+	if [[ $UID -ne 1000 ]]
+	then
+		echo "The user does not have permission to operate."
+		return 1
+	fi
+	if [[ $# -eq 0 ]]
+	then
+		echo "You must specific a name."
+		return 1
+	fi
+	local nv=$HOME/.env/evars/$1.evar 
+
+	if [[ -f $nv ]];
+	then
+		${EDITOR} $nv
+	else
+		echo "Specified evar: $1 does not exist on user environment control directory."
+		echo "If you want to create it, use command \"addevar $1\""
+		return 1
+	fi
+
 	envup "$1.evar"
 	return $?
 }
