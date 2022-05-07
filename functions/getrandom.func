@@ -1,0 +1,42 @@
+#!/bin/sh
+# Created by zijian at 2022-05-07 22:22:40
+
+function getrandom() {
+	if [[ $1 -le 0 ]];
+	then
+		echo "Argument must greater then 0."
+		return ''
+	fi
+	
+	local len=${#1}
+	if [[ $(( $1 % 10 )) -eq 0 && ${1:0:1} -eq 1 ]]; 
+	then
+		len=$(( $len - 1 )); 
+	fi
+	while true; do                                      
+		local r_num=$(tr -dc 0-9 </dev/urandom | head -c $len )
+		rmzero $r_num
+		r_num=$?
+		if [[ $r_num -lt $1 ]]; 
+		then
+			return $r_num
+		fi 
+	done 
+}
+
+
+function rmzero() {
+	local retval
+	local i=0
+	while [[ $i -lt ${#1} ]];
+	do
+		if [[ ${1:$i:1} -ge 0 ]];
+		then
+			retval=$retval${1:$i:1}
+		fi
+		i=$(( $i + 1 ));
+	done
+	
+	return $retval
+}
+
