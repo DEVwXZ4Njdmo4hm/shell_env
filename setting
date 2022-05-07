@@ -27,6 +27,9 @@ USE_GENTOO=1
 # USE EDITOR
 USE_EDITOR=micro
 
+# Specified local ruby version
+RUBY_VERSION=3.1.0
+
 # Enable local gem library
 USE_USERGEMHOME=1
 
