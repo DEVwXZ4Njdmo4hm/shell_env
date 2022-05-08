@@ -8,7 +8,7 @@ source $HOME/.env/functions/ev_op.func
 LOCAL_ICU_MAJOR_VER=69
 LOCAL_ICU_HOME=$HOME/.local/lib/ICU${LOCAL_ICU_MAJOR_VER}/lib
 
-if [[ ${USE_LOCAL_ICU} -eq -1 ]];
+if [[ ${USE_LOCAL_ICU} -eq 1 ]];
 then
 	is_in ${LOCAL_ICU_HOME} LD_LIBRARY_PATH
 	if [[ $? -eq 1 ]];
