@@ -13,10 +13,9 @@ function newfunc() {
 	then
 		echo "function $1 is exist in functions directory."
 		sleep 0.2
-		echo "now edit mode."
+		echo "call editfunc."
 		sleep 0.5
-		${EDITOR} $nf
-		envup $1
+		editfunc $1
 		return $?
 	fi
 
