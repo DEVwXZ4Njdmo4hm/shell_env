@@ -53,6 +53,10 @@ function addevar() {
 		echo "source \$HOME/.env/functions/ev_op.func" >> $nv
 		echo >> $nv
 	else
+		echo "Specified $1.evar has been existed."
+		sleep 0.2
+		echo "Now call editevar."
+		sleep 0.5
 		editevar $1
 		return $?
 	fi
