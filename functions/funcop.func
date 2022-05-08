@@ -13,9 +13,10 @@ function newfunc() {
 	then
 		echo "function $1 is exist in functions directory."
 		sleep 0.2
-		echo "call editfunc"
+		echo "now edit mode."
 		sleep 0.5
-		editfunc $1
+		${EDITOR} $nf
+		envup $1
 		return $?
 	fi
 
@@ -45,7 +46,6 @@ function editfunc() {
 	if [[ -f $nf ]];
 	then
 		${EDITOR} $nf
-		source $HOME/.shrc
 		envup "$1.func"
 		return $?
 	else
