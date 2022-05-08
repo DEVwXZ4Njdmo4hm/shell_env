@@ -60,3 +60,6 @@ USE_LOCAL_OPENSSL3=0
 # LLVM Support
 USE_LLVM=1
 LLVM_TOOLCHAIN_VER=14
+
+# Enable local ICU Library (Version 69.1)
+USE_LOCAL_ICU=1
