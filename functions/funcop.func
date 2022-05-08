@@ -15,7 +15,8 @@ function newfunc() {
 		sleep 0.2
 		echo "call editfunc"
 		sleep 0.5
-		return $(editfunc $1)
+		editfunc $1
+		return $?
 	fi
 
 	local create_date=$(date +"%Y-%m-%d %H:%M:%S")
@@ -28,7 +29,8 @@ function newfunc() {
 	echo "}" >> $nf
 	${EDITOR} $nf
 
-	return $(envup "$1.func")
+	envup "$1.func"
+	return $?
 }
 
 function editfunc() {
@@ -44,7 +46,8 @@ function editfunc() {
 	then
 		${EDITOR} $nf
 		source $HOME/.shrc
-		return $(envup "$1.func")
+		envup "$1.func"
+		return $?
 	else
 		echo "$1 is not exist in functions directory."
 		return 2
@@ -60,7 +63,8 @@ function rmfunc() {
 
 	local nf="$HOME/.env/functions/$1.func"
 	rm -vf $nf
-	return $(envup "$1.func")
+	envup "$1.func"
+	return $?
 }
 
 function viewfunc() {
@@ -76,4 +80,13 @@ function viewfunc() {
 	else
 		echo "$1 is not defined."
 	fi
+}
+
+function listfunc() {
+	for i in $(typeset +f); do
+		if [[ $(type ${i}) =~ "/.env/functions/" ]];
+		then
+			echo ${i}
+		fi
+	done
 }
