@@ -110,7 +110,7 @@ function viewevar() {
 
 function listevar() {
 	pushd $HOME/.env/evars
-	stat -c "%y %n" | sed -e 's/\.evar$//'
+	stat -c "%y %n" * | sed -e 's/\.evar$//'
 	popd
 	return 0
 }
