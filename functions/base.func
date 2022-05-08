@@ -88,6 +88,33 @@ function editevar() {
 	return $?
 }
 
+function viewevar() {
+	if [[ $# -ne 1 ]];
+	then
+		echo "You must specify a name."
+		return 2
+	fi
+
+	local evar=$HOME/.env/evars/$1.evar
+	if [[ -f $evar ]];
+	then
+		/usr/bin/bat -l sh --file-name=$1.evar <<< $(/bin/cat $evar)
+	else
+		echo "Specified evar file: $1.evar does not exist in user environment control directory."
+		echo "Please use \'listevar\' to corret input, or use \'addevar $1\' to create it."
+		return 3
+	fi
+
+	return 0
+}
+
+function listevar() {
+	pushd $HOME/.env/evars
+	stat -c "%y %n" | sed -e 's/\.evar$//'
+	popd
+	return 0
+}
+
 function envset() {
 	if [[ $UID -ne 1000 ]]
 	then
