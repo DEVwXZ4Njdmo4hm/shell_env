@@ -1,0 +1,20 @@
+#!/bin/sh
+# Created by zijian at 2022-05-08 22:28:01
+
+source $HOME/.env/setting
+source $HOME/.env/functions/pathremove.func
+source $HOME/.env/functions/ev_op.func
+
+LOCAL_ICU_MAJOR_VER=69
+LOCAL_ICU_HOME=$HOME/.local/lib/ICU${LOCAL_ICU_MAJOR_VER}
+
+if [[ ${USE_LOCAL_ICU} -eq -1 ]];
+then
+	is_in ${LOCAL_ICU_HOME}/lib LD_LIBRARY_PATH
+	if [[ $? -eq 1 ]];
+	then
+		export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${LOCAL_ICU_HOME}/lib
+	fi
+else
+	pathremove ${LOCAL_ICU_HOME}/lib LD_LIBRARY_PATH
+fi
