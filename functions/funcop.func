@@ -1,5 +1,4 @@
 #!/bin/sh
-# comment for test
 
 function newfunc() {
 	if [[ $# -eq 0 ]];
@@ -75,6 +74,7 @@ function rmfunc() {
 }
 
 function viewfunc() {
+	echo "haha"
 	if [[ $# -eq 0 ]];
 	then
 		echo "You must specific a name"
