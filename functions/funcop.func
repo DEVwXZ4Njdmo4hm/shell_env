@@ -1,4 +1,5 @@
 #!/bin/sh
+# comment for test
 
 function newfunc() {
 	if [[ $# -eq 0 ]];
