@@ -42,15 +42,10 @@ function editfunc() {
 
 	local nf="$HOME/.env/functions/$1.func"
 
-	if [[ -f $nf ]];
-	then
-		${EDITOR} <<< $(/bin/cat $nf) >| $nf
-		envup "$1.func"
-		return $?
-	elif [[ $(type $1) =~ "/.env/functions/" ]];
+	if [[ $(type $1) =~ "/.env/functions/" ]];
 	then
 		local fstr=$(type $1)
-		nf="$HOME/.env/functions/$(basename $fstr)"
+		local nf="$HOME/.env/functions/$(basename $fstr)"
 		${EDITOR} <<< $(/bin/cat $nf) >| $nf
 		envup "$(basename $fstr)"
 		return $?
