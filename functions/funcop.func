@@ -27,7 +27,7 @@ function newfunc() {
 	echo "function $1() {" >> $nf
 	echo >> $nf
 	echo "}" >> $nf
-	${EDITOR} $nf
+	${EDITOR} <<< (/bin/cat $nf) >| $nf
 
 	envup "$1.func"
 	return $?
@@ -44,7 +44,7 @@ function editfunc() {
 
 	if [[ -f $nf ]];
 	then
-		${EDITOR} $nf
+		${EDITOR} <<< $(/bin/cat $nf) >| $nf
 		envup "$1.func"
 		return $?
 	elif [[ $(type $1) =~ "/.env/functions/" ]];
