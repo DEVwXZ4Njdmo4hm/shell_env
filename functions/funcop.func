@@ -99,7 +99,7 @@ function listfunc() {
 	return 0
 }
 
-if [[ $0 == "bash" ]];
+if [[ $0 == bash ]];
 then
 	declare -F "listfunc" &> /dev/null;
 	if [[ $? -eq 0 ]];
