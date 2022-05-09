@@ -8,7 +8,7 @@ function addalias() {
 		return 1
 	fi
 
-	${EDITOR} $HOME/.env/alias
+	${EDITOR} <<< $(/bin/cat $HOME/.env/alias) >| $HOME/.env/alias
 	envup "alias"
 	return $?
 }
@@ -61,7 +61,7 @@ function addevar() {
 		return $?
 	fi
 
-	${EDITOR} $nv
+	${EDITOR} <<< $(/bin/cat $nv) >| $nv
 	envup "$1.evar"
 	return $?
 }
@@ -81,7 +81,7 @@ function editevar() {
 
 	if [[ -f $nv ]];
 	then
-		${EDITOR} $nv
+		${EDITOR} <<< $(/bin/cat $nv) >| $nv
 	else
 		echo "Specified evar: $1 does not exist on user environment control directory."
 		echo "If you want to create it, use command \"addevar $1\""
