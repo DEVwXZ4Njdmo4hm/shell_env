@@ -89,10 +89,24 @@ function viewfunc() {
 }
 
 function listfunc() {
-	for i in $(typeset +f); do
-		if [[ $(type ${i}) =~ "/.env/functions/" ]];
-		then
-			echo ${i}
-		fi
-	done
+	if [[ $0 == "zsh" ]];
+	then
+		for i in $(typeset +f); do
+			if [[ $(type ${i}) =~ "/.env/functions/" ]];
+			then
+				echo ${i}
+			fi
+		done
+	else
+		shopt -s extdebug
+		for i in $(declare -F); do
+			fstr=$(declare -F ${i});
+			if [[ $fstr =~ "/.env/functions/" ]];
+			then
+				ff=$(basename ${fstr%% *})
+				echo $ff
+			fi
+		done
+		shopt -u extdebug
+	fi
 }
