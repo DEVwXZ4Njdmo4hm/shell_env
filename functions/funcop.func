@@ -27,7 +27,7 @@ function newfunc() {
 	echo "function $1() {" >> $nf
 	echo >> $nf
 	echo "}" >> $nf
-	${EDITOR} <<< (/bin/cat $nf) >| $nf
+	${EDITOR} <<< $(/bin/cat $nf) >| $nf
 
 	envup "$1.func"
 	return $?
