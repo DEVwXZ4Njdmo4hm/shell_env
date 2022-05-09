@@ -52,9 +52,8 @@ function editfunc() {
 		local fstr=$(type $1)
 		nf="$HOME/.env/functions/$(basename $fstr)"
 		${EDITOR} $nf
-		envup "$(basename $fstr).func"
+		envup "$(basename $fstr)"
 		return $?
-# test comment
 	else
 		echo "$1 is not exist in functions directory."
 		return 2
