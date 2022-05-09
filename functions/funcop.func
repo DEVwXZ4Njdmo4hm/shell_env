@@ -51,7 +51,7 @@ function editfunc() {
 	then
 		local fstr=$(type $1)
 		nf="$HOME/.env/functions/$(basename $fstr)"
-		${EDITOR} $nf
+		${EDITOR} <<< $(/bin/cat $nf) >| $nf
 		envup "$(basename $fstr)"
 		return $?
 	else
