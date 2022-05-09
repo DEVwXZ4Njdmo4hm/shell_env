@@ -97,6 +97,7 @@ function listfunc() {
 				echo ${i}
 			fi
 		done
+		return 0
 	else
 		shopt -s extdebug
 		for i in $(declare -F); do
