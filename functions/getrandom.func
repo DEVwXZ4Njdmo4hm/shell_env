@@ -2,9 +2,9 @@
 # Created by zijian at 2022-05-07 22:22:40
 
 function getrandom() {
-	if [[ $1 -le 0 ]];
+	if [[ $# -ne 1 || $1 -le 0 ]];
 	then
-		echo "Argument must greater then 0."
+		echo "Usage: getrandom [limit (must greater than 0)]"
 		return ''
 	fi
 	
@@ -39,4 +39,3 @@ function rmzero() {
 	
 	return $retval
 }
-
