@@ -104,8 +104,7 @@ function listfunc() {
 			fstr=$(declare -F ${i});
 			if [[ $fstr =~ "/.env/functions/" ]];
 			then
-				ff=$(basename ${fstr%% *})
-				echo $ff
+				echo ${fstr%% *}
 			fi
 		done
 		shopt -u extdebug
