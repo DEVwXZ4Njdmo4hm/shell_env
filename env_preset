@@ -35,5 +35,5 @@ unset INFOPATH
 unset MANPATH
 unset MOZ_GMP_PATH
 unset LD_LIBRARY_PATH
-export PATH=/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:/usr/lib/llvm/13/bin:/usr/lib64/subversion/bin
-
+export PATH=/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:/usr/lib64/subversion/bin
+export LD_LIBRARY_PATH=""
