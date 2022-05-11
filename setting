@@ -62,4 +62,4 @@ USE_LLVM=1
 LLVM_TOOLCHAIN_VER=14
 
 # Enable local ICU Library (Version 69.1)
-USE_LOCAL_ICU=0
+USE_LOCAL_ICU=1
