@@ -55,7 +55,7 @@ USE_FLUTTER=1
 USE_DOTNET=1
 
 # Enable local openssl3 library
-USE_LOCAL_OPENSSL3=0
+USE_LOCAL_OPENSSL3=1
 
 # LLVM Support
 USE_LLVM=1
