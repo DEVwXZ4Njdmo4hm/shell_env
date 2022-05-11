@@ -1,30 +1,30 @@
 #!/bin/sh
 
-function pathremove () {
-	if [[ $# -lt 2 ]];
-	then
-		echo "You should give at least 2 argument"
-		echo "For example"
-		echo "pathremove [dir] [ev_name]"
-		return 1
-	fi
+#function pathremove () {
+#	if [[ $# -lt 2 ]];
+#	then
+#		echo "You should give at least 2 argument"
+#		echo "For example"
+#		echo "pathremove [dir] [ev_name]"
+#		return 1
+#	fi
 
 	#FOLDERS_TO_REMOVE=`echo $@ | sed 's/ /|/g'` 
-	FOLDERS_TO_REMOVE=$1
-	EV_NAME=$2 
-	EV_VAR=$( echo $(env | grep ${EV_NAME}) | tr -s ":" "\n" | grep -vwE "(${FOLDERS_TO_REMOVE})" | tr -s "\n" ":" | sed "s/:$//" )
-	export ${EV_NAME}=${EV_VAR}
-	
-	return $?
-}
+#	FOLDERS_TO_REMOVE=$1
+#	EV_NAME=$2 
+#	EV_VAR=$( echo $(env | grep ${EV_NAME}) | tr -s ":" "\n" | grep -vwE "(${FOLDERS_TO_REMOVE})" | tr -s "\n" ":" | sed "s/:$//" )
+#	export ${EV_NAME}=${EV_VAR}
+#	
+#	return $?
+#}
 
-if [[ $0 == bash ]];
-then
-	declare -F "pathremove" &> /dev/null;
-	if [[ $? -eq 0 ]];
-	then
-		unset pathremove
-	fi
+#if [[ $0 == bash ]];
+#then
+#	declare -F "pathremove" &> /dev/null;
+#	if [[ $? -eq 0 ]];
+#	then
+#		unset pathremove
+#	fi
 
 	function no_path() {
 		eval "case :\$${2-PATH}: in *:$1:*) return 1;; *) return 0;; esac"
@@ -43,4 +43,4 @@ then
 
 		return $?
 	}
-fi
+#fi
