@@ -9,7 +9,8 @@ function pathremove () {
 		return 1
 	fi
 
-	FOLDERS_TO_REMOVE=`echo $@ | sed 's/ /|/g'` 
+	#FOLDERS_TO_REMOVE=`echo $@ | sed 's/ /|/g'` 
+	FOLDERS_TO_REMOVE=$1
 	EV_NAME=$2 
 	EV_VAR=$( echo $(env | grep ${EV_NAME}) | tr -s ":" "\n" | grep -vwE "(${FOLDERS_TO_REMOVE})" | tr -s "\n" ":" | sed "s/:$//" )
 	export ${EV_NAME}=${EV_VAR}
