@@ -3,7 +3,7 @@
 
 # USE ANACONDA
 # shell will use anaconda python interpreter instead of system python if it set to 1
-USE_ANACONDA=1
+USE_ANACONDA=0
 
 # USE CONDA
 # enable conda package manager if it set to 1
@@ -62,4 +62,4 @@ USE_LLVM=1
 LLVM_TOOLCHAIN_VER=14
 
 # Enable local ICU Library (Version 69.1)
-USE_LOCAL_ICU=1
+USE_LOCAL_ICU=0
