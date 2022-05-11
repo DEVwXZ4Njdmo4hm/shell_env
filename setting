@@ -37,7 +37,7 @@ USE_USERGEMHOME=1
 USE_RV64TOOLCHAIN=1
 
 # Enable local Qt lib
-USE_LOCALQT=1
+USE_LOCALQT=0
 
 # Enable local rust library
 USE_LOCALRUSTLIB=1
