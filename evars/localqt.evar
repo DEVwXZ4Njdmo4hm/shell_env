@@ -7,7 +7,7 @@ source $HOME/.env/functions/ev_op.func
 
 LOCAL_QT_VER=6.2
 LOCAL_QT_HOME=${HOME}/.local/lib/Qt-${LOCAL_QT_VER}
-QT_QPA_PLATFORM=wayland
+export QT_QPA_PLATFORM=wayland
 
 if [[ ${USE_LOCALQT} -eq 1 ]];
 then
