@@ -24,7 +24,7 @@ function envup() {
 		local create_time=$(date +"%Y-%m-%d %H:%M:%S") 
 		local commit_str="Regular update file {$1} by envup at ${create_time}"
 		git commit -m $commit_str
-		/usr/bin/wget -q --spider http://baidu.com
+		/usr/bin/wget -q --spider github.com
 		if [[ $? -eq 0 ]];
 		then
 			git push origin master
