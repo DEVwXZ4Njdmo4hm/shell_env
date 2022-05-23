@@ -11,7 +11,7 @@ function newfunc() {
 
 	if [[ -f $nf ]];
 	then
-		echo "function $1 is exist in functions directory."
+		echo "function $1 has been existed in functions directory."
 		sleep 0.2
 		echo "call editfunc."
 		sleep 0.5
