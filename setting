@@ -3,7 +3,7 @@
 
 # USE ANACONDA
 # shell will use anaconda python interpreter instead of system python if it set to 1
-USE_ANACONDA=0
+USE_ANACONDA=1
 
 # USE CONDA
 # enable conda package manager if it set to 1
