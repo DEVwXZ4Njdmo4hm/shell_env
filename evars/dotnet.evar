@@ -12,6 +12,7 @@ then
 	DOTNET_ROOT="/opt/dotnet-sdk-bin-${DOTNET_VER}"
 	PATH=$PATH:${DOTNET_TOOLS_PATH}
 else
-	unset DOTNET_ROOT
 	pathremove ${DOTNET_TOOLS_PATH} PATH
+	unset DOTNET_ROOT
+	unset DOTNET_TOOLS_PATH
 fi
