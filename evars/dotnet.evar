@@ -5,7 +5,7 @@ source $HOME/.env/setting
 source $HOME/.env/functions/pathremove.func
 
 DOTNET_VER=6.0
-DOTNET_TOOLS_PATH=PATH=$HOME/.dotnet/tools
+DOTNET_TOOLS_PATH=$HOME/.dotnet/tools
 
 if [[ ${USE_DOTNET} -eq 1 ]];
 then
