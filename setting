@@ -52,7 +52,7 @@ USE_ANDROID_CLI_TOOLSET=1
 USE_FLUTTER=1
 
 # Enable dotnet
-USE_DOTNET=1
+USE_DOTNET=0
 
 # Enable local openssl3 library
 USE_LOCAL_OPENSSL3=0
