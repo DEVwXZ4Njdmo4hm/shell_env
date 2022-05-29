@@ -31,4 +31,9 @@ then
 
 		return 0	
 	}
+else
+	if declare -f bdv &> /dev/null;
+	then
+		unset -f bdv
+	fi	
 fi
