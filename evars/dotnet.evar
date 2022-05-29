@@ -5,11 +5,13 @@ source $HOME/.env/setting
 source $HOME/.env/functions/pathremove.func
 
 DOTNET_VER=6.0
-#DOTNET_TOOLCHAIN
+DOTNET_TOOLS_PATH=PATH=$HOME/.dotnet/tools
 
 if [[ ${USE_DOTNET} -eq 1 ]];
 then
-	export DOTNET_ROOT="/opt/dotnet-sdk-bin-${DOTNET_VER}"
+	DOTNET_ROOT="/opt/dotnet-sdk-bin-${DOTNET_VER}"
+	PATH=$PATH:${DOTNET_TOOLS_PATH}
 else
 	unset DOTNET_ROOT
+	pathremove ${DOTNET_TOOLS_PATH} PATH
 fi
