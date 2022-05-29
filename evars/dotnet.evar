@@ -5,6 +5,7 @@ source $HOME/.env/setting
 source $HOME/.env/functions/pathremove.func
 
 DOTNET_VER=6.0
+#DOTNET_TOOLCHAIN
 
 if [[ ${USE_DOTNET} -eq 1 ]];
 then
