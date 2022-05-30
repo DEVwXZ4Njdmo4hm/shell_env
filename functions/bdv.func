@@ -17,8 +17,9 @@ then
 		echo "Agruments: $@"
 		echo "Workdir: ${main_work_dir}/$2"
 		
+		
 		while true; do
-			${DOTNET_TOOLS_PATH}/BBDown -mt -app -p "ALL" --workdir "${main_work_dir}/$2" $1
+			${DOTNET_TOOLS_PATH}/BBDown -mt -app -p "ALL" --workdir "${main_work_dir}/$2" "$1"
 			if [[ $? -eq 0 ]];
 			then
 				break
