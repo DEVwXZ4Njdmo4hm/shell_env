@@ -16,7 +16,8 @@ then
 
 		echo "Agruments: $@"
 		echo "Workdir: ${main_work_dir}/$2"
-		
+		echo "CMD:"
+		echo "${DOTNET_TOOLS_PATH}/BBDown -mt -app -p ALL --workdir ${main_work_dir}/$2 $1"		
 		
 		while true; do
 			${DOTNET_TOOLS_PATH}/BBDown -mt -app -p "ALL" --workdir "${main_work_dir}/$2" "$1"
