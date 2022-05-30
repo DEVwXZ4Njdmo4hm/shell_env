@@ -13,9 +13,6 @@ then
 			echo "Usage: bdv [link/bv/av] [additional dir] [max retry times]"	
 			return 1
 		fi
-
-		echo "Agruments: $@"
-		echo "Workdir: ${main_work_dir}/$2"
 		
 		while true; do
 			${DOTNET_TOOLS_PATH}/BBDown -mt -app -p ALL --work-dir "${main_work_dir}/$2" $1
