@@ -17,5 +17,5 @@ source $HOME/.env/alias
 #git status --porcelain $HOME/.env/
 
 for i in ${STARTUP_GIT_STATUS_CHECK_DIRS}; do
-	git status --porcelain ${i}
+	git status --porcelain ${i}/
 done
