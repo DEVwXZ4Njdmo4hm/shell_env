@@ -113,7 +113,7 @@ then
 			fstr=$(declare -F ${i});
 			if [[ $fstr =~ "/.env/functions/" ]];
 			then
-				echo "${fstr%% *} 		$(stat -c "%y %n" $(echo $fstr | cut -d ' ' -f 3) | sed -e 's/\/.*//')"
+				printf "${fstr%% *}            $(stat -c "%y %n" $(echo $fstr | cut -d ' ' -f 3) | sed -e 's/\/.*//')"
 			fi
 		done
 		shopt -u extdebug
