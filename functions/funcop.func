@@ -92,7 +92,7 @@ function listfunc() {
 	for i in $(typeset +f); do
 		if [[ $(type ${i}) =~ "/.env/functions/" ]];
 		then
-			echo ${i}
+			printf "stat -c "%y %n" $HOME/.env/functions/${i}.func | sed -e 's/\/.*//'\t\t${i}\n"
 		fi
 	done
 
@@ -105,6 +105,7 @@ then
 	if [[ $? -eq 0 ]];
 	then
 		unset listfunc
+		unset editfunc
 	fi
 
 	function listfunc() {
@@ -119,4 +120,32 @@ then
 		shopt -u extdebug
 		return 0
 	}
+
+	function editfunc () {
+		if [[ $# -eq 0 ]]
+		then
+			echo "You must specific a name"
+			return 1
+		fi
+		local nf="$HOME/.env/functions/$1.func"
+		shopt -s extdebug
+		local fstr=$(declare -F $1)
+		shopt -u extdebug
+		if [[ $? -eq 0 ]]
+		then 
+			nf=$(echo ${fstr} | cut -d ' ' -f 3)
+			${EDITOR} <<< $(/bin/cat $nf) >| $nf
+			envup "$(basename $nf)"
+			return $?
+		elif [[ -f $nf ]]
+		then
+			${EDITOR} <<< $(/bin/cat $nf) >| $nf
+			envup "$1.func"
+			return $?
+		else
+			echo "$1 is not exist in functions directory."
+			return 2
+		fi
+	}
+	
 fi
