@@ -89,7 +89,8 @@ function viewfunc() {
 }
 
 function listfunc() {
-	for i in $(typeset +f); do
+	local func_table=("${(@f)$(typeset +f)}")
+	for i in ${func_table}; do
 		if [[ $(type ${i}) =~ "/.env/functions/" ]];
 		then
 			printf "$(stat -c "%y %n" $HOME/.env/functions/${i}.func | sed -e 's/\/.*//')\t\t${i}\n"
