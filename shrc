@@ -13,3 +13,5 @@ source $HOME/.env/env_preset
 source $HOME/.env/functions/.func_dir_init
 source $HOME/.env/evars/.evars_init
 source $HOME/.env/alias
+
+git status --porcelain $HOME/.env/
