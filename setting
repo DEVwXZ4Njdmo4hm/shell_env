@@ -67,5 +67,5 @@ USE_LOCAL_ICU=1
 # check git status at shell startup.
 CHECK_GIT_STATUS_ON_STARTUP=(
 	$HOME/.env
-	$HONE/MyProgrammes/CL/nxos
+	$HOME/MyProgrammes/CL/nxos
 );
