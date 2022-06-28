@@ -17,22 +17,23 @@ function repoupdate() {
 		while
 			sudo /usr/sbin/emaint sync -A
 			[[ $? -eq 0 ]]
-		do :; done
+		do :; done;
 
 		if [[ -f /usr/bin/eix ]];
 		then
 			while
 				/usr/bin/eix-update
 				[[ $? -eq 0 ]]
-			do :; done
+			do :; done;
 
 			while
 				/usr/bin/eix-remote update
 				[[ $? -eq 0 ]]
-			do :; done
+			do :; done;
 		else
 			echo "eix is not installed on this machine.";
 			echo "emerge eix if you want to get better package query experience.";
 		fi
-		return 0
+		
+		return 0;
 }
