@@ -64,8 +64,7 @@ LLVM_TOOLCHAIN_VER=14
 # Enable local ICU Library (Version 69.1)
 USE_LOCAL_ICU=1
 
-
 # check git status at shell startup.
 STARTUP_GIT_STATUS_CHECK_DIRS=(
-	$HOME/.env
-)
+	$HOME/.env/
+);
