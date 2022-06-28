@@ -35,6 +35,5 @@ function repoupdate() {
 			echo "emerge eix if you want to get better package query experience."
 		fi
 
-		return 0
+		return 0;
 }
-
