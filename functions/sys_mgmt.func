@@ -17,19 +17,19 @@ function repoupdate() {
 	then
 		while
 			sudo /usr/sbin/emaint sync -A
-			[[ $? -eq 0 ]]
+			[[ $? -ne 0 ]]
 		do :; done;
 
 		if [[ -f /usr/bin/eix ]];
 		then
 			while
 				/usr/bin/eix-update
-				[[ $? -eq 0 ]]
+				[[ $? -ne 0 ]]
 			do :; done;
 
 			while
 				/usr/bin/eix-remote update
-				[[ $? -eq 0 ]]
+				[[ $? -ne 0 ]]
 			do :; done;
 		else
 			echo "eix is not installed on this machine.";
