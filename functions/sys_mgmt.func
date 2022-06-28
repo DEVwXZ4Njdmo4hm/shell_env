@@ -18,24 +18,24 @@ function repoupdate() {
 		while
 			sudo /usr/sbin/emaint sync -A
 			[[ $? -ne 0 ]]
-		do :; done;
+		do :; done
 
 		if [[ -f /usr/bin/eix ]];
 		then
 			while
 				/usr/bin/eix-update
 				[[ $? -ne 0 ]]
-			do :; done;
+			do :; done
 
 			while
 				/usr/bin/eix-remote update
 				[[ $? -ne 0 ]]
-			do :; done;
+			do :; done
 		else
-			echo "eix is not installed on this machine.";
-			echo "emerge eix if you want to get better package query experience.";
+			echo "eix is not installed on this machine."
+			echo "emerge eix if you want to get better package query experience."
 		fi
 	fi
 		
-		return 0;
+		return 0
 }
