@@ -16,8 +16,8 @@ source $HOME/.env/alias
 
 #git status --porcelain $HOME/.env/
 
-for i in ${STARTUP_GIT_STATUS_CHECK_DIRS}; do
-	pushd ${i} &>/dev/null
-	git status --porcelain 
-	popd &>/dev/null
-done
+#for i in ${STARTUP_GIT_STATUS_CHECK_DIRS}; do
+#	pushd ${i} &>/dev/null
+#	git status --porcelain 
+#	popd &>/dev/null
+#done
