@@ -49,6 +49,11 @@ function editfunc() {
 		${EDITOR} <<< $(/bin/cat $nf) >| $nf
 		envup "$(basename $fstr)"
 		return $?
+	elif [[ -f $nf ]];
+	then
+		${EDITOR} <<< $(/bin/cat $nf) >| $nf
+		envup "$1.func"
+		return $?
 	else
 		echo "$1 is not exist in functions directory."
 		return 2
