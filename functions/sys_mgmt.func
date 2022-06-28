@@ -31,11 +31,8 @@ function repoupdate() {
 				[[ $? -eq 0 ]]
 			do :; done
 		else
-			echo "eix is not installed on this machine."
-			echo "emerge eix if you want to get better package query experience."
+			echo "eix is not installed on this machine.";
+			echo "emerge eix if you want to get better package query experience.";
 		fi
-
-		return 0;
-
-
+		return 0
 }
