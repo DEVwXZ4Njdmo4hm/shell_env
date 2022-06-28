@@ -65,6 +65,6 @@ LLVM_TOOLCHAIN_VER=14
 USE_LOCAL_ICU=1
 
 # check git status at shell startup.
-STARTUP_GIT_STATUS_CHECK_DIRS=(
+CHECK_GIT_STATUS_ON_STARTUP=(
 	$HOME/.env/
 );
