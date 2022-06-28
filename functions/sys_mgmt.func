@@ -4,6 +4,7 @@
 source $HOME/.env/setting
 
 function repoupdate() {
+	echo "Testing network..."
 	/usr/bin/wget -q --spider google.com
 	if [[ $? -ne 0 ]];
 	then
