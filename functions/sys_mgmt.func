@@ -20,7 +20,8 @@ function repoupdate() {
 			[[ $? -ne 0 ]]
 		do :; done
 
-		if [[ -f /usr/bin/eix ]];
+		command -v wget &>/dev/null
+		if [[ $? -eq 0 ]];
 		then
 			while
 				/usr/bin/eix-update
@@ -32,7 +33,7 @@ function repoupdate() {
 				[[ $? -ne 0 ]]
 			do :; done
 		else
-			echo "eix is not installed on this machine."
+			echo "It seems eix is not installed on this machine."
 			echo "emerge eix if you want to get better package query experience."
 		fi
 	fi
