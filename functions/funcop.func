@@ -93,7 +93,7 @@ function listfunc() {
 	for i in ${func_table}; do
 		if [[ $(type ${i}) =~ "/.env/functions/" ]];
 		then
-			printf "$(stat -c "%y %n" $HOME/.env/functions/${i}.func | sed -e 's/\/.*//')\t\t${i}\n"
+			printf "$(stat -c "%y %n" $(echo $(type ${i} | cut -d ' ' -f 7)) | sed -e 's/\/.*//')\t\t${i}\n"
 		fi
 	done
 
