@@ -8,7 +8,7 @@ source $HOME/.env/functions/ev_op.func
 ANACONDA_HOME=$HOME/anaconda3
 CONDA_PY_PATH=${ANACONDA_HOME}/bin
 
-if [[ -f ${ANACONDA_HOME}/envs/${CONDA_ENV} ]];
+if [[ -d ${ANACONDA_HOME}/envs/${CONDA_ENV} ]];
 then
 	CONDA_PY_PATH=${ANACONDA_HOME}/envs/${CONDA_ENV}/bin
 fi
