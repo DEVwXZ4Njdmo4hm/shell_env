@@ -16,7 +16,7 @@ function repoupdate() {
 
 	if [[ $USE_GENTOO -eq 1 ]];
 	then
-		while sudo /usr/sbin/emaint sync -A &>/dev/null; [[ $? -ne 0 ]]
+		while sudo /usr/sbin/emaint sync -A &>/dev/null; [[ $? -ne 0 ]];
 		do:
 			echo "repositories update operate failed."
 			retry=$(( ${retry} + 1 ))
@@ -37,7 +37,7 @@ function repoupdate() {
 			while
 				echo "Update local ebuild tree index..."
 				/usr/bin/eix-update &>/dev/null
-				[[ $? -ne 0 ]]
+				[[ $? -ne 0 ]];
 			do:
 				echo "local ebuild tree index update failed."
 				retry=$(( ${retry} + 1 ))
@@ -54,7 +54,7 @@ function repoupdate() {
 			while
 				echo "Update remote ebuild tree index."
 				/usr/bin/eix-remote update &>/dev/null
-				[[ $? -ne 0 ]]
+				[[ $? -ne 0 ]];
 			do:
 				echo "remote ebuilds tree index update failed."
 				retry=$(( ${retry} + 1 ))
