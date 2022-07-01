@@ -18,7 +18,7 @@ function repoupdate() {
 	then
 		while
 			echo "updating repositories...";
-			sudo /usr/sbin/emaint sync -A;
+			sudo /usr/sbin/emaint sync -A &>/dev/null;
 			[[ $? -ne 0 ]];
 		do
 			echo "repositories update operate failed."
