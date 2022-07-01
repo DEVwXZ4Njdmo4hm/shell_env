@@ -64,6 +64,9 @@ LLVM_TOOLCHAIN_VER=14
 # Enable local ICU Library (Version 69.1)
 USE_LOCAL_ICU=1
 
+# repoupdate command max re-try times.
+REPOUPDATE_RETRY_MAX=10
+
 # check git status at shell startup.
 CHECK_GIT_STATUS_ON_STARTUP=(
 	$HOME/.env
