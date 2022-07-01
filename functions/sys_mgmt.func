@@ -21,15 +21,15 @@ function repoupdate() {
 			echo "repositories update operate failed."
 			retry=$(( ${retry} + 1 ))
 			[[ ${retry} -gt $REPOUPDATE_RETRY_MAX ]] && {
-				echo "Retry times have exceeded the limit, exit 2.";
-				echo "repoupdate operation failed on ebuild updating phase.";
-				return 2;
-			};
+				echo "Retry times have exceeded the limit, exit 2."
+				echo "repoupdate operation failed on ebuild updating phase."
+				return 2
+			}
 			
 			echo "retrying..."
 		done
 		
-		#echo "Successfully update all repositories!"
+		echo "Successfully update all repositories!"
 		local retry=0
 		command -v eix &>/dev/null
 		if [[ $? -eq 0 ]];
@@ -38,7 +38,7 @@ function repoupdate() {
 				echo "Update local ebuild tree index..."
 				/usr/bin/eix-update &>/dev/null
 				[[ $? -ne 0 ]];
-			do:
+			do
 				echo "local ebuild tree index update failed."
 				retry=$(( ${retry} + 1 ))
 				[[ ${retry} -gt $REPOUPDATE_RETRY_MAX ]] && {
@@ -50,12 +50,12 @@ function repoupdate() {
 			done
 
 			echo "Successfully update local ebuilds index!"
-			retry=0
+			local retry=0
 			while
 				echo "Update remote ebuild tree index."
 				/usr/bin/eix-remote update &>/dev/null
 				[[ $? -ne 0 ]];
-			do:
+			do
 				echo "remote ebuilds tree index update failed."
 				retry=$(( ${retry} + 1 ))
 				[[ ${retry} -gt $REPOUPDATE_RETRY_MAX ]] && {
