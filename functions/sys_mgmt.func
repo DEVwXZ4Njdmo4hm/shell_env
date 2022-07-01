@@ -31,7 +31,7 @@ function repoupdate() {
 			echo "retrying..."
 		done
 
-		echo "Successfully update all repositories!"
+		#echo "Successfully update all repositories!"
 		retry=0
 		command -v eix &>/dev/null
 		if [[ $? -eq 0 ]];
