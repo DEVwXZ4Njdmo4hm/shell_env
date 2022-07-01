@@ -17,7 +17,7 @@ function repoupdate() {
 	if [[ $USE_GENTOO -eq 1 ]];
 	then
 		while sudo /usr/sbin/emaint sync -A &>/dev/null; [[ $? -ne 0 ]];
-		do:
+		do
 			echo "repositories update operate failed."
 			retry=$(( ${retry} + 1 ))
 			[[ ${retry} -gt $REPOUPDATE_RETRY_MAX ]] && {
@@ -30,7 +30,7 @@ function repoupdate() {
 		done
 		
 		#echo "Successfully update all repositories!"
-		retry=0
+		local retry=0
 		command -v eix &>/dev/null
 		if [[ $? -eq 0 ]];
 		then
