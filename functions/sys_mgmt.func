@@ -21,12 +21,13 @@ function repoupdate() {
 			echo "repositories update operate failed."
 			retry=$(( ${retry} + 1 ))
 			[[ ${retry} -gt $REPOUPDATE_RETRY_MAX ]] && {
-				echo "Retry times have exceeded the limit, exit 2."
-				echo "repoupdate operation failed on ebuild updating phase."
-				return 2
-			}
-			echo "retrying...";
-		done;
+				echo "Retry times have exceeded the limit, exit 2.";
+				echo "repoupdate operation failed on ebuild updating phase.";
+				return 2;
+			};
+			
+			echo "retrying..."
+		done
 		
 		#echo "Successfully update all repositories!"
 		retry=0
