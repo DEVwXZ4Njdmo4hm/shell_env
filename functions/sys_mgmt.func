@@ -25,9 +25,9 @@ function repoupdate() {
 				echo "repoupdate operation failed on ebuild updating phase."
 				return 2
 			}
-			echo "retrying..."
-		done
-
+			echo "retrying...";
+		done;
+		
 		#echo "Successfully update all repositories!"
 		retry=0
 		command -v eix &>/dev/null
