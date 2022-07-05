@@ -5,7 +5,7 @@ source $HOME/.env/setting
 source $HOME/.env/functions/pathremove.func
 source $HOME/.env/functions/ev_op.func
 
-LOCAL_TBB_DIR=${LOCAL_INTEL_ONEAPI_DIR}/tbb/${LOCAL_TBB_VERSION}/
+LOCAL_TBB_DIR=${LOCAL_INTEL_ONEAPI_DIR}/tbb/${LOCAL_TBB_VERSION}
 
 if [[ ${USE_LOCAL_TBB} -eq 1 ]];
 then
