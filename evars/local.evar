@@ -6,4 +6,4 @@ source $HOME/.env/functions/pathremove.func
 source $HOME/.env/functions/ev_op.func
 
 
-LOCAL_INTEL_OPENAPI_DIR=$HOME/.local/share/intel/oneapi
+LOCAL_INTEL_ONEAPI_DIR=$HOME/.local/share/intel/oneapi
