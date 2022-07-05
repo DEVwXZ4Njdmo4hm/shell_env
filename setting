@@ -72,11 +72,11 @@ CHECK_GIT_STATUS_ON_STARTUP=(
 	$HOME/.env
 );
 
-# add local intel icx support
-USE_LOCAL_ICX=1
+# add local intel icx compilers support
+USE_LOCAL_ICX_COMPILERS=1
 
-# specify local icx version (default: latest)
-LOCAL_ICX_VERSION=latest
+# specify local icx compilers version (default: latest)
+LOCAL_ICX_COMPILERS_VERSION=latest
 
 # add local intel tbb library support
 USE_LOCAL_TBB=1
