@@ -4,3 +4,25 @@
 source $HOME/.env/setting
 source $HOME/.env/functions/pathremove.func
 source $HOME/.env/functions/ev_op.func
+
+LOCAL_TBB_DIR=${LOCAL_INTEL_ONEAPI_DIR}/tbb/${LOCAL_TBB_VERSION}/
+
+if [[ ${USE_LOCAL_TBB} -eq 1 ]];
+then
+	TBBROOT=${LOCAL_TBB_DIR}
+	TBB_TARGET_ARCH=intel64
+	TBB_TARGET_PLATFORM=linux
+	TBB_LIB_DIR="${TBBROOT}/lib/${TBB_TARGET_ARCH}/gcc4.8"
+	is_in ${TBB_LIB_DIR} LD_LIBRARY_PATH
+
+	if [[ $? -eq 1 ]];
+	then
+		LD_LIBRARY_PATH=${TBB_LIB_DIR}:$LD_LIBRARY_PATH
+	fi
+else
+	pathremove ${TBB_LIB_DIR} LD_LIBRARY_PATH
+	unset TBB_LIB_DIR
+	unset TBB_TARGET_PLATFORM
+	unset TBB_TARGET_ARCH
+	unset TBBROOT
+fi
