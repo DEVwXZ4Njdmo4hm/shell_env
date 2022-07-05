@@ -5,7 +5,7 @@ source $HOME/.env/setting
 source $HOME/.env/functions/pathremove.func
 source $HOME/.env/functions/ev_op.func
 
-ICX_COMPILERS_DIR=${LOCAL_INTEL_ONEAPI_DIR}/compiler/${LOCAL_ICX_COMPILERS_VERSION}/linux/
+ICX_COMPILERS_DIR=${LOCAL_INTEL_ONEAPI_DIR}/compiler/${LOCAL_ICX_COMPILERS_VERSION}/linux
 
 if [[ ${USE_LOCAL_ICX_COMPILERS} -eq 1 ]];
 then
