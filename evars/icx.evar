@@ -5,3 +5,29 @@ source $HOME/.env/setting
 source $HOME/.env/functions/pathremove.func
 source $HOME/.env/functions/ev_op.func
 
+ICX_COMPILERS_DIR=${LOCAL_INTEL_OPENAPI_DIR}/compiler/${LOCAL_ICX_COMPILERS_VERSION}/linux/
+
+if [[ ${USE_LOCAL_ICX_COMPILERS} -eq 1 ]];
+then
+	is_in ${ICX_COMPILERS_DIR}/bin PATH
+	if [[ $? -eq 1 ]];
+	then
+		PATH=${ICX_COMPILERS_DIR}/bin:$PATH
+	fi
+
+	is_in ${ICX_COMPILERS_DIR}/bin-llvm ${PATH}
+	if [[ $? -eq 1 ]];
+	then
+		PATH=${ICX_COMPILERS_DIR}/bin-llvm:$PATH
+	fi
+	
+	is_in ${ICX_COMPILERS_DIR}/lib LD_LIBRARY_PATH
+	if [[ $? -eq 1 ]];
+	then
+		LD_LIBRARY_PATH=${ICX_COMPILERS_DIR}/lib:$LD_LIBRARY_PATH
+	fi
+else
+	pathremove ${ICX_COMPILERS_DIR}/bin PATH
+	pathremove ${ICX_COMPILERS_DIR}/bin-llvm PATH
+	pathremove ${ICX_COMPILERS_DIR}/lib LD_LIBRARY_PATH
+fi
