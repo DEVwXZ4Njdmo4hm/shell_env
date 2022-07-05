@@ -71,3 +71,15 @@ REPOUPDATE_RETRY_MAX=10
 CHECK_GIT_STATUS_ON_STARTUP=(
 	$HOME/.env
 );
+
+# add local intel icx support
+USE_LOCAL_ICX=1
+
+# specify local icx version (default: latest)
+LOCAL_ICX_VERSION=latest
+
+# add local intel tbb library support
+USE_LOCAL_TBB=1
+
+# specify local intel tbb library version (default: latest)
+LOCAL_TBB_VERSION=latest
