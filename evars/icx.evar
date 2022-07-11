@@ -15,10 +15,13 @@ then
 		PATH=${ICX_COMPILERS_DIR}/bin:$PATH
 	fi
 
-	is_in ${ICX_COMPILERS_DIR}/bin-llvm ${PATH}
-	if [[ $? -eq 1 ]];
+	if [[ ${USE_LOCAL_ICX_CLANG} -eq 1 ]];
 	then
-		PATH=${ICX_COMPILERS_DIR}/bin-llvm:$PATH
+		is_in ${ICX_COMPILERS_DIR}/bin-llvm ${PATH}
+		if [[ $? -eq 1 ]];
+		then
+			PATH=${ICX_COMPILERS_DIR}/bin-llvm:$PATH
+		fi
 	fi
 	
 	is_in ${ICX_COMPILERS_DIR}/lib LD_LIBRARY_PATH
