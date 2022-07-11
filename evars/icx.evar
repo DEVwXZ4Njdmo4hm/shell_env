@@ -27,9 +27,15 @@ then
 	if [[ $? -eq 1 ]];
 	then
 		LD_LIBRARY_PATH=${ICX_COMPILERS_DIR}/lib:$LD_LIBRARY_PATH
+		LD_LIBRARY_PATH=${ICX_COMPILERS_DIR}/lib/x64:$LD_LIBRARY_PATH
+		LD_LIBRARY_PATH=${ICX_COMPILERS_DIR}/compiler/lib/intel64:$LD_LIBRARY_PATH
+		LD_LIBRARY_PATH=${ICX_COMPILERS_DIR}/compiler/lib/intel64_lin:$LD_LIBRARY_PATH
 	fi
 else
 	pathremove ${ICX_COMPILERS_DIR}/bin PATH
 	pathremove ${ICX_COMPILERS_DIR}/bin-llvm PATH
 	pathremove ${ICX_COMPILERS_DIR}/lib LD_LIBRARY_PATH
+	pathremove ${ICX_COMPILERS_DIR}/lib64 LD_LIBRARY_PATH
+	pathremove ${ICX_COMPILERS_DIR}/compiler/lib/intel64 LD_LIBRARY_PATH
+	pathremove ${ICX_COMPILERS_DIR}/compiler/lib/intel64_lin LD_LIBRARY_PATH
 fi
