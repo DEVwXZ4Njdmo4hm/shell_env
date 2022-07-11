@@ -1,6 +1,5 @@
 #!/bin/sh
 # Created by zijian at 2022-05-29 19:38:24
-source $HOME/.env/setting
 
 if [[ ${USE_DOTNET} -eq 1 ]];
 then
