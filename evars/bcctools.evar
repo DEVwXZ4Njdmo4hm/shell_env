@@ -1,7 +1,6 @@
 #!/bin/sh
 # Created by zijian at 2022-04-01 13:14:39
 
-source $HOME/.env/setting
 source $HOME/.env/functions/pathremove.func
 source $HOME/.env/functions/ev_op.func
 

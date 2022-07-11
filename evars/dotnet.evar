@@ -1,7 +1,6 @@
 #!/bin/sh
 # Created by zijian at 2022-04-01 13:45:41
 
-source $HOME/.env/setting
 source $HOME/.env/functions/pathremove.func
 
 DOTNET_VER=6.0
