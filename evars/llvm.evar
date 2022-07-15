@@ -4,7 +4,7 @@
 source $HOME/.env/functions/pathremove.func
 source $HOME/.env/functions/ev_op.func
 
-LLVM_HOME=/usr/lib/llvm/$LLVM_TOOLCHAIN_VER/bin
+LLVM_HOME=/usr/lib/llvm/${SYS_LLVM_TOOLCHAIN_VER}/bin
 
 if [[ ${USE_SYS_LLVM_TOOLCHAIN} -eq 1 && ${USE_LOCAL_ICX_CLANG} -eq 0 ]];
 then
