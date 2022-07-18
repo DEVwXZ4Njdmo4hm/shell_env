@@ -5,7 +5,7 @@ source $HOME/.env/functions/pathremove.func
 source $HOME/.env/functions/ev_op.func
 
 JDK_MAJOR_VERSION=17
-JAVA_HOME=/usr/bin/jvm/openjdk-bin-${JDK_MAJOR_VERSION}
+JAVA_HOME=/usr/lib/jvm/openjdk-bin-${JDK_MAJOR_VERSION}
 JFX_VERSION=17.0.1
 JFX_HOME=$HOME/.local/lib/javafx-sdk-${JFX_VERSION}
 
