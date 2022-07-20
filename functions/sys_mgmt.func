@@ -11,6 +11,13 @@ function repoupdate() {
 		return -1
 	fi
 
+	if [[ $# -eq 1 && $1 == "extra" ]];
+	then
+		sudo /sbin/XanmodVersionChecker EDGE &>/dev/null;
+		sudo /sbin/ThunderbirdBetaChecker &>/dev/null;
+	fi
+	
+
 	if [[ $USE_GENTOO -eq 1 ]];
 	then
 		while
