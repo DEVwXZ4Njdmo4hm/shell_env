@@ -13,6 +13,7 @@ function repoupdate() {
 
 	if [[ $# -eq 1 && $1 == "extra" ]];
 	then
+		echo "checking new xanmod-kernel and thunderbird beta."
 		sudo /sbin/XanmodVersionChecker EDGE &>/dev/null;
 		sudo /sbin/ThunderbirdBetaChecker &>/dev/null;
 	fi
