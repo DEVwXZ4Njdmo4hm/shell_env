@@ -14,14 +14,6 @@ function repoupdate() {
 		echo "	OK!"
 	fi
 
-	if [[ $# -eq 1 && $1 == "extra" ]];
-	then
-		echo "checking new xanmod-kernel and thunderbird beta."
-		sudo /usr/sbin/XanmodVersionChecker EDGE &>/dev/null;
-		sudo /usr/sbin/ThunderbirdBetaChecker &>/dev/null;
-	fi
-	
-
 	if [[ $USE_GENTOO -eq 1 ]];
 	then
 		while
