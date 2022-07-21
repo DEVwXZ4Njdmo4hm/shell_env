@@ -6,9 +6,12 @@ function repoupdate() {
 	/usr/bin/wget -q --spider google.com
 	if [[ $? -ne 0 ]];
 	then
-		echo "No active network!"
+		printf "	FAILED!\n"
+		echo "It seems you current have not any active network!"
 		echo "EXIT!"
 		return -1
+	else
+		printf "	OK!\n"
 	fi
 
 	if [[ $# -eq 1 && $1 == "extra" ]];
