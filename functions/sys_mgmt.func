@@ -23,7 +23,7 @@ function repoupdate() {
 	then
 		while
 			echo "updating repositories...";
-			echo "rsync from gentoo mirror? [y/n]:"
+			sudo echo "rsync from gentoo mirror? [y/n]:"
 			sudo /usr/sbin/emaint sync -A &>/dev/null;
 			[[ $? -ne 0 ]];
 		do
