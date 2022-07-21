@@ -28,6 +28,7 @@ function repoupdate() {
 			echo "Permission authentication is in progress."
 			sleep 0.5
 			sudo echo xxc &>/dev/null
+			if [[ $? -ne 0 ]]; then echo "Failed at permission authentication"; return 1; fi
 			echo "updating repositories..."
 			sleep 0.3
 			printf "rsync from gentoo mirror? [y/n]:"
