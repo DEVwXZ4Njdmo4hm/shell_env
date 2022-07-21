@@ -23,6 +23,9 @@ function repoupdate() {
 	then
 		while
 			echo "updating repositories...";
+			echo "Permission authentication is in progress."
+			sleep 0.5
+			sudo echo xxc &>/dev/null
 			sudo printf "rsync from gentoo mirror? [y/n]:"
 			sudo /usr/sbin/emaint sync -A &>/dev/null;
 			[[ $? -ne 0 ]];
