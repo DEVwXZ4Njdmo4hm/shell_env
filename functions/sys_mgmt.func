@@ -2,7 +2,7 @@
 # Created by zijian at 2022-06-28 14:30:10
 function repoupdate() {
 	local retry=0
-	echo "Testing network..."
+	printf "Testing network..."
 	/usr/bin/wget -q --spider google.com
 	if [[ $? -ne 0 ]];
 	then
