@@ -22,12 +22,20 @@ function repoupdate() {
 	if [[ $USE_GENTOO -eq 1 ]];
 	then
 		while
-			echo "updating repositories...";
 			echo "Permission authentication is in progress."
 			sleep 0.5
 			sudo echo xxc &>/dev/null
+			echo "updating repositories..."
+			sleep 0.3
 			printf "rsync from gentoo mirror? [y/n]:"
 			sudo /usr/sbin/emaint sync -A &>/dev/null;
+			if [[ $# -eq 1 && $1 == "extra" ]];
+			then
+				echo "now checking new xanmod kernel and thunderbird beta source"
+				sudo /usr/sbin/XanmodVersionChecker EDGE &>/dev/null
+				sudo /usr/sbin/ThunderbirdBetaChecker &>/dev/null
+			fi
+			
 			[[ $? -ne 0 ]];
 		do
 			echo "repositories update operate failed."
