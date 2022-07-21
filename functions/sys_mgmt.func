@@ -6,12 +6,12 @@ function repoupdate() {
 	/usr/bin/wget -q --spider google.com
 	if [[ $? -ne 0 ]];
 	then
-		printf "	FAILED!\n"
+		echo "	FAILED!"
 		echo "It seems you current have not any active network!"
 		echo "EXIT!"
 		return -1
 	else
-		printf "	OK!\n"
+		echo "	OK!"
 	fi
 
 	if [[ $# -eq 1 && $1 == "extra" ]];
@@ -59,28 +59,29 @@ function repoupdate() {
 		if [[ $? -eq 0 ]];
 		then
 			while
-				echo "Update local ebuild tree index..."
+				printf "Update local ebuild tree index..."
 				/usr/bin/eix-update &>/dev/null
 				[[ $? -ne 0 ]];
 			do
-				echo "local ebuild tree index update failed."
+				echo "	FAILED!"
 				retry=$(( ${retry} + 1 ))
 				[[ ${retry} -gt $REPOUPDATE_RETRY_MAX ]] && {
 					echo "Retry times have exceeded the limit, exit 3."
 					echo "repoupdate operation failed on local index update phase."
 					return 3
 				}
+				echo
 				echo "retrying..."
 			done
 
-			echo "Successfully update local ebuilds index!"
+			echo "	OK!"
 			local retry=0
 			while
-				echo "Update remote ebuild tree index."
+				printf "Updating remote ebuild tree index..."
 				/usr/bin/eix-remote update &>/dev/null
 				[[ $? -ne 0 ]];
 			do
-				echo "remote ebuilds tree index update failed."
+				echo "	FAILED!"
 				retry=$(( ${retry} + 1 ))
 				[[ ${retry} -gt $REPOUPDATE_RETRY_MAX ]] && {
 					echo "Retry times have exceeded the limit, exit 4."
@@ -90,7 +91,7 @@ function repoupdate() {
 				echo "retrying"
 			done
 
-			echo "Successfully updated remote ebuilds index!"
+			echo "	OK!"
 		else
 			echo "It seems eix is not installed on this machine."
 			echo "emerge eix if you want to get better package query experience."
