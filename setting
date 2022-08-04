@@ -85,7 +85,7 @@ USE_LOCAL_TBB=1
 LOCAL_TBB_VERSION=latest
 
 # enable local intel openAPI clang compiler
-USE_LOCAL_ICX_CLANG=1
+USE_LOCAL_ICX_CLANG=0
 
 # enable local intel MPI library.
 USE_LOCAL_INTEL_MPI_LIB=1
