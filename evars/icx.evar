@@ -58,4 +58,3 @@ else
 	pathremove ${ICX_COMPILERS_DIR}/compiler/lib/intel64_lin LD_LIBRARY_PATH
 	pathremove ${INTEL_MPI_DIR}/lib LD_LIBRARY_PATH
 fi
-\
