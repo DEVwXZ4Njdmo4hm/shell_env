@@ -5,6 +5,7 @@ source $HOME/.env/functions/pathremove.func
 source $HOME/.env/functions/ev_op.func
 
 ICX_COMPILERS_DIR=${LOCAL_INTEL_ONEAPI_DIR}/compiler/${LOCAL_ICX_COMPILERS_VERSION}/linux
+INTEL_MPI_DIR=${LOCAL_INTEL_ONEAPI_DIR}/mpi/${LOCAL_ICX_COMPILERS_VERSION}
 
 if [[ ${USE_LOCAL_ICX_COMPILERS} -eq 1 ]];
 then
@@ -34,28 +35,26 @@ then
 
 	if [[ ${USE_LOCAL_INTEL_MPI_LIB} -eq 1 ]];
 	then
-		is_in ${LOCAL_INTEL_ONEAPI_DIR}/mpi/${LOCAL_ICX_COMPILERS_VERSION}/bin PATH
-		
+		is_in ${INTEL_MPI_DIR}/bin PATH
 		if [[ $? -eq 1 ]];
 		then
-			PATH=${LOCAL_INTEL_ONEAPI_DIR}/mpi/${LOCAL_ICX_COMPILERS_VERSION}/bin：$PATH
+			PATH=${INTEL_MPI_DIR}/bin：$PATH
 		fi
 
-		is_in ${LOCAL_INTEL_ONEAPI_DIR}/mpi/${LOCAL_ICX_COMPILERS_VERSION}/lib LD_LIBRARY_PATH
-
+		is_in ${INTEL_MPI_DIR}/lib LD_LIBRARY_PATH
 		if [[ $? -eq 1 ]];
 		then
-			LD_LIBRARY_PATH=${LOCAL_INTEL_ONEAPI_DIR}/mpi/${LOCAL_ICX_COMPILERS_VERSION}/lib:$LD_LIBRARY_PATH
+			LD_LIBRARY_PATH=${INTEL_MPI_DIR}/lib:$LD_LIBRARY_PATH
 		fi
 	fi
 	
 else
 	pathremove ${ICX_COMPILERS_DIR}/bin PATH
 	pathremove ${ICX_COMPILERS_DIR}/bin-llvm PATH
-	pathremove ${LOCAL_INTEL_ONEAPI_DIR}/mpi/${LOCAL_ICX_COMPILERS_VERSION}/bin PATH
+	pathremove ${INTEL_MPI_DIR}/bin PATH
 	pathremove ${ICX_COMPILERS_DIR}/lib LD_LIBRARY_PATH
 	pathremove ${ICX_COMPILERS_DIR}/lib64 LD_LIBRARY_PATH
 	pathremove ${ICX_COMPILERS_DIR}/compiler/lib/intel64 LD_LIBRARY_PATH
 	pathremove ${ICX_COMPILERS_DIR}/compiler/lib/intel64_lin LD_LIBRARY_PATH
-	pathremove ${LOCAL_INTEL_ONEAPI_DIR}/mpi/${LOCAL_ICX_COMPILERS_VERSION}/lib LD_LIBRARY_PATH
+	pathremove ${INTEL_MPI_DIR}/lib LD_LIBRARY_PATH
 fi
