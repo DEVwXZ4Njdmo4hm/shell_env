@@ -104,7 +104,7 @@ function viewevar() {
 	then
 		/usr/bin/bat -l sh --file-name=$1.evar <<< $(/bin/cat $evar)
 	else
-		echo -e "Specified evar: ${RED}${BOLD}"$1"${NoColor}${NORM} does not exist in user environment control directory."
+		echo -e "Specified evar: ${RED}${BOLD}'$1'${NoColor}${NORM} does not exist in user environment control directory."
 		echo "Please use \"listevar\" to corret input, or use \"addevar $1\" to create it."
 		return 3
 	fi
