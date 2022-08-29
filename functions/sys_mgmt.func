@@ -30,7 +30,7 @@ function repoupdate() {
 				if [[ $? -eq 0 ]];
 				then
 					echo "now checking new xanmod kernel and thunderbird beta source"
-					sudo /usr/sbin/XanmodVersionChecker &>/dev/null
+					sudo /usr/sbin/XanmodVersionChecker EDGE &>/dev/null
 					sudo /usr/sbin/ThunderbirdBetaChecker &>/dev/null
 				else
 					$?=1
