@@ -1,6 +1,7 @@
 #!/bin/sh
 # Created by zijian at 2022-06-28 14:30:10
 function repoupdate() {
+	source "${HOME}/.env/functions/macro/colors"
 	local retry=0
 	printf "Testing network..."
 	/usr/bin/wget -q --spider google.com
@@ -14,6 +15,7 @@ function repoupdate() {
 		echo "	OK!"
 	fi
 
+	mirror=$(sed -n '/^sync-uri = /{s/^sync-uri = //;p}' /etc/portage/repos.conf/gentoo.conf)
 	if [[ $USE_GENTOO -eq 1 ]];
 	then
 		while
@@ -23,7 +25,7 @@ function repoupdate() {
 			if [[ $? -ne 0 ]]; then echo "Failed at permission authentication"; return 1; fi
 			echo "updating repositories..."
 			sleep 0.3
-			printf "rsync from gentoo mirror? [y/n]:"
+			echo -en "rsync ebuild tree from ${RED}${BOLD}${mirror}${NoColor}${NORM}? [y/n]:"
 			sudo /usr/sbin/emaint sync -A &>/dev/null;
 			if [[ $# -eq 1 && $1 == "extra" ]];
 			then
