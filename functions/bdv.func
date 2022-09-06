@@ -23,7 +23,7 @@ then
 			retry_count=$(( $retry_count + 1 ))
 
 			if [[ $3 -gt -1 && $retry_count -eq $3 ]]; then
-				echo "errors too much,"
+				echo "errors too much."
 				return 3
 			fi
 		done
