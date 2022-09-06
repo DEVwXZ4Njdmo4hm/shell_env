@@ -97,6 +97,6 @@ function repoupdate() {
 		fi
 	fi
 
-	echo -e "There are ${CYAN}${BOLD}$(wc -l <<< $(eix -u#))${NORM}${NoColor} softwares pacakges that can be upgraded."
+	echo -e "There are ${CYAN}${BOLD}$(wc -l <<< $(eix -u#))${NORM}${NoColor} software pacakges that can be upgraded."
 	return 0
 }
