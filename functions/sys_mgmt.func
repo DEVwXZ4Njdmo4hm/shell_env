@@ -96,6 +96,7 @@ function repoupdate() {
 			echo "emerge eix if you want to get better package query experience."
 		fi
 	fi
-	
+
+	echo -e "There are ${CYAN}${BOLD}$(wc -l <<< $(eix -u#))${NORM}${NoColor} that can be upgraded."
 	return 0
 }
