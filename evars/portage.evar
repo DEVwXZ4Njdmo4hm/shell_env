@@ -5,13 +5,15 @@ source $HOME/.env/functions/pathremove.func
 
 if [[ ${USE_GENTOO} -eq 1 ]];
 then
-	export PORTAGE="/etc/portage"
-	export PUSES="$PORTAGE/package.use"
-	export PENV="$PORTAGE/env"
-	export PMASK="$PORTAGE/package.mask"
+	PORTAGE="/etc/portage"
+	PUSES="$PORTAGE/package.use"
+	PENV="$PORTAGE/env"
+	PMASK="$PORTAGE/package.mask"
+	MAKECONF="$PORTAGE/make.conf"
 else
 	unset PORTAGE
 	unset PUSES
 	unset PENV
 	unset PMASK
+	unset MAKECONF
 fi
