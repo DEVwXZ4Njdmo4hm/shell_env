@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # but do not excute it!
+# haha
 
 if [[ ${UID} -ne 1000 ]]
 then
