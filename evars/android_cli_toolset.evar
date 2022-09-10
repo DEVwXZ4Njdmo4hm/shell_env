@@ -5,10 +5,10 @@ source $HOME/.env/functions/pathremove.func
 
 if [[ ${USE_ANDROID_CLI_TOOLSET} -eq 1 ]];
 then
-	export SDK_ROOT=${HOME}/.local/lib/android/sdk_root
-	export REPO_OS_OVERRIDE=linux
-	export ANDROID_CLI_TOOLS_HOME=$SDK_ROOT/cmdline-tools/latest
-	export AVD_HOME=${HOME}/.local/lib/android/avd_home
+	SDK_ROOT=${HOME}/.local/lib/android/sdk_root
+	REPO_OS_OVERRIDE=linux
+	ANDROID_CLI_TOOLS_HOME=$SDK_ROOT/cmdline-tools/latest
+	AVD_HOME=${HOME}/.local/lib/android/avd_home
 else
 	unset SDK_ROOT
 	unset REPO_OS_OVERRIDE
