@@ -10,7 +10,7 @@ then
 
 	if [[ $? -eq 1 ]];
 	then
-		export PATH=$HOME/.cargo/bin:$PATH
+		PATH=$HOME/.cargo/bin:$PATH
 	fi
 else
 	pathremove $HOME/.cargo/bin PATH
