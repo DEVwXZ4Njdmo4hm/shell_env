@@ -12,7 +12,7 @@ then
 	is_in ${LOCAL_ICU_HOME} LD_LIBRARY_PATH
 	if [[ $? -eq 1 ]];
 	then
-		export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${LOCAL_ICU_HOME}
+		LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${LOCAL_ICU_HOME}
 	fi
 else
 	pathremove ${LOCAL_ICU_HOME} LD_LIBRARY_PATH
