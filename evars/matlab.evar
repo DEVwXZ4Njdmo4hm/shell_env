@@ -13,7 +13,7 @@ then
 
 	if [[ $? -eq 1 ]];
 	then
-		export PATH=${MATLAB_HOME}/${MATLAB_VERSION}/bin:$PATH
+		PATH=${MATLAB_HOME}/${MATLAB_VERSION}/bin:$PATH
 	fi
 elif [[ ${USE_MATALB} -eq 0 ]];
 then
