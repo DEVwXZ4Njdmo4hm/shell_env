@@ -12,7 +12,7 @@ then
 
 	if [[ $? -eq 1 ]];
 	then
-		export PATH=$PATH:${RISCV_TOOLCHAIN_HOME}/bin
+		PATH=$PATH:${RISCV_TOOLCHAIN_HOME}/bin
 	fi
 else
 	pathremove $RISCV_TOOLCHAIN_HOME/bin PATH
