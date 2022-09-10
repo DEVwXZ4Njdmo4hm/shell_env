@@ -3,5 +3,5 @@
 
 source $HOME/.env/functions/pathremove.func
 
-export LD_LIBRARY_PATH=/lib:/lib64:/usr/lib:/usr/lib64:/usr/local/lib:/usr/local/lib64:$LD_LIBRARY_PATH
-export PATH=$HOME/.local/bin:$PATH
+LD_LIBRARY_PATH=/lib:/lib64:/usr/lib:/usr/lib64:/usr/local/lib:/usr/local/lib64:$LD_LIBRARY_PATH
+PATH=$HOME/.local/bin:$PATH
