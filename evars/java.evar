@@ -15,7 +15,7 @@ then
 
 	if [[ $? -eq 1 ]];
 	then
-		export LD_LIBRARY_PATH=${JFX_HOME}/lib:$LD_LIBRARY_PATH
+		LD_LIBRARY_PATH=${JFX_HOME}/lib:$LD_LIBRARY_PATH
 	fi
 else
 	pathremove ${JFX_HOME}/lib LD_LIBRARY_PATH
