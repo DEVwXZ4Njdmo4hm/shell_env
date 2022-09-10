@@ -12,7 +12,7 @@ then
 
 	if [[ $? -eq 1 ]];
 	then
-		export LD_LIBRARY_PATH=${OPENSSL3_HOME}/lib64:$LD_LIBRARY_PATH
+		LD_LIBRARY_PATH=${OPENSSL3_HOME}/lib64:$LD_LIBRARY_PATH
 	fi
 else
 	pathremove ${OPENSSL3_HOME}/lib64 LD_LIBRARY_PATH
