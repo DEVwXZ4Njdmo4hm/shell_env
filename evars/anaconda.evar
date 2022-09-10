@@ -17,7 +17,7 @@ then
 	is_in ${CONDA_PY_PATH} PATH
 	if [[ $? -eq 1 ]];
 	then
-		export PATH=${CONDA_PY_PATH}:$PATH
+		PATH=${CONDA_PY_PATH}:$PATH
 	fi
 elif [[ ${USE_ANACONDA} -eq 0 ]]
 then
@@ -30,7 +30,7 @@ then
 	is_in ${ANACONDA_HOME}/condabin PATH
 	if [[ $? -eq 1 ]];
 	then
-		export PATH=${ANACONDA_HOME}/condabin:$PATH
+		PATH=${ANACONDA_HOME}/condabin:$PATH
 	fi
 elif [[ ${USE_CONDA} -eq 0 ]]
 then
