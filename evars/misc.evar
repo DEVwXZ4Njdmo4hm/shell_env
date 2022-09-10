@@ -3,9 +3,9 @@
 
 source $HOME/.env/functions/pathremove.func
 
-export USER_COMMIT="$(echo "$(getent passwd $USER)" | cut -d ':' -f 5)"
-export EDITOR="/usr/bin/${USE_EDITOR}"
-export OPENCV_LOG_LEVEL=ERROR
-export USERIPSLOG=$HOME/.ipslog
-export vmlinuz="/usr/src/linux/arch/$(uname -m)/boot/bzImage"
-export SCREEN_RESOLVE=1920x1080
+USER_COMMIT="$(echo "$(getent passwd $USER)" | cut -d ':' -f 5)"
+EDITOR="/usr/bin/${USE_EDITOR}"
+OPENCV_LOG_LEVEL=ERROR
+USERIPSLOG=$HOME/.ipslog
+vmlinuz="/usr/src/linux/arch/$(uname -m)/boot/bzImage"
+SCREEN_RESOLVE=1920x1080
