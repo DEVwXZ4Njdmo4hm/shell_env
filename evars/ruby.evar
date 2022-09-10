@@ -6,15 +6,15 @@ source $HOME/.env/functions/ev_op.func
 
 if [[ ${USE_USERGEMHOME} -eq 1 ]];
 then
-	export GEM_HOME=$HOME/.local/share/gem/ruby/${RUBY_VERSION}
+	GEM_HOME=$HOME/.local/share/gem/ruby/${RUBY_VERSION}
 
 	is_in ${GEM_HOME}/bin PATH
 
 	if [[ $? -eq 1 ]];
 	then
-		export PATH=${GEM_HOME}/bin:$PATH
+		PATH=${GEM_HOME}/bin:$PATH
 	fi
 else
 	pathremove ${GEM_HOME}/bin PATH
-	export GEM_HOME=/usr/lib64/ruby/gems/${RUBY_VERSION}/gems
+	GEM_HOME=/usr/lib64/ruby/gems/${RUBY_VERSION}/gems
 fi
