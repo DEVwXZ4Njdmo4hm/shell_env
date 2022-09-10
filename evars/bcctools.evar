@@ -12,7 +12,7 @@ then
 
 	if [[ $? -eq 1 ]];
 	then
-		export PATH=${BCC_HOME}/tools:$PATH
+		PATH=${BCC_HOME}/tools:$PATH
 	fi
 else
 	pathremove ${BCC_HOME} PATH
