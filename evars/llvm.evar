@@ -12,7 +12,7 @@ then
 
 	if [[ $? -eq 1 ]];
 	then
-		export PATH=$LLVM_HOME:$PATH
+		PATH=$LLVM_HOME:$PATH
 	fi
 else
 	pathremove ${LLVM_HOME} PATH
