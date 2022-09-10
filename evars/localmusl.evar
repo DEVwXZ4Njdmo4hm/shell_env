@@ -12,14 +12,14 @@ then
 
 	if [[ $? -eq 1 ]];
 	then
-		export PATH=${MUSL_HOME}/bin:$PATH
+		PATH=${MUSL_HOME}/bin:$PATH
 	fi
 
 	is_in ${MUSL_HOME}/lib LD_LIBRARY_PATH
 
 	if [[ $? -eq 1 ]];
 	then
-		export LD_LIBRARY_PATH=${MUSL_HOME}/lib:$LD_LIBRARY_PATH
+		LD_LIBRARY_PATH=${MUSL_HOME}/lib:$LD_LIBRARY_PATH
 	fi
 	
 else
