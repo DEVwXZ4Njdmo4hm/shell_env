@@ -73,19 +73,19 @@ CHECK_GIT_STATUS_ON_STARTUP=(
 );
 
 # enable local intel icx compilers
-USE_LOCAL_ICX_COMPILERS=1
+USE_LOCAL_ICX_COMPILERS=0
 
 # specify local icx compilers version (default: latest)
 LOCAL_ICX_COMPILERS_VERSION=latest
 
 # enable local intel tbb library
-USE_LOCAL_TBB=1
+USE_LOCAL_TBB=0
 
 # specify local intel tbb library version (default: latest)
 LOCAL_TBB_VERSION=latest
 
 # enable local intel openAPI clang compiler
-USE_LOCAL_ICX_CLANG=1
+USE_LOCAL_ICX_CLANG=0
 
 # enable local intel MPI library.
-USE_LOCAL_INTEL_MPI_LIB=1
+USE_LOCAL_INTEL_MPI_LIB=0
