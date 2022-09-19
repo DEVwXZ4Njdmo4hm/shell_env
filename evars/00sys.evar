@@ -5,3 +5,4 @@ source $HOME/.env/functions/pathremove.func
 
 LD_LIBRARY_PATH=/lib:/lib64:/usr/lib:/usr/lib64:/usr/local/lib:/usr/local/lib64:$LD_LIBRARY_PATH
 PATH=$HOME/.local/bin:$PATH
+OPENCV_LOG_LEVEL=ERR
