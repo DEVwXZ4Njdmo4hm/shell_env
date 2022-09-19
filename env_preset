@@ -11,16 +11,16 @@ source $HOME/.env/setting
 
 if [[ $(/usr/bin/tty) =~ "pts" ]]
 then
-	BAT_THEME="Coldark-Cold"
+	BAT_THEME=Coldark-Cold
 	alias menuconfig="sudo /usr/bin/make MENUCONFIG_COLOR=mono menuconfig"
 elif [[ $(/usr/bin/tty) =~ "tty" ]]
 then
-	BAT_THEME="gruvbox-white"
+	BAT_THEME=gruvbox-white
 	alias menuconfig="sudo /usr/bin/make MENUCONFIG_COLOR=blackbg menuconfig"
 else
 	echo "I do not know what device are you using, bat_theme set to \"gruvbox\""
 	echo "Set MENUCONFIG_COLOR to default."
-	BAT_THEME="gruvbox"
+	BAT_THEME=gruvbox
 	alias menuconfig="sudo /usr/bin/make menuconfig"
 fi
 
