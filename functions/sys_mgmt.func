@@ -27,9 +27,9 @@ function repoupdate() {
 			sleep 0.3
 			echo -en "sync remote ebuild tree from ${RED}${BOLD}${mirror}${NoColor}${NORM}? [y/n]:"
 			sudo /usr/sbin/emaint sync -A &>/dev/null;
-			if [[ $# -eq 1 && $1 == "extra" ]];
+			if [[ $? -eq 0 ]];
 			then
-				if [[ $? -eq 0 ]];
+				if [[ $# -eq 1 && $1 == "extra" ]];
 				then
 					echo "now checking new xanmod kernel and thunderbird beta source"
 					sudo /usr/sbin/XanmodVersionChecker &>/dev/null
