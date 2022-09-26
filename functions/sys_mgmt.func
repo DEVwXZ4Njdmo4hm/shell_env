@@ -29,12 +29,14 @@ function repoupdate() {
 			sudo /usr/sbin/emaint sync -A &>/dev/null;
 			if [[ $? -eq 0 ]];
 			then
+				echo "successfully sync remote ebuild tree!"
 				if [[ $# -eq 1 && $1 == "extra" ]];
 				then
 					echo "now checking new xanmod kernel and thunderbird beta source"
 					sudo /usr/sbin/XanmodVersionChecker &>/dev/null
 					sudo /usr/sbin/ThunderbirdBetaChecker &>/dev/null
 				else
+					echo "failed on syncing remote ebuild tree, retrying."
 					$?=1
 				fi
 			fi
