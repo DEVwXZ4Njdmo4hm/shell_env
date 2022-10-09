@@ -112,6 +112,26 @@ function repoupdate() {
 		do
 			echo "Unrecognized input, try again."
 		done
+
+		if [[ $reply =~ ^[Yy] ]];
+		then
+			retry=0
+			while
+				op_flag=0
+				echo "Permission authentication is in progress..."
+				sudo echo "xxz" &>/dev/null
+				[[ $? -eq 0 ]] && op_flag=1
+				[[ $op_flag -eq 0 ]]
+			do
+				retry=$(( ${retry} + 1 ))
+				if [[ $retry -gt $REPOUPDATE_RETRY_MAX ]];
+				then
+					echo "Retry times has exceeded the limit, exit with 5."
+					return 5
+				fi
+
+				echo "Failed at permission authentication, retry."
+			done
 	fi
 			
 	return 0
