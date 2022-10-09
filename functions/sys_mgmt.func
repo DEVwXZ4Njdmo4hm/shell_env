@@ -113,7 +113,7 @@ function repoupdate() {
 			echo "Unrecognized input, try again."
 		done
 
-		if [[ $reply =~ ^[Yy] ]];
+		if [[ $reply =~ ^[Yy]$ ]];
 		then
 			while
 				op_flag=0
