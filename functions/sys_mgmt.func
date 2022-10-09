@@ -128,6 +128,7 @@ function repoupdate() {
 					echo "Retry times has exceeded the limit, exit with 5."
 					return 5
 				fi
+			done
 		fi
 	fi	
 
