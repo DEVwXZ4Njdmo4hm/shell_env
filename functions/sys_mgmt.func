@@ -129,8 +129,7 @@ function repoupdate() {
 					return 5
 				fi
 		fi
+	fi	
 
-	fi
-			
 	return 0
 }
