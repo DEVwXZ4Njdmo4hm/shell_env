@@ -113,7 +113,7 @@ function repoupdate() {
 			echo "Unrecognized input, try again."
 		done
 
-		if [[ $reply =~ ^[Yy]$ ]];
+		if [[ $reply =~ ^[Yy] ]];
 		then
 			while
 				op_flag=0
@@ -128,9 +128,8 @@ function repoupdate() {
 					echo "Retry times has exceeded the limit, exit with 5."
 					return 5
 				fi
+		fi
 
-				echo "Failed at permission authentication, retry."
-			done
 	fi
 			
 	return 0
