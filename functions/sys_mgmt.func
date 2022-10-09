@@ -128,7 +128,17 @@ function repoupdate() {
 					echo "Retry times has exceeded the limit, exit with 5."
 					return 5
 				fi
+
+				echo "Failed at permission authentication, retry."
 			done
+
+			if [[ $op_flag -eq 1 ]];
+			then
+				echo "Performing system upgrade."
+				sudo /usr/bin/emerge -avquUDN world
+			fi
+		else
+			echo "You rejected system upgrade."
 		fi
 	fi	
 
