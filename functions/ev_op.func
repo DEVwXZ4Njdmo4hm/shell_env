@@ -32,7 +32,7 @@ function is_in() {
     if [[ $(/usr/bin/printenv $2) == *":$1:"* ]];
     then
 		return 0
-	elif [[ $(/usr/bin/printenv $2) == *" $1 "*]];
+	elif [[ $(/usr/bin/printenv $2) == *" $1 "* ]];
 	then
 		return 0
     elif [[ $(get_first $2) == $1 ]];
