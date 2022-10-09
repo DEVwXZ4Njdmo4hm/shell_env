@@ -1,9 +1,5 @@
 #!/bin/sh
 
-# When the number of packages that can be upgraded is greater 
-# than or equal to this value, repoupdate will suggest a system upgrade.
-REPOUPDATE_SUGGESTED_UPGRADE_PKG_COUNT=120
-
 # USE ANACONDA
 # shell will use anaconda python interpreter instead of system python if it set to 1
 USE_ANACONDA=1
@@ -69,6 +65,11 @@ USE_LOCAL_ICU=1
 
 # repoupdate command max re-try times.
 REPOUPDATE_RETRY_MAX=10
+
+# When the number of packages that can be upgraded is greater 
+# than or equal to this value, repoupdate will suggest a system upgrade.
+REPOUPDATE_SUGGESTED_UPGRADE_PKG_COUNT=120
+
 
 # check git status at shell startup.
 CHECK_GIT_STATUS_ON_STARTUP=(
