@@ -105,6 +105,13 @@ function repoupdate() {
 	then
 		echo "Due to upgradable software in your system has been greater than or equal to ${REPOUPDATE_SUGGESTED_UPGRADE_PKG_COUNT}."
 		echo "repoupdate recommands that you do a complete system upgrade."
+
+		while
+			read -p "Do you want to do it? [Y/n]: " reply
+			[[ ! $reply =~ ^[YyNn"YES""Yes""yes""NO""No""no"]$ ]]
+		do
+			echo "Unrecognized input, try again."
+		done
 	fi
 			
 	return 0
