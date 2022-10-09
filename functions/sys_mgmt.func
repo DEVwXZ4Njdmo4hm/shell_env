@@ -132,10 +132,9 @@ function repoupdate() {
 				echo "Failed at permission authentication, retry."
 			done
 
-			[[ op_flat -eq 1 ]] && sudo /usr/bin/emerge -avquUDN world
+			[[ op_flat -eq 1 ]] && sys_update
 		else
 			echo "You rejected system upgrade."
-		fi
-				
+		fi				
 	return 0
 }
