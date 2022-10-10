@@ -68,7 +68,7 @@ REPOUPDATE_RETRY_MAX=10
 
 # When the number of packages that can be upgraded is greater 
 # than or equal to this value, repoupdate will suggest a system upgrade.
-REPOUPDATE_SUGGESTED_UPGRADE_PKG_COUNT=120
+REPOUPDATE_SUGGESTED_UPGRADE_PKG_COUNT=50
 
 
 # check git status at shell startup.
