@@ -117,8 +117,8 @@ function repoupdate() {
 			
 			#[[ ! $reply =~ ^[YyNn"YES""Yes""yes""NO""No""no"]$ ]]
 			reply=$( echo $reply | tr '[:upper:]' '[:lower:]' )
-			[[ ! $reply =~ ^[yn]$ ]] 	||
-			[[ $reply != "yes" ]]		||
+			[[ ! $reply =~ ^[yn]$ ]] 	&&
+			[[ $reply != "yes" ]]		&&
 			[[ $reply != "no" ]]
 		do
 			echo "Unrecognized input :\"$replay\", try again."
