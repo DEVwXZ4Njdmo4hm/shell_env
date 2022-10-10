@@ -110,7 +110,7 @@ function repoupdate() {
 			if [[ $SHELL =~ bash ]];
 			then
 				read -p "Do you want to do it? [Y/n]: " reply
-			elif [[ $SHELL = zsh ]];
+			elif [[ $SHELL =~ zsh ]];
 			then
 				read "reply?Do you want to do it? [Y/n]: "
 			fi
