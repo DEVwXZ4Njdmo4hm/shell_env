@@ -35,10 +35,10 @@ function repoupdate() {
 					echo "now checking new xanmod kernel and thunderbird beta source"
 					sudo /usr/sbin/XanmodVersionChecker &>/dev/null
 					sudo /usr/sbin/ThunderbirdBetaChecker &>/dev/null
-				else
-					echo "failed on syncing remote ebuild tree, retrying."
-					$?=1
 				fi
+			else
+				echo "failed on syncing remote ebuild tree, retrying."
+				$?=1
 			fi
 			
 			[[ $? -ne 0 ]];
