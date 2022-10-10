@@ -121,7 +121,7 @@ function repoupdate() {
 			[[ $reply != "yes" ]]		&&
 			[[ $reply != "no" ]]
 		do
-			echo "Unrecognized input :\"$replay\", try again."
+			echo "Unrecognized input :\"$reply\", try again."
 		done
 
 		if [[ $reply =~ ^[Yy] ]];
