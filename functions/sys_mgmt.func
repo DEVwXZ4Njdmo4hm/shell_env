@@ -107,10 +107,10 @@ function repoupdate() {
 		echo "repoupdate recommands that you do a complete system upgrade."
 
 		while
-			if [[ $SHELL =~ bash ]];
+			if [[ ! -z $BASH_VERSION ]];
 			then
 				read -p "Do you want to do it? [Y/n]: " reply
-			elif [[ $SHELL =~ zsh ]];
+			elif [[ ! -z $ZSH_VERSION ]];
 			then
 				read "reply?Do you want to do it? [Y/n]: "
 			fi
