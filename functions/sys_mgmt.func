@@ -119,7 +119,7 @@ function repoupdate() {
 			reply=$( echo $reply | tr '[:upper:]' '[:lower:]' )
 			[[ ! $reply =~ ^[yn]$ ]] 	||
 			[[ $reply != "yes" ]]		||
-			[[ $reply != "no" ]]		||
+			[[ $reply != "no" ]]
 		do
 			echo "Unrecognized input :\"$replay\", try again."
 		done
