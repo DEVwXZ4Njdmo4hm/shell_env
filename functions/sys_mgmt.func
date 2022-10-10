@@ -107,7 +107,14 @@ function repoupdate() {
 		echo "repoupdate recommands that you do a complete system upgrade."
 
 		while
-			read -p "Do you want to do it? [Y/n]: " reply
+			if [[ $0 = "bash" ]];
+			then
+				read -p "Do you want to do it? [Y/n]: " reply
+			elif [[ $0 = "zsh" ]];
+			then
+				read "reply?Do you want to do it? [Y/n]: "
+			fi
+			
 			[[ ! $reply =~ ^[YyNn"YES""Yes""yes""NO""No""no"]$ ]]
 		do
 			echo "Unrecognized input, try again."
