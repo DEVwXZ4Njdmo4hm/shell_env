@@ -16,7 +16,7 @@ function addrdpic() {
 		wget "http://api.iw233.cn/api.php?sort=sw" -O "${save_dir}/${index}.jpg" &>/dev/null
 		if [[ $? -eq 0 ]];
 		then
-			echo "Successfully fetched ${i}.jpg, [${i}/${count}]"
+			echo "Successfully fetched ${index}.jpg, [${index}/${count}]"
 			index=$(( $index + 1 ))
 		else
 			rm -f ${save_dir}/${index}.jpg
@@ -43,7 +43,7 @@ function addbspic() {
 		wget "http://api.iw233.cn/api.php?sort=swbs" -O "${save_dir}/${index}.jpg" &>/dev/null
 		if [[ $? -eq 0 ]];
 		then
-			echo "Successfully fetched ${i}.jpg, [${i}/${count}]"
+			echo "Successfully fetched ${index}.jpg, [${index}/${count}]"
 			index=$(( $index + 1 ))
 		else
 			rm -f ${save_dir}/${index}.jpg
@@ -70,7 +70,7 @@ function addhspic() {
 		wget "http://api.iw233.cn/api.php?sort=swhs" -O "${save_dir}/${index}.jpg" &>/dev/null
 		if [[ $? -eq 0 ]];
 		then
-			echo "Successfully fetched ${i}.jpg, [${i}/${count}]"
+			echo "Successfully fetched ${index}.jpg, [${index}/${count}]"
 			index=$(( $index + 1 ))
 		else
 			rm -f ${save_dir}/${index}.jpg
