@@ -169,7 +169,11 @@ function repoupdate() {
 			if [[ ! -z ${REPOUPDATE_ALWAYS_UPDATE} && ${#always_update[@]} -gt 0 ]];
 			then
 				echo "According to user\`s environment settings, repoupdate will update the following software."
-				echo ${always_update}
+				for i in ${always_update};
+				do
+					echo "${RED}${BOLD}${i}${NORM}${NoColor}"
+				done
+				
 				while
 					op_flag=0
 					echo "Permission authentication is in progress..."
@@ -188,7 +192,7 @@ function repoupdate() {
 
 				if [[ $op_flag -eq 1 ]];
 				then
-					echo "Performing system upgrade."
+					echo "Performing software(s) upgrade."
 					sudo /usr/bin/emerge -avuqUDN1 ${always_update}
 				fi
 			fi
@@ -197,7 +201,11 @@ function repoupdate() {
 		if [[ ! -z ${REPOUPDATE_ALWAYS_UPDATE} && ${#always_update[@]} -gt 0 ]];
 		then
 			echo "According to user\`s environment settings, repoupdate will update the following software."
-			echo ${always_update}
+			for i in ${always_update};
+			do
+				echo "${RED}${BOLD}${i}${NORM}${NoColor}"
+			done
+			
 			while
 				op_flag=0
 				echo "Permission authentication is in progress..."
@@ -216,7 +224,7 @@ function repoupdate() {
 
 			if [[ $op_flag -eq 1 ]];
 			then
-				echo "Performing system upgrade."
+				echo "Performing software(s) upgrade."
 				sudo /usr/bin/emerge -qu1 ${always_update}
 			fi
 		fi
