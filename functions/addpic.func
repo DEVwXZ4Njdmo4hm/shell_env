@@ -2,10 +2,11 @@
 # Created by zijian at 2022-10-11 21:52:01
 function addrdpic() {
 	local top_dir=$HOME/pics/random
-
+	local new_dir=0
+	
 	if [[ -z $(ls $top_dir) ]];
 	then
-		mkdir "0"
+		mkdir "$new_dir"
 	else
 		local dir_arr=()
 		local old_ifs=$IFS
