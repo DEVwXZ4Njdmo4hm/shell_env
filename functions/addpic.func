@@ -20,7 +20,7 @@ function addrdpic() {
 		IFS=$'\n' 
 		local new_dir=$(( $( echo "${dir_arr[*]}" | sort -nr | head -n1 ) + 1 )) 
 		IFS=$old_ifs 
-		mkdir -pv "$new_dir"
+		mkdir -pv "${top_dir}/${new_dir}"
 	fi
 	
 	local max_retry=500
