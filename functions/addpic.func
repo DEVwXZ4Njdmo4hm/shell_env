@@ -23,13 +23,14 @@ function addrdpic() {
 		mkdir -pv "${top_dir}/${new_dir}"
 	fi
 	
-	local max_retry=500
 	local count=100
 	local index=1
 	local save_dir=${top_dir}/${new_dir}
 	local retry=0
 
 	[[ $# -eq 1 ]] && count=$1
+
+	local max_retry=$(( $count * 4 ))
 
 	echo "You are calling addrdpic, you requested amount of pictures is ${count}"
 	echo "Saving pictures to ${save_dir}"
@@ -75,12 +76,14 @@ function addbspic() {
 		IFS=$old_ifs 
 		mkdir -pv -pv "${top_dir}/${new_dir}"
 	fi
-	local max_retry=500 
+	
 	local count=100 
 	local index=1 
 	local save_dir=${top_dir}/${new_dir} 
 	local retry=0 
-	[[ $# -eq 1 ]] && count=$1 
+	[[ $# -eq 1 ]] && count=$1
+	local max_retry=$(( $count * 4 ))
+	
 	echo "You are calling addbspic, you requested amount of pictures is ${count}"
 	echo "Saving pictures to ${save_dir}"
 	echo
@@ -126,12 +129,14 @@ function addhspic() {
 		IFS=$old_ifs 
 		mkdir -pv -pv "${top_dir}/${new_dir}"
 	fi
-	local max_retry=500 
+	
 	local count=100 
 	local index=1 
 	local save_dir=${top_dir}/${new_dir} 
 	local retry=0 
-	[[ $# -eq 1 ]] && count=$1 
+	[[ $# -eq 1 ]] && count=$1
+	local max_retry=$(( $count * 4 ))
+	
 	echo "You are calling addhspic, you requested amount of pictures is ${count}"
 	echo "Saving pictures to ${save_dir}"
 	echo
