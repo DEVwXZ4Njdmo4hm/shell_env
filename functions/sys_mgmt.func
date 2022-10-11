@@ -105,12 +105,11 @@ function repoupdate() {
 	then
 		echo "Due to upgradable software in your system has been greater than or equal to ${REPOUPDATE_SUGGESTED_UPGRADE_PKG_COUNT}."
 		echo "repoupdate recommands that you do a complete system upgrade."
-		local i=0 
-		while [[ $i -lt 3 ]]
-		do
-			$HOME/.local/bin/play_2 /usr/share/sounds/freedesktop/stereo/message-new-instant.oga
-			local i=$(( $i + 1 )) 
-		done
+
+		# play ringtone for 3 times.
+		$HOME/.local/bin/play_2 /usr/share/sounds/freedesktop/stereo/message-new-instant.oga
+		$HOME/.local/bin/play_2 /usr/share/sounds/freedesktop/stereo/message-new-instant.oga
+		$HOME/.local/bin/play_2 /usr/share/sounds/freedesktop/stereo/message-new-instant.oga
 
 		while
 			if [[ ! -z $BASH_VERSION ]];
