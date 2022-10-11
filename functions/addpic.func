@@ -1,0 +1,27 @@
+#!/bin/sh
+# Created by zijian at 2022-10-11 21:52:01
+
+function addbspic() {
+	local max_retry=1000
+	local count=100
+	local index=1
+	local save_dir=$HOME/pics/bs
+	local retry=0
+
+	[[ $# -eq 1 ]] && count=$1
+
+	while [[ $index -le $count ]];
+	do
+		wget "http://api.iw233.cn/api.php?sort=swbs" -O "${save_dir}/${index}.jpg"
+		if [[ $? -eq 0 ]];
+		then
+			index=$(( $index + 1 ))
+		else
+			rm -f ${save_dir}/${index}.jpg
+			retry=$(( $retry + 1 ))
+			[[ $retry -eq $max_retry ]] && break
+		fi
+	done
+
+	echo "Done"
+}
