@@ -102,6 +102,15 @@ function repoupdate() {
 
 	local upgradable=$(wc -l <<< $(/usr/bin/eix "-u#"))
 	echo -e "There are ${CYAN}${BOLD}${upgradable}${NORM}${NoColor} software packages that can be upgraded."
+
+	for i in $(/usr/bin/eix -u#);
+	do
+		for j in $REPOUPDATE_ALWAYS_UPDATE;
+		do
+			[[ $i == $j ]] && always_update+=($i)
+		done
+	done
+	
 	if [[ ${upgradable} -ge $REPOUPDATE_SUGGESTED_UPGRADE_PKG_COUNT ]];
 	then
 		echo "Due to upgradable software in your system has been greater than or equal to ${REPOUPDATE_SUGGESTED_UPGRADE_PKG_COUNT}."
@@ -180,7 +189,7 @@ function repoupdate() {
 				if [[ $op_flag -eq 1 ]];
 				then
 					echo "Performing system upgrade."
-					sudo /usr/bin/emerge -avquUDN ${always_update}
+					sudo /usr/bin/emerge -avuqUDN1 ${always_update}
 				fi
 			fi
 		fi
