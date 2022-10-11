@@ -32,7 +32,10 @@ function addrdpic() {
 	[[ $# -eq 1 ]] && count=$1
 
 	echo "You are calling addrdpic, you requested amount of pictures is ${count}"
-	echo "Save to ${save_dir}"
+	echo "Saving pictures to ${save_dir}"
+	echo
+	echo
+	echo '-------------------------------------------'
 
 	while [[ $index -le $count ]];
 	do
@@ -49,6 +52,7 @@ function addrdpic() {
 		fi
 	done
 
+	echo '-------------------------------------------'
 	echo "Done"
 }
 
