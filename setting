@@ -75,6 +75,8 @@ REPOUPDATE_SUGGESTED_UPGRADE_PKG_COUNT=120
 REPOUPDATE_ALWAYS_UPDATE=(
 	"sys-kernel/xanmod-sources"
 	"sys-kernel/linux-firmware"
+	"sys-apps/portage"
+	"sys-apps/openrc"
 )
 
 # check git status at shell startup.
