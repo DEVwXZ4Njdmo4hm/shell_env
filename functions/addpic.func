@@ -7,7 +7,7 @@ function addrdpic() {
 	if [[ -z $(ls $top_dir) ]];
 	then
 		echo "empty directory."
-		mkdir "$new_dir"
+		mkdir "${top_dir}/${new_dir}"
 	else
 		local dir_arr=()
 		local old_ifs=$IFS
