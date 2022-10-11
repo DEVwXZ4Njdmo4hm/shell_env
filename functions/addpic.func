@@ -36,7 +36,7 @@ function addrdpic() {
 
 	while [[ $index -le $count ]];
 	do
-		/usr/bin/wget "http://api.iw233.cn/api.php?sort=sw" -O "${save_dir}/${index}.jpg"
+		/usr/bin/wget "http://api.iw233.cn/api.php?sort=sw" -O "${save_dir}/${index}.jpg" &>/dev/null
 		if [[ $? -eq 0 ]];
 		then
 			echo "Successfully fetched ${index}.jpg, [${index}/${count}]"
