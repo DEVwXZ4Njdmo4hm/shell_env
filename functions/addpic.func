@@ -43,7 +43,6 @@ function addrdpic() {
 			echo "Successfully fetched ${index}.jpg, [${index}/${count}]"
 			index=$(( $index + 1 ))
 		else
-			echo "Failed, re-fetch ${index}.jpg, [${index}/${count}]"
 			rm -f ${save_dir}/${index}.jpg
 		fi
 	done
@@ -92,7 +91,6 @@ function addbspic() {
 			echo "Successfully fetched ${index}.jpg, [${index}/${count}]"
 			index=$(( $index + 1 ))
 		else
-			echo "Failed, re-fetch ${index}.jpg, [${index}/${count}]"
 			rm -f ${save_dir}/${index}.jpg
 		fi
 	done
@@ -141,7 +139,6 @@ function addhspic() {
 			echo "Successfully fetched ${index}.jpg, [${index}/${count}]"
 			index=$(( $index + 1 ))
 		else
-			echo "Failed, re-fetch ${index}.jpg, [${index}/${count}]"
 			rm -f ${save_dir}/${index}.jpg
 		fi
 	done
