@@ -160,33 +160,31 @@ function repoupdate() {
 			if [[ ! -z ${REPOUPDATE_ALWAYS_UPDATE} && ${#always_update[@]} -gt 0 ]];
 			then
 				echo "According to user`s environment settings, repoupdate will update the following software."
-				echo ${always_update}
-				
-			while
-				op_flag=0
-				echo "Permission authentication is in progress..."
-				sudo echo &> /dev/null
-				[[ $? -eq 0 ]] && op_flag=1
-				[[ $op_flag -eq 0 ]]
-			do
-				retry=$(( ${retry} + 1 ))
-				if [[ $retry -gt $REPOUPDATE_RETRY_MAX ]];
+				echo ${always_update}			
+				while
+					op_flag=0
+					echo "Permission authentication is in progress..."
+					sudo echo &> /dev/null
+					[[ $? -eq 0 ]] && op_flag=1
+					[[ $op_flag -eq 0 ]]
+				do
+					retry=$(( ${retry} + 1 ))
+					if [[ $retry -gt $REPOUPDATE_RETRY_MAX ]];
+					then
+						echo "Retry times has exceeded the limit, exit with 5."
+						return 5
+					fi
+					echo "Failed at permission authentication, retry."
+				done
+
+				if [[ $op_flag -eq 1 ]];
 				then
-					echo "Retry times has exceeded the limit, exit with 5."
-					return 5
+					echo "Performing system upgrade."
+					sudo /usr/bin/emerge -avquUDN ${always_update}
 				fi
-
-				echo "Failed at permission authentication, retry."
-			done
-
-			if [[ $op_flag -eq 1 ]];
-			then
-				echo "Performing system upgrade."
-				sudo /usr/bin/emerge -avquUDN ${always_update}
 			fi
-
 		fi
-	fi	
-
+	fi
+	
 	return 0
 }
