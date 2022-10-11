@@ -70,6 +70,13 @@ REPOUPDATE_RETRY_MAX=10
 # than or equal to this value, repoupdate will suggest a system upgrade.
 REPOUPDATE_SUGGESTED_UPGRADE_PKG_COUNT=120
 
+# The packages specified here are automatically upgraded via repoupdate, 
+# regardless of whether they reach the prompt limit defined above
+REPOUPDATE_ALWAYS_UPDATE=(
+	"sys-kernel/xanmod-sources"
+	"sys-kernel/linux-firmware"
+)
+
 # check git status at shell startup.
 CHECK_GIT_STATUS_ON_STARTUP=(
 	$HOME/.env
