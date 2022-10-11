@@ -168,6 +168,7 @@ function repoupdate() {
 			echo "You rejected system upgrade."
 			if [[ ! -z ${REPOUPDATE_ALWAYS_UPDATE} && ${#always_update[@]} -gt 0 ]];
 			then
+				echo
 				echo "According to user\`s environment settings, repoupdate will update the following software."
 				echo '-------------------------------------------'
 				for i in ${always_update};
@@ -202,6 +203,7 @@ function repoupdate() {
 	else
 		if [[ ! -z ${REPOUPDATE_ALWAYS_UPDATE} && ${#always_update[@]} -gt 0 ]];
 		then
+			echo
 			echo "According to user\`s environment settings, repoupdate will update the following software."
 			echo '-------------------------------------------'
 			for i in ${always_update};
