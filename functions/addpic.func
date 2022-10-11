@@ -42,7 +42,7 @@ function addrdpic() {
 			echo "Successfully fetched ${index}.jpg, [${index}/${count}]"
 			index=$(( $index + 1 ))
 		else
-			echo "Failed, retrying..."
+			echo "Failed, re-fetch ${index}.jpg, [${index}/${count}]"
 			rm -f ${save_dir}/${index}.jpg
 			retry=$(( $retry + 1 ))
 			[[ $retry -eq $max_retry ]] && break
