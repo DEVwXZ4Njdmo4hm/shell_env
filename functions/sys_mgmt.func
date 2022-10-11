@@ -3,6 +3,7 @@
 function repoupdate() {
 	source "${HOME}/.env/functions/macro/colors"
 	local retry=0
+	local always_update=()
 	printf "Testing network..."
 	/usr/bin/wget -q --spider google.com
 	if [[ $? -ne 0 ]];
@@ -156,6 +157,15 @@ function repoupdate() {
 			fi
 		else
 			echo "You rejected system upgrade."
+			if [[ ! -z ${REPOUPDATE_ALWAYS_UPDATE} && ${#always_update[@]} -gt 0 ]];
+			then
+				echo "According to user`s environment settings, repoupdate will update the following software."
+				echo ${always_update}
+				
+				while
+					op_flag=0
+					echo
+				
 		fi
 	fi	
 
