@@ -1,23 +1,30 @@
 #!/bin/sh
 # Created by zijian at 2022-10-11 21:52:01
 function addrdpic() {
-	local dir_arr=()
-	local old_ifs=$IFS
-	
-	for i in $(ls $HOME/pics/random/);
-	do
-		dir_arr+=($i)
-	done
+	local top_dir=$HOME/pics/random
 
-	IFS=$'\n' 
-	local new_dir=$(( $( echo "${dir_arr[*]}" | sort -nr | head -n1 ) + 1 )) 
-	IFS=$old_ifs 
-	mkdir -pv "$new_dir"
+	if [[ -z $(ls $top_dir) ]];
+	then
+		mkdir "0"
+	else
+		local dir_arr=()
+		local old_ifs=$IFS
+	
+		for i in $(ls $top_dir/);
+		do
+			dir_arr+=($i)
+		done
+
+		IFS=$'\n' 
+		local new_dir=$(( $( echo "${dir_arr[*]}" | sort -nr | head -n1 ) + 1 )) 
+		IFS=$old_ifs 
+		mkdir -pv "$new_dir"
+	fi
 	
 	local max_retry=1000
 	local count=100
 	local index=1
-	local save_dir=$HOME/pics/random/${new_dir}
+	local save_dir=$top_dir/${new_dir}
 	local retry=0
 
 	[[ $# -eq 1 ]] && count=$1
