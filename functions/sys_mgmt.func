@@ -159,7 +159,7 @@ function repoupdate() {
 			echo "You rejected system upgrade."
 			if [[ ! -z ${REPOUPDATE_ALWAYS_UPDATE} && ${#always_update[@]} -gt 0 ]];
 			then
-				echo "According to user`s environment settings, repoupdate will update the following software."
+				echo "According to users environment settings, repoupdate will update the following software."
 				#echo ${always_update}
 				while
 					op_flag=0
