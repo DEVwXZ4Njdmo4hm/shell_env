@@ -9,6 +9,8 @@ function addrdpic() {
 
 	[[ $# -eq 1 ]] && count=$1
 
+	echo "You are calling addrdpic, you requested amount of pictures is ${count}"
+
 	while [[ $index -le $count ]];
 	do
 		wget "http://api.iw233.cn/api.php?sort=sw" -O "${save_dir}/${index}.jpg" &>/dev/null
