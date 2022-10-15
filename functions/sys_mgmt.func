@@ -234,6 +234,6 @@ function repoupdate() {
 				sudo /usr/bin/emerge -qu1 ${always_update}
 			fi
 		fi
-	fi	
+	fi
 	return 0
 }
