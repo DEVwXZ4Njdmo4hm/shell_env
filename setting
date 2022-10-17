@@ -70,8 +70,9 @@ REPOUPDATE_RETRY_MAX=10
 # than or equal to this value, repoupdate will suggest a system upgrade.
 REPOUPDATE_SUGGESTED_UPGRADABLE_QUANTITY=120
 
-# The packages specified here are automatically upgraded via repoupdate, 
-# regardless of whether they reach the prompt limit defined above
+# The packages specified here are always automatically upgraded via repoupdate, 
+# when eix detected updates of them, regardless of whether they reach the prompt 
+# limit defined above.
 REPOUPDATE_ALWAYS_UPDATE=(
 	"sys-kernel/xanmod-sources"
 	"sys-kernel/linux-firmware"
