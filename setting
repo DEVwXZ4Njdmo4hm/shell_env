@@ -66,9 +66,9 @@ USE_LOCAL_ICU=1
 # repoupdate command max re-try times.
 REPOUPDATE_RETRY_MAX=10
 
-# When the number of packages that can be upgraded is greater 
+# When the quantity of packages that can be upgraded is greater 
 # than or equal to this value, repoupdate will suggest a system upgrade.
-REPOUPDATE_SUGGESTED_UPGRADABLE_QUANITY=120
+REPOUPDATE_SUGGESTED_UPGRADABLE_QUANTITY=120
 
 # The packages specified here are automatically upgraded via repoupdate, 
 # regardless of whether they reach the prompt limit defined above
