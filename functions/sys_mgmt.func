@@ -111,9 +111,9 @@ function repoupdate() {
 		done
 	done
 	
-	if [[ ${upgradable} -ge $REPOUPDATE_SUGGESTED_UPGRADABLE_QUANITY ]];
+	if [[ ${upgradable} -ge $REPOUPDATE_SUGGESTED_UPGRADABLE_QUANTITY ]];
 	then
-		echo "Due to upgradable software in your system has been greater than or equal to ${REPOUPDATE_SUGGESTED_UPGRADABLE_QUANITY}."
+		echo "Due to upgradable software in your system has been greater than or equal to ${REPOUPDATE_SUGGESTED_UPGRADABLE_QUANTITY}."
 		echo "repoupdate recommands that you do a complete system upgrade."
 
 		# play ringtone for 3 times.
