@@ -12,6 +12,7 @@ function net_test() {
 	then
 		echo "wget does not exist, install it to /usr/bin."
 		return -2
+	fi
 
 	case $1 in
 		"global")
@@ -23,8 +24,8 @@ function net_test() {
 					/usr/bin/wget -q --spider baidu.com
 					return $?
 					;;
-		*)
-					echo "Unknown option: $1"
-					return -3
 	esac
+
+	echo "Unknown option: $1"
+	return -3
 }
