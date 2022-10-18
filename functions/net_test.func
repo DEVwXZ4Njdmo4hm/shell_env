@@ -1,0 +1,30 @@
+#!/bin/sh
+# Created by zijian at 2022-10-18 11:42:41
+
+function net_test() {
+	if [[ $# -ne 1 ]];
+	then
+		echo "Arguments error: required 1, got $#."
+		return -1
+	fi
+
+	if [[ -f /usr/bin/wget ]];
+	then
+		echo "wget does not exist, install it to /usr/bin."
+		return -2
+
+	case $1 in
+		"global")
+					/usr/bin/wget -q --spider google.com
+					return $?
+					;;
+
+		"local")
+					/usr/bin/wget -q --spider baidu.com
+					return $?
+					;;
+		*)
+					echo "Unknown option: $1"
+					return -3
+	esac
+}
