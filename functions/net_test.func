@@ -8,7 +8,7 @@ function net_test() {
 		return -1
 	fi
 
-	if [[ -f /usr/bin/wget ]];
+	if [[ ! -f /usr/bin/wget ]];
 	then
 		echo "wget does not exist, install it to /usr/bin."
 		return -2
