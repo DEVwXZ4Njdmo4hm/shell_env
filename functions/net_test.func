@@ -15,17 +15,26 @@ function net_test() {
 	fi
 
 	case $1 in
-		"global")
+		"external")
 					/usr/bin/wget -q --spider google.com
 					return $?
 					;;
 
-		"local")
+		"internal")
 					/usr/bin/wget -q --spider baidu.com
 					return $?
 					;;
+
+		"help"	  )
+					echo "net_test [option]"
+					echo "Options:"
+					echo "		external:	test the connection to the external network, like google.com."
+					echo "		internal:	Test the connection to the internal network, like baidu.com."
+					echo
+					return -3
 	esac
 
 	echo "Unknown option: $1"
-	return -3
+	echo "please run \"net_test help\" to get help."
+	return -4
 }
