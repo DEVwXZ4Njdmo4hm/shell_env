@@ -26,10 +26,10 @@ function net_test() {
 					;;
 
 		"help"	  )
-					echo "net_test [option]"
+					echo "Usage: net_test [option]"
 					echo "Options:"
-					echo "		external:	test the connection to the external network, like google.com."
-					echo "		internal:	Test the connection to the internal network, like baidu.com."
+					echo "	external: test the connection to the external network, like google.com."
+					echo "	internal: test the connection to the internal network, like baidu.com."
 					echo
 					return -3
 	esac
