@@ -5,7 +5,7 @@ function repoupdate() {
 	local retry=0
 	local always_update=()
 	printf "Testing network..."
-	/usr/bin/wget -q --spider google.com
+	net_test external
 	if [[ $? -ne 0 ]];
 	then
 		echo "	FAILED!"
