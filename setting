@@ -80,7 +80,8 @@ REPOUPDATE_ALWAYS_UPDATE=(
 	"sys-apps/openrc"
 	"sys-devel/binutils"
 	"sys-devel/binutils-config"
-	"sys-libs/binutils-lib"
+	"sys-libs/binutils-libs"
+	"sys-libs/glibc"
 )
 
 # check git status at shell startup.
