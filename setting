@@ -78,6 +78,9 @@ REPOUPDATE_ALWAYS_UPDATE=(
 	"sys-kernel/linux-firmware"
 	"sys-apps/portage"
 	"sys-apps/openrc"
+	"sys-devel/binutils"
+	"sys-devel/binutils-config"
+	"sys-libs/binutils-lib"
 )
 
 # check git status at shell startup.
