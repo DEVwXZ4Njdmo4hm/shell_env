@@ -39,7 +39,7 @@ function repoupdate() {
 				fi
 			else
 				echo "failed on syncing remote ebuild tree, retrying."
-				$?=1
+				/bin/false
 			fi
 			
 			[[ $? -ne 0 ]];
