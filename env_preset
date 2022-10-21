@@ -32,7 +32,14 @@ fi
 if [[ $REPOUPDATE_SUGGESTED_UPGRADABLE_QUANTITY == "AUTO" ]];
 then
 	REPOUPDATE_SUGGESTED_UPGRADABLE_QUANTITY=$(( $(wc -l <<< $(cd /var/db/pkg/ && ls -d */*)) / 15 ))
+elif [[ ${REPOUPDATE_SUGGESTED_UPGRADABLE_QUANTITY =~ '^[0-9]+$' ]];
+then
+	;
+else
+	echo "Wrong set: REPOUPDATE_SUGGESTED_UPGRADABLE_QUANTITY = ${REPOUPDATE_SUGGESTED_UPGRADABLE_QUANTITY}"
+	echo "Correct: [num/\"AUTO\"], please use \"envset\" to fix it."
 fi
+
 
 unset PATH
 unset INFOPATH
