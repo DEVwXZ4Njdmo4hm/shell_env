@@ -2,8 +2,6 @@
 
 # but do not excute it.
 
-source $HOME/.env/setting
-
 #alias matlab=$MATLAB_HOME"/bin/matlab"
 alias sdkmanager="sdkmanager --sdk_root="$SDK_ROOT""
 alias cd..="cd .."
