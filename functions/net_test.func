@@ -35,7 +35,7 @@ function net_test() {
 					echo "Options:"
 					echo "	external: test the connection to the external network, target: google.com."
 					echo "	internal: test the connection to the internal network, target: baidu.com."
-					echo "	github:	test the connection to github.com."
+					echo "	github:	  test the connection to github.com."
 					echo
 					return -3
 	esac
