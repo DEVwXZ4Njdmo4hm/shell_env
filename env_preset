@@ -29,6 +29,11 @@ then
 	alias py=python
 fi
 
+if [[ $REPOUPDATE_SUGGESTED_UPGRADABLE_QUANTITY == "AUTO" ]];
+then
+	REPOUPDATE_SUGGESTED_UPGRADABLE_QUANTITY=$(( $(wc -l <<< $(cd /var/db/pkg/ && ls -d */*)) / 15 ))
+fi
+
 unset PATH
 unset INFOPATH
 unset MANPATH
