@@ -13,8 +13,8 @@ function repoupdate() {
 	then
 		rec_qua=$(( $(wc -l <<< $(cd /var/db/pkg/ && ls -d */*)) / 15 ))
 	else
-		echo "Wrong REPOUPDATE_SUGGESTED_UPGRADABLE_QUANTITY setting: ${REPOUPDATE_SUGGESTED_UPGRADABLE_QUANTITY}"
-		echo "Correct: [num/\"AUTO\"]"
+		echo "Wrong set: REPOUPDATE_SUGGESTED_UPGRADABLE_QUANTITY = ${REPOUPDATE_SUGGESTED_UPGRADABLE_QUANTITY}"
+		echo "Correct: [num/\"AUTO\"], please use \"envset\" to fix it."
 		return -8
 	fi
 		
