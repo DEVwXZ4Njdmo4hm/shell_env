@@ -69,7 +69,7 @@ REPOUPDATE_RETRY_MAX=10
 # When the quantity of packages that can be upgraded is greater 
 # than or equal to this value, repoupdate will suggest a system upgrade.
 # Values: [NUM/"AUTO"]
-REPOUPDATE_SUGGESTED_UPGRADABLE_QUANTITY=Auto
+REPOUPDATE_SUGGESTED_UPGRADABLE_QUANTITY=AUTO
 
 # The packages specified here are always automatically upgraded via repoupdate
 # when eix detected updates of them, regardless of whether the quantity of upgradable 
