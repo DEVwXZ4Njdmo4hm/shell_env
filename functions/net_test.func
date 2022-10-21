@@ -25,11 +25,17 @@ function net_test() {
 					return $?
 					;;
 
+		"github")
+					/usr/bin/wget -q --spider github.com
+					return $?
+					;;
+
 		"help"	  )
 					echo "Usage: net_test [option]"
 					echo "Options:"
-					echo "	external: test the connection to the external network, like google.com."
-					echo "	internal: test the connection to the internal network, like baidu.com."
+					echo "	external: test the connection to the external network, target: google.com."
+					echo "	internal: test the connection to the internal network, target: baidu.com."
+					echo "	github:	test the connection to github.com."
 					echo
 					return -3
 	esac
