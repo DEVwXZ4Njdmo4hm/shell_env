@@ -5,20 +5,7 @@ function repoupdate() {
 	local retry=0
 	local always_update=()
 	mirror=$(sed -n '/^sync-uri = /{s/^sync-uri = //;p}' /etc/portage/repos.conf/gentoo.conf)
-	local rec_qua=${REPOUPDATE_SUGGESTED_UPGRADABLE_QUANTITY}
-	if [[ $rec_qua =~ '^[0-9]+$' ]];
-	then
-		;
-	elif [[ $rec_qua == "AUTO" ]];
-	then
-		rec_qua=$(( $(wc -l <<< $(cd /var/db/pkg/ && ls -d */*)) / 15 ))
-	else
-		echo "Wrong set: REPOUPDATE_SUGGESTED_UPGRADABLE_QUANTITY = ${REPOUPDATE_SUGGESTED_UPGRADABLE_QUANTITY}"
-		echo "Correct: [num/\"AUTO\"], please use \"envset\" to fix it."
-		return -8
-	fi
-		
-
+	
 	printf "Testing network..."
 	if [[ ${mirror} =~ "edu.cn" ]];
 	then
