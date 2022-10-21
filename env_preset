@@ -29,7 +29,6 @@ then
 	alias py=python
 fi
 
-
 unset PATH
 unset INFOPATH
 unset MANPATH
