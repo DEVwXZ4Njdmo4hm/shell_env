@@ -4,8 +4,16 @@ function repoupdate() {
 	source "${HOME}/.env/functions/macro/colors"
 	local retry=0
 	local always_update=()
+	mirror=$(sed -n '/^sync-uri = /{s/^sync-uri = //;p}' /etc/portage/repos.conf/gentoo.conf)
+
 	printf "Testing network..."
-	net_test external
+	if [[ ${mirror} =~ "edu.cn" ]];
+	then
+		net_test internal
+	else
+		net_test external
+	fi
+
 	if [[ $? -ne 0 ]];
 	then
 		echo "	FAILED!"
@@ -15,8 +23,7 @@ function repoupdate() {
 	else
 		echo "	OK!"
 	fi
-
-	mirror=$(sed -n '/^sync-uri = /{s/^sync-uri = //;p}' /etc/portage/repos.conf/gentoo.conf)
+	
 	if [[ $USE_GENTOO -eq 1 ]];
 	then
 		while
