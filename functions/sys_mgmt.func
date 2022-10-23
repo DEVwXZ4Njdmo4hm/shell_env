@@ -147,7 +147,7 @@ function repoupdate() {
 			echo "Unrecognized input :\"$reply\", try again."
 		done
 
-		if [[ $reply =~ ^[Yy] ]];
+		if [[ $reply =~ ^[y] ]];
 		then
 			while
 				op_flag=0
@@ -247,6 +247,42 @@ function repoupdate() {
 	do
 		if [[ $updated_item == "sys-kernel/xanmod-sources" ]];
 		then
+			echo "After updating the kernel source, repoupdate recommends you to do a kernel upgrade, too."	
+			# play ringtone for 3 times.
+			$HOME/.local/bin/play_2 /usr/share/sounds/freedesktop/stereo/message-new-instant.oga
+			$HOME/.local/bin/play_2 /usr/share/sounds/freedesktop/stereo/message-new-instant.oga
+			$HOME/.local/bin/play_2 /usr/share/sounds/freedesktop/stereo/message-new-instant.oga
+
+			while
+				if [[ ! -z $BASH_VERSION ]];
+				then
+					read -p "Do you want to do it? [Y/n]: " reply
+				elif [[ ! -z $ZSH_VERSION ]];
+				then
+					read "reply?Do you want to do it? [Y/n]: "
+				fi
+				
+				reply=$( echo $reply | tr '[:upper:]' '[:lower:]' )
+				[[ ! $reply =~ ^[yn]$ ]]	&&
+				[[ $reply != "yes" ]]	 	&&
+				[[ $reply != "no" ]]		&&
+				[[ $reply != "" ]]
+			do
+				echo "Unrecognized input :\"$reply\", try again."
+			done
+
+			if [[ $reply =~ ^[y] ]];
+			then
+				echo "Performing kernel upgrade..."
+				$HOME/.local/bin/play_2 /usr/share/sounds/freedesktop/stereo/message-new-instant.oga
+				sleep 1
+				$HOME/.local/bin/play_2 /usr/share/sounds/freedesktop/stereo/message-new-instant.oga
+				sleep 1
+				$HOME/.local/bin/play_2 /usr/share/sounds/freedesktop/stereo/message-new-instant.oga
+				sleep 1
+				sudo /sbin/upgrade_kernel
+			fi
+
 			break
 		fi
 	done
