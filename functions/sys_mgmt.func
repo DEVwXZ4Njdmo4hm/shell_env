@@ -242,5 +242,14 @@ function repoupdate() {
 			fi
 		fi
 	fi
+
+	for updated_item in ${always_update};
+	do
+		if [[ $updated_item == "sys-kernel/xanmod-sources" ]];
+		then
+			break
+		fi
+	done
+	
 	return 0
 }
