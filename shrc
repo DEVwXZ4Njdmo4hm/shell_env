@@ -19,3 +19,5 @@ for i in ${CHECK_GIT_STATUS_ON_STARTUP}; do
 	git status --porcelain 
 	popd &>/dev/null
 done
+
+alias env_reload="source $HOME/.shrc"
