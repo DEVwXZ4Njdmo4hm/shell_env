@@ -33,7 +33,7 @@ function repoupdate() {
 			if [[ $? -ne 0 ]]; then echo "Failed at permission authentication"; return 1; fi
 			echo "updating repositories..."
 			sleep 0.3
-			echo -en "sync remote ebuild tree from ${RED}${BOLD}${mirror}${NoColor}${NORM}? [y/n]:"
+			echo -en "sync remote ebuild tree from ${RED}${BOLD}${mirror}${NoColor}${NORM}"
 			sudo /usr/sbin/emaint sync -A &>/dev/null;
 			if [[ $? -eq 0 ]];
 			then
