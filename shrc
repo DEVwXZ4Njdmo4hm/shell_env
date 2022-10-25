@@ -5,7 +5,7 @@
 if [[ ${UID} -ne 1000 ]]
 then
 	echo "Incorret UID ${UID}!!!"
-	echo "Attempting env source!"
+	echo "Environment loading process attempted!"
 	return 133
 fi
 
