@@ -2,6 +2,7 @@
 # Created by zijian at 2022-04-01 13:42:17
 
 source $HOME/.env/functions/pathremove.func
+source $HOME/.env/functions/ev_op.func
 
 if [[ ${USE_ANDROID_CLI_TOOLSET} -eq 1 ]];
 then
@@ -10,10 +11,23 @@ then
 	REPO_OS_OVERRIDE=linux
 	ANDROID_CLI_TOOLS_HOME=$SDK_ROOT/cmdline-tools/latest
 	AVD_HOME=${HOME}/.local/lib/android/avd_home
+
+	is_in ${SDK_BUILD_TOOLS} PATH
+	[[ $? -eq 1 ]] && PATH=${SDK_BUILD_TOOLS}:$PATH
+
+	is_in ${SDK_BUILD_TOOLS}/lib LD_LIBRARY_PATH
+	[[ $? -eq 1 ]] && LD_LIBRARY_PATH=${SDK_BUILD_TOOLS}/lib:$LD_LIBRARY_PATH
+
+	is_in ${SDK_BUILD_TOOLS}/lib64 LD_LIBRARY_PATH
+	[[ $? -eq 1 ]] && LD_LIBRARY_PATH=${SDK_BUILD_TOOLS}/lib64:$LD_LIBRARY_PATH
 	
 else
 	unset SDK_ROOT
+	unset SDK_BUILD_TOOLS
 	unset REPO_OS_OVERRIDE
 	unset ANDROID_CLI_TOOLS_HOME
 	unset AVD_HOME
+
+	pathremove ${SDK_BUILD_TOOLS} PATH
+	pathremove ${SDK_BUILD_TOOLS} LD_LIBRARY_PATH
 fi
