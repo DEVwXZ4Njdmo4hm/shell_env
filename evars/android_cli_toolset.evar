@@ -15,6 +15,9 @@ then
 	is_in ${ANDROID_CLI_TOOLS_HOME}/bin PATH
 	[[ $? -eq 1 ]] && PATH=${ANDROID_CLI_TOOLS_HOME}/bin:$PATH
 
+	is_in ${ANDROID_CLI_TOOLS_HOME}/lib LD_LIBRARY_PATH
+	[[ $? -eq 1 ]] && LD_LIBRARY_PATH=${ANDROID_CLI_TOOLS_HOME}/lib:$LD_LIBRARY_PATH
+
 	is_in ${SDK_BUILD_TOOLS} PATH
 	[[ $? -eq 1 ]] && PATH=${SDK_BUILD_TOOLS}:$PATH
 
@@ -33,4 +36,6 @@ else
 
 	pathremove ${SDK_BUILD_TOOLS} PATH
 	pathremove ${SDK_BUILD_TOOLS} LD_LIBRARY_PATH
+	pathremove ${ANDROID_CLI_TOOLS_HOME} PATH
+	pathremove ${ANDROID_CLI_TOOLS_HOME} LD_LIBRARY_PATH
 fi
