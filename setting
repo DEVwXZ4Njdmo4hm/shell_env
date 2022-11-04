@@ -47,6 +47,9 @@ USE_LOCALMUSL=1
 # Enable Android CLI toolset
 USE_ANDROID_CLI_TOOLSET=1
 
+# specify Android SDK Version
+USE_ANDROID_SDK=31.0.0
+
 # Enable local flutter
 USE_FLUTTER=1
 
