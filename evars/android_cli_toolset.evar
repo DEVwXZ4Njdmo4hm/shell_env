@@ -9,8 +9,11 @@ then
 	SDK_ROOT=${HOME}/.local/lib/android/sdk_root/
 	SDK_BUILD_TOOLS=${SDK_ROOT}/build-tools/${USE_ANRDOID_BUILD_TOOLS_VERSION}
 	REPO_OS_OVERRIDE=linux
-	ANDROID_CLI_TOOLS_HOME=$SDK_ROOT/cmdline-tools/latest
+	ANDROID_CLI_TOOLS_HOME=$SDK_ROOT/cmdline-tools/
 	AVD_HOME=${HOME}/.local/lib/android/avd_home
+
+	is_in ${ANDROID_CLI_TOOLS_HOME}/bin PATH
+	[[ $? -eq 1 ]] && PATH=${ANDROID_CLI_TOOLS_HOME}/bin:$PATH
 
 	is_in ${SDK_BUILD_TOOLS} PATH
 	[[ $? -eq 1 ]] && PATH=${SDK_BUILD_TOOLS}:$PATH
