@@ -11,6 +11,7 @@ then
 	REPO_OS_OVERRIDE=linux
 	ANDROID_CLI_TOOLS_HOME=$SDK_ROOT/cmdline-tools/
 	AVD_HOME=${HOME}/.local/lib/android/avd_home
+	ANDROID_NDK=${SDK_ROOT}/ndk/${USE_NDK_VERSION}
 
 	is_in ${ANDROID_CLI_TOOLS_HOME}/bin PATH
 	[[ $? -eq 1 ]] && PATH=${ANDROID_CLI_TOOLS_HOME}/bin:$PATH
@@ -33,6 +34,7 @@ else
 	unset REPO_OS_OVERRIDE
 	unset ANDROID_CLI_TOOLS_HOME
 	unset AVD_HOME
+	unset ANDROID_NDK
 
 	pathremove ${SDK_BUILD_TOOLS} PATH
 	pathremove ${SDK_BUILD_TOOLS} LD_LIBRARY_PATH
