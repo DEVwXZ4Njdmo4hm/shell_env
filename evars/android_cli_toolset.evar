@@ -6,7 +6,7 @@ source $HOME/.env/functions/ev_op.func
 
 if [[ ${USE_ANDROID_CLI_TOOLSET} -eq 1 ]];
 then
-	SDK_ROOT=${HOME}/.local/lib/android/sdk_root/
+	SDK_ROOT=${HOME}/.local/lib/android/sdk_root
 	SDK_BUILD_TOOLS=${SDK_ROOT}/build-tools/${USE_ANRDOID_BUILD_TOOLS_VERSION}
 	REPO_OS_OVERRIDE=linux
 	ANDROID_CLI_TOOLS_HOME=$SDK_ROOT/cmdline-tools/
