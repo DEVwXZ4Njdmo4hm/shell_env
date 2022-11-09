@@ -203,7 +203,7 @@ function repoupdate() {
 				if [[ $op_flag -eq 1 ]];
 				then
 					echo "Performing software(s) upgrade."
-					sudo /usr/bin/emerge -avuqUDN1 ${always_update}
+					sudo /usr/bin/emerge -vuqUDN1 ${always_update}
 				fi
 			fi
 		fi
