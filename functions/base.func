@@ -48,9 +48,6 @@ function addevar() {
 		echo "#!/bin/sh" > $nv
 		echo "# Created by $USER at ${create_date}">> $nv
 		echo >> $nv
-		echo "source \$HOME/.env/functions/pathremove.func" >> $nv
-		echo "source \$HOME/.env/functions/ev_op.func" >> $nv
-		echo >> $nv
 	else
 		echo "Specified $1.evar has been existed."
 		sleep 0.2
