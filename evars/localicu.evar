@@ -1,9 +1,6 @@
 #!/bin/sh
 # Created by zijian at 2022-05-08 22:28:01
 
-source $HOME/.env/functions/pathremove.func
-source $HOME/.env/functions/ev_op.func
-
 LOCAL_ICU_MAJOR_VER=69
 LOCAL_ICU_HOME=$HOME/.local/lib/ICU${LOCAL_ICU_MAJOR_VER}/lib
 

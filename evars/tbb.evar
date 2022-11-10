@@ -1,9 +1,6 @@
 #!/bin/sh
 # Created by zijian at 2022-07-05 17:35:49
 
-source $HOME/.env/functions/pathremove.func
-source $HOME/.env/functions/ev_op.func
-
 LOCAL_TBB_DIR=${LOCAL_INTEL_ONEAPI_DIR}/tbb/${LOCAL_TBB_VERSION}
 
 if [[ ${USE_LOCAL_TBB} -eq 1 ]];

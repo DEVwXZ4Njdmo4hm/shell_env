@@ -1,9 +1,6 @@
 #!/bin/sh
 # Created by zijian at 2022-04-01 12:56:01
 
-source $HOME/.env/functions/pathremove.func
-source $HOME/.env/functions/ev_op.func
-
 MATLAB_HOME=${HOME}/.local/share/MATLAB
 MATLAB_VERSION=R2021b
 

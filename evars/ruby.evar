@@ -1,9 +1,6 @@
 #!/bin/sh
 # Created by zijian at 2022-04-01 13:20:48
 
-source $HOME/.env/functions/pathremove.func
-source $HOME/.env/functions/ev_op.func
-
 if [[ ${USE_USERGEMHOME} -eq 1 ]];
 then
 	GEM_HOME=$HOME/.local/share/gem/ruby/${RUBY_VERSION}

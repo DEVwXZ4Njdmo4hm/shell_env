@@ -1,9 +1,6 @@
 #!/bin/sh
 # Created by zijian at 2022-04-01 13:04:14
 
-source $HOME/.env/functions/pathremove.func
-source $HOME/.env/functions/ev_op.func
-
 #JDK_MAJOR_VERSION=17
 #JAVA_HOME=/usr/lib/jvm/openjdk-bin-${JDK_MAJOR_VERSION}
 JFX_VERSION=17.0.1

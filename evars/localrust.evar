@@ -1,9 +1,6 @@
 #!/bin/sh
 # Created by zijian at 2022-04-01 13:51:42
 
-source $HOME/.env/functions/pathremove.func
-source $HOME/.env/functions/ev_op.func
-
 if [[ ${USE_LOCALRUSTLIB} -eq 1 ]];
 then
 	is_in $HOME/.cargo/bin PATH

@@ -1,9 +1,6 @@
 #!/bin/sh
 # Created by zijian at 2022-07-05 17:19:21
 
-source $HOME/.env/functions/pathremove.func
-source $HOME/.env/functions/ev_op.func
-
 ICX_COMPILERS_DIR=${LOCAL_INTEL_ONEAPI_DIR}/compiler/${LOCAL_ICX_COMPILERS_VERSION}/linux
 INTEL_MPI_DIR=${LOCAL_INTEL_ONEAPI_DIR}/mpi/${LOCAL_ICX_COMPILERS_VERSION}
 

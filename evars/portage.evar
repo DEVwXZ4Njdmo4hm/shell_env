@@ -1,8 +1,6 @@
 #!/bin/sh
 # Created by zijian at 2022-04-01 13:16:44
 
-source $HOME/.env/functions/pathremove.func
-
 if [[ ${USE_GENTOO} -eq 1 ]];
 then
 	PORTAGE="/etc/portage"

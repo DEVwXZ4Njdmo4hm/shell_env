@@ -1,9 +1,6 @@
 #!/bin/sh
 # Created by zijian at 2022-04-01 13:42:17
 
-source $HOME/.env/functions/pathremove.func
-source $HOME/.env/functions/ev_op.func
-
 if [[ ${USE_ANDROID_CLI_TOOLSET} -eq 1 ]];
 then
 	SDK_ROOT=${HOME}/.local/lib/android/sdk_root

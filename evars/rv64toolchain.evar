@@ -1,9 +1,6 @@
 #!/bin/sh
 # Created by zijian at 2022-04-01 13:33:25
 
-source $HOME/.env/functions/pathremove.func
-source $HOME/.env/functions/ev_op.func
-
 RISCV_TOOLCHAIN_HOME=/opt/riscv
 
 if [[ ${USE_RV64TOOLCHAIN} -eq 1 ]];

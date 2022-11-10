@@ -1,9 +1,6 @@
 #!/bin/sh
 # Created by zijian at 2022-04-01 13:44:07
 
-source $HOME/.env/functions/pathremove.func
-source $HOME/.env/functions/ev_op.func
-
 FLUTTER_HOME=${HOME}/.local/lib/flutter
 CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
 

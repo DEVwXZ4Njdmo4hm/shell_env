@@ -1,9 +1,6 @@
 #!/bin/sh
 # Created by zijian at 2022-04-01 13:35:52
 
-source $HOME/.env/functions/pathremove.func
-source $HOME/.env/functions/ev_op.func
-
 LOCAL_QT_VER=6.2
 LOCAL_QT_HOME=${HOME}/.local/lib/Qt-${LOCAL_QT_VER}
 QT_QPA_PLATFORM=wayland

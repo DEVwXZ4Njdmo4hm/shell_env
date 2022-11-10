@@ -1,8 +1,4 @@
 #!/bin/sh
 # Created by zijian at 2022-07-05 17:22:10
 
-source $HOME/.env/functions/pathremove.func
-source $HOME/.env/functions/ev_op.func
-
-
 LOCAL_INTEL_ONEAPI_DIR=$HOME/.local/share/intel/oneapi
